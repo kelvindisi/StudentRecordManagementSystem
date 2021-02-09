@@ -30,6 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.activeMenu = new System.Windows.Forms.Panel();
+            this.btnHospital = new System.Windows.Forms.Button();
+            this.btnLecturer = new System.Windows.Forms.Button();
+            this.btnDepartmentAdmin = new System.Windows.Forms.Button();
+            this.btnAdmin = new System.Windows.Forms.Button();
+            this.btnDashboard = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -37,13 +43,10 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnDashboard = new System.Windows.Forms.Button();
-            this.btnAdmin = new System.Windows.Forms.Button();
-            this.btnDepartmentAdmin = new System.Windows.Forms.Button();
-            this.btnLecturer = new System.Windows.Forms.Button();
-            this.btnHospital = new System.Windows.Forms.Button();
-            this.activeMenu = new System.Windows.Forms.Panel();
-            this.dashboard1 = new StudentRecordManagementSystem.Dashboard();
+            this.adminControl = new StudentRecordManagementSystem.AdminControl();
+            this.dashboardControl = new StudentRecordManagementSystem.Dashboard();
+            this.departmentControl = new StudentRecordManagementSystem.DepartmentControl();
+            this.lecturerControl = new StudentRecordManagementSystem.LecturerControl();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -62,8 +65,97 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(238, 534);
+            this.panel1.Size = new System.Drawing.Size(238, 467);
             this.panel1.TabIndex = 0;
+            // 
+            // activeMenu
+            // 
+            this.activeMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(27)))), ((int)(((byte)(55)))));
+            this.activeMenu.Location = new System.Drawing.Point(0, 63);
+            this.activeMenu.Name = "activeMenu";
+            this.activeMenu.Size = new System.Drawing.Size(7, 66);
+            this.activeMenu.TabIndex = 2;
+            // 
+            // btnHospital
+            // 
+            this.btnHospital.FlatAppearance.BorderSize = 0;
+            this.btnHospital.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHospital.ForeColor = System.Drawing.Color.White;
+            this.btnHospital.Image = ((System.Drawing.Image)(resources.GetObject("btnHospital.Image")));
+            this.btnHospital.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHospital.Location = new System.Drawing.Point(3, 351);
+            this.btnHospital.Name = "btnHospital";
+            this.btnHospital.Size = new System.Drawing.Size(232, 66);
+            this.btnHospital.TabIndex = 4;
+            this.btnHospital.Text = "    Hospital";
+            this.btnHospital.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHospital.UseVisualStyleBackColor = true;
+            this.btnHospital.Visible = false;
+            this.btnHospital.Click += new System.EventHandler(this.btnHospital_Click);
+            // 
+            // btnLecturer
+            // 
+            this.btnLecturer.FlatAppearance.BorderSize = 0;
+            this.btnLecturer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLecturer.ForeColor = System.Drawing.Color.White;
+            this.btnLecturer.Image = ((System.Drawing.Image)(resources.GetObject("btnLecturer.Image")));
+            this.btnLecturer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLecturer.Location = new System.Drawing.Point(3, 279);
+            this.btnLecturer.Name = "btnLecturer";
+            this.btnLecturer.Size = new System.Drawing.Size(232, 66);
+            this.btnLecturer.TabIndex = 3;
+            this.btnLecturer.Text = "    Lecturer";
+            this.btnLecturer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLecturer.UseVisualStyleBackColor = true;
+            this.btnLecturer.Click += new System.EventHandler(this.btnLecturer_Click);
+            // 
+            // btnDepartmentAdmin
+            // 
+            this.btnDepartmentAdmin.FlatAppearance.BorderSize = 0;
+            this.btnDepartmentAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDepartmentAdmin.ForeColor = System.Drawing.Color.White;
+            this.btnDepartmentAdmin.Image = ((System.Drawing.Image)(resources.GetObject("btnDepartmentAdmin.Image")));
+            this.btnDepartmentAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDepartmentAdmin.Location = new System.Drawing.Point(3, 207);
+            this.btnDepartmentAdmin.Name = "btnDepartmentAdmin";
+            this.btnDepartmentAdmin.Size = new System.Drawing.Size(232, 66);
+            this.btnDepartmentAdmin.TabIndex = 2;
+            this.btnDepartmentAdmin.Text = "    Department Admin";
+            this.btnDepartmentAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDepartmentAdmin.UseVisualStyleBackColor = true;
+            this.btnDepartmentAdmin.Click += new System.EventHandler(this.btnDepartmentAdmin_Click);
+            // 
+            // btnAdmin
+            // 
+            this.btnAdmin.FlatAppearance.BorderSize = 0;
+            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdmin.ForeColor = System.Drawing.Color.White;
+            this.btnAdmin.Image = ((System.Drawing.Image)(resources.GetObject("btnAdmin.Image")));
+            this.btnAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdmin.Location = new System.Drawing.Point(3, 135);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Size = new System.Drawing.Size(232, 66);
+            this.btnAdmin.TabIndex = 1;
+            this.btnAdmin.Text = "    Admin";
+            this.btnAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAdmin.UseVisualStyleBackColor = true;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
+            // 
+            // btnDashboard
+            // 
+            this.btnDashboard.FlatAppearance.BorderSize = 0;
+            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashboard.ForeColor = System.Drawing.Color.White;
+            this.btnDashboard.Image = ((System.Drawing.Image)(resources.GetObject("btnDashboard.Image")));
+            this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDashboard.Location = new System.Drawing.Point(3, 63);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Size = new System.Drawing.Size(232, 66);
+            this.btnDashboard.TabIndex = 0;
+            this.btnDashboard.Text = "    Dashboard";
+            this.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDashboard.UseVisualStyleBackColor = true;
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
             // panel3
             // 
@@ -71,7 +163,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(660, 11);
+            this.panel3.Size = new System.Drawing.Size(552, 11);
             this.panel3.TabIndex = 0;
             // 
             // panel4
@@ -80,7 +172,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 11);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(660, 30);
+            this.panel4.Size = new System.Drawing.Size(552, 30);
             this.panel4.TabIndex = 1;
             // 
             // toolStrip1
@@ -93,7 +185,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.toolStrip1.Size = new System.Drawing.Size(660, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(552, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -125,111 +217,55 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(238, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(660, 42);
+            this.panel2.Size = new System.Drawing.Size(552, 42);
             this.panel2.TabIndex = 1;
             // 
-            // btnDashboard
+            // adminControl
             // 
-            this.btnDashboard.FlatAppearance.BorderSize = 0;
-            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDashboard.ForeColor = System.Drawing.Color.White;
-            this.btnDashboard.Image = ((System.Drawing.Image)(resources.GetObject("btnDashboard.Image")));
-            this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDashboard.Location = new System.Drawing.Point(3, 63);
-            this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(232, 66);
-            this.btnDashboard.TabIndex = 0;
-            this.btnDashboard.Text = "    Dashboard";
-            this.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDashboard.UseVisualStyleBackColor = true;
-            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
+            this.adminControl.AutoSize = true;
+            this.adminControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminControl.Location = new System.Drawing.Point(238, 41);
+            this.adminControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.adminControl.Name = "adminControl";
+            this.adminControl.Size = new System.Drawing.Size(552, 426);
+            this.adminControl.TabIndex = 3;
             // 
-            // btnAdmin
+            // dashboardControl
             // 
-            this.btnAdmin.FlatAppearance.BorderSize = 0;
-            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdmin.ForeColor = System.Drawing.Color.White;
-            this.btnAdmin.Image = ((System.Drawing.Image)(resources.GetObject("btnAdmin.Image")));
-            this.btnAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdmin.Location = new System.Drawing.Point(3, 135);
-            this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(232, 66);
-            this.btnAdmin.TabIndex = 1;
-            this.btnAdmin.Text = "    Admin";
-            this.btnAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAdmin.UseVisualStyleBackColor = true;
-            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
+            this.dashboardControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dashboardControl.Location = new System.Drawing.Point(238, 47);
+            this.dashboardControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dashboardControl.Name = "dashboardControl";
+            this.dashboardControl.Size = new System.Drawing.Size(552, 420);
+            this.dashboardControl.TabIndex = 2;
             // 
-            // btnDepartmentAdmin
+            // departmentControl
             // 
-            this.btnDepartmentAdmin.FlatAppearance.BorderSize = 0;
-            this.btnDepartmentAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDepartmentAdmin.ForeColor = System.Drawing.Color.White;
-            this.btnDepartmentAdmin.Image = ((System.Drawing.Image)(resources.GetObject("btnDepartmentAdmin.Image")));
-            this.btnDepartmentAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDepartmentAdmin.Location = new System.Drawing.Point(3, 207);
-            this.btnDepartmentAdmin.Name = "btnDepartmentAdmin";
-            this.btnDepartmentAdmin.Size = new System.Drawing.Size(232, 66);
-            this.btnDepartmentAdmin.TabIndex = 2;
-            this.btnDepartmentAdmin.Text = "    Department Admin";
-            this.btnDepartmentAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDepartmentAdmin.UseVisualStyleBackColor = true;
-            this.btnDepartmentAdmin.Click += new System.EventHandler(this.btnDepartmentAdmin_Click);
+            this.departmentControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.departmentControl.Location = new System.Drawing.Point(238, 47);
+            this.departmentControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.departmentControl.Name = "departmentControl";
+            this.departmentControl.Size = new System.Drawing.Size(552, 420);
+            this.departmentControl.TabIndex = 4;
             // 
-            // btnLecturer
+            // lecturerControl
             // 
-            this.btnLecturer.FlatAppearance.BorderSize = 0;
-            this.btnLecturer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLecturer.ForeColor = System.Drawing.Color.White;
-            this.btnLecturer.Image = ((System.Drawing.Image)(resources.GetObject("btnLecturer.Image")));
-            this.btnLecturer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLecturer.Location = new System.Drawing.Point(3, 279);
-            this.btnLecturer.Name = "btnLecturer";
-            this.btnLecturer.Size = new System.Drawing.Size(232, 66);
-            this.btnLecturer.TabIndex = 3;
-            this.btnLecturer.Text = "    Lecturer";
-            this.btnLecturer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLecturer.UseVisualStyleBackColor = true;
-            this.btnLecturer.Click += new System.EventHandler(this.btnLecturer_Click);
-            // 
-            // btnHospital
-            // 
-            this.btnHospital.FlatAppearance.BorderSize = 0;
-            this.btnHospital.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHospital.ForeColor = System.Drawing.Color.White;
-            this.btnHospital.Image = ((System.Drawing.Image)(resources.GetObject("btnHospital.Image")));
-            this.btnHospital.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHospital.Location = new System.Drawing.Point(3, 351);
-            this.btnHospital.Name = "btnHospital";
-            this.btnHospital.Size = new System.Drawing.Size(232, 66);
-            this.btnHospital.TabIndex = 4;
-            this.btnHospital.Text = "    Hospital";
-            this.btnHospital.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnHospital.UseVisualStyleBackColor = true;
-            this.btnHospital.Click += new System.EventHandler(this.btnHospital_Click);
-            // 
-            // activeMenu
-            // 
-            this.activeMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(27)))), ((int)(((byte)(55)))));
-            this.activeMenu.Location = new System.Drawing.Point(0, 63);
-            this.activeMenu.Name = "activeMenu";
-            this.activeMenu.Size = new System.Drawing.Size(7, 66);
-            this.activeMenu.TabIndex = 2;
-            // 
-            // dashboard1
-            // 
-            this.dashboard1.Location = new System.Drawing.Point(238, 41);
-            this.dashboard1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dashboard1.Name = "dashboard1";
-            this.dashboard1.Size = new System.Drawing.Size(660, 495);
-            this.dashboard1.TabIndex = 2;
+            this.lecturerControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lecturerControl.Location = new System.Drawing.Point(238, 47);
+            this.lecturerControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lecturerControl.Name = "lecturerControl";
+            this.lecturerControl.Size = new System.Drawing.Size(552, 420);
+            this.lecturerControl.TabIndex = 5;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(898, 534);
-            this.Controls.Add(this.dashboard1);
+            this.ClientSize = new System.Drawing.Size(790, 467);
+            this.Controls.Add(this.lecturerControl);
+            this.Controls.Add(this.departmentControl);
+            this.Controls.Add(this.adminControl);
+            this.Controls.Add(this.dashboardControl);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -245,6 +281,7 @@
             this.toolStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -264,6 +301,9 @@
         private System.Windows.Forms.Button btnAdmin;
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Panel activeMenu;
-        private Dashboard dashboard1;
+        private Dashboard dashboardControl;
+        private AdminControl adminControl;
+        private DepartmentControl departmentControl;
+        private LecturerControl lecturerControl;
     }
 }
