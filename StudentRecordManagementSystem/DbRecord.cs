@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using Futronic.SDKHelper;
 
-namespace Biometric
+namespace StudentRecordManagementSystem
 {
     /// <summary>
     /// This class represent a user fingerprint database record.
@@ -28,7 +28,7 @@ namespace Biometric
         /// <param name="szFileName">
         /// A file name with previous saved user's information.
         /// </param>
-        public DbRecord(String szFileName)
+        public DbRecord( String szFileName )
         {
             if (szFileName == null)
                 throw new ArgumentNullException("szFileName");
@@ -55,25 +55,25 @@ namespace Biometric
                 byte[] Data = null;
 
                 // Read user name length and user name in UTF8
-                if (fileStream.Length < 2)
+                if( fileStream.Length < 2 )
                     throw new InvalidDataException(String.Format("Bad file {0}", fileStream.Name));
                 int nLength = (fileStream.ReadByte() << 8) | fileStream.ReadByte();
                 Data = new byte[nLength];
-                if (nLength != fileStream.Read(Data, 0, nLength))
+                if( nLength != fileStream.Read(Data, 0, nLength) )
                     throw new InvalidDataException(String.Format("Bad file {0}", fileStream.Name));
                 m_UserName = utfEncoder.GetString(Data);
 
                 // Read user unique ID
                 m_Key = new byte[16];
-                if (fileStream.Read(m_Key, 0, 16) != 16)
+                if( fileStream.Read(m_Key, 0, 16) != 16)
                     throw new InvalidDataException(String.Format("Bad file {0}", fileStream.Name));
 
                 // Read template length and template data
-                if ((fileStream.Length - fileStream.Position) < 2)
+                if( (fileStream.Length - fileStream.Position) < 2)
                     throw new InvalidDataException(String.Format("Bad file {0}", fileStream.Name));
                 nLength = (fileStream.ReadByte() << 8) | fileStream.ReadByte();
                 m_Template = new byte[nLength];
-                if (fileStream.Read(m_Template, 0, nLength) != nLength)
+                if( fileStream.Read(m_Template, 0, nLength) != nLength )
                     throw new InvalidDataException(String.Format("Bad file {0}", fileStream.Name));
             }
         }
@@ -99,8 +99,8 @@ namespace Biometric
 
                 // Save user name
                 Data = utfEncoder.GetBytes(m_UserName);
-                fileStream.WriteByte((byte)((Data.Length >> 8) & 0xFF));
-                fileStream.WriteByte((byte)(Data.Length & 0xFF));
+                fileStream.WriteByte( (byte)((Data.Length >> 8) & 0xFF) );
+                fileStream.WriteByte( (byte)(Data.Length & 0xFF) );
                 fileStream.Write(Data, 0, Data.Length);
 
                 // Save user unique ID
@@ -174,22 +174,22 @@ namespace Biometric
         /// <returns>
         /// reference to List objects with records
         /// </returns>
-        public static List<DbRecord> ReadRecords(String szDbDir)
+        public static List<DbRecord> ReadRecords( String szDbDir )
         {
             List<DbRecord> Users = new List<DbRecord>(10);
 
-            if (!Directory.Exists(szDbDir))
+            if( !Directory.Exists( szDbDir ) )
                 throw new DirectoryNotFoundException(String.Format("The folder {0} is not found", szDbDir));
             string[] rgFiles = Directory.GetFiles(szDbDir, "*");
             if (rgFiles == null || rgFiles.Length == 0)
                 return Users;
 
-            for (int iFiles = 0; iFiles < rgFiles.Length; iFiles++)
+            for( int iFiles = 0; iFiles < rgFiles.Length; iFiles++ )
             {
                 try
                 {
                     DbRecord User = new DbRecord(rgFiles[iFiles]);
-                    Users.Add(User);
+                    Users.Add( User );
                 }
                 catch (InvalidDataException)
                 {

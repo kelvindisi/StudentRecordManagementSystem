@@ -5,8 +5,6 @@ using DataAccess;
 using System.Windows.Forms;
 using Futronic.SDKHelper;
 using System.Drawing;
-using Biometric;
-using System.ComponentModel;
 using System.IO;
 using System.Text;
 
@@ -14,10 +12,9 @@ namespace StudentRecordManagementSystem
 {
     public partial class BioDataForm : MaterialForm
     {
-        const string kCompanyName = "Ndisi";
+        const string kCompanyName = "Futronic";
         const string kProductName = "SDK 4.0";
-        const string kDbName = "Students";
-
+        const string kDbName = "DataBaseNet";
         /// <summary>
         /// This delegate enables asynchronous calls for setting
         /// the text property on a status control.
@@ -65,21 +62,25 @@ namespace StudentRecordManagementSystem
         private String m_DatabaseDir;
 
         private bool m_bInitializationSuccess;
-
-        /// <summary>
-        /// End of Futronic initialization code
-        /// </summary>
         public const int MINIMUM_ADM_AGE = 15;
         public BioDataForm()
         {
             InitializeComponent();
+            this.m_bInitializationSuccess = false;
+            // Create FutronicEnrollment object for retrieve default values only
+            FutronicEnrollment dummy = new FutronicEnrollment();
+            FingerprintConfig.FARNLevel = (int) dummy.FARnLevel;
+            FingerprintConfig.MaxModels = dummy.MaxModels;
+            FingerprintConfig.detectFakeFinger = dummy.FakeDetection;
+            FingerprintConfig.MIOT = dummy.MIOTControlOff;
+            FingerprintConfig.FastMode = dummy.FastMode;
+            FingerprintConfig.identificationLimit = dummy.IdentificationsLeft;
+            FingerprintConfig.version = dummy.Version;
 
-            // Futronic initialization
-            m_bExit = false;
-            
+            btnStop.Enabled = false;
             try
             {
-                this.m_DatabaseDir = BiometricData.GetDatabaseDir(kCompanyName, kProductName, kDbName);
+                m_DatabaseDir = GetDatabaseDir();
             }
             catch (UnauthorizedAccessException)
             {
@@ -95,7 +96,7 @@ namespace StudentRecordManagementSystem
             }
             m_bInitializationSuccess = true;
         }
-        
+
 
         private void BioDataForm_Load(object sender, EventArgs e)
         {
@@ -108,10 +109,6 @@ namespace StudentRecordManagementSystem
             rdoMale.Checked = true;
             rdoChristian.Checked = true;
             datePickerDOB.MaxDate = DateTime.Now.AddYears(-MINIMUM_ADM_AGE);
-
-            //initialize scanner
-            //btnScanLeft.Enabled = false;
-            //btnScanRight.Enabled = false;
         }
 
         private string getGender()
@@ -149,11 +146,13 @@ namespace StudentRecordManagementSystem
                 {
                     MessageBox.Show("Bio Data saved successfully", "Successfull", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     bioDisableControls();
-                } else
+                }
+                else
                 {
                     MessageBox.Show("Failed to save data", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -197,7 +196,6 @@ namespace StudentRecordManagementSystem
             btnSave.Enabled = false;
             btnClear.Enabled = false;
             btnScanLeft.Enabled = true;
-            btnScanRight.Enabled = true;
         }
 
         private bool validateInput()
@@ -291,72 +289,114 @@ namespace StudentRecordManagementSystem
         private void btnScanLeft_Click(object sender, EventArgs e)
         {
             DbRecord User = new DbRecord();
-            string userEmail = txtEmail.Text;
-            if (userEmail == null || userEmail.Length == 0)
+            string UserName = txtEmail.Text;
+
+            if (UserName.Length == 0)
             {
-                MessageBox.Show("Email is required to register fingerprint", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Email is required to register fingerprint",
+                    "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            // check if email is associated with fingerprint
-            if (isUserExists(userEmail))
+            if (isUserExists(UserName))
             {
-                DialogResult respo = MessageBox.Show("User has already been registered, want to replace?",
-                    "User has been registered already", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                if (respo == DialogResult.No)
+                DialogResult results = MessageBox.Show("User exists, do you want to replace?", 
+                    "User Exists", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (results == DialogResult.No)
                     return;
-            }
-            else
+            }else
             {
                 try
                 {
-                    CreateFile(userEmail);
+                    CreateFile(UserName);
                 }
-                catch (DirectoryNotFoundException ep)
+                catch (DirectoryNotFoundException)
                 {
-                    MessageBox.Show("Cannot create file to save student information",
-                        "Error occured", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(this, "Can not create file to save an user's information.", this.Text,
+                                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
-                catch (IOException ei)
+                catch (IOException)
                 {
-                    MessageBox.Show(String.Format("Bad user {0}", userEmail), "Error occured",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(this, String.Format("Bad user name '{0}'.", UserName),
+                                    this.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
-
-                User.UserName = userEmail;
-                m_OperationObj = User;
-                FutronicSdkBase dummy = new FutronicEnrollment();
-                if (m_Operation != null)
-                {
-                    m_Operation.Dispose();
-                    m_Operation = null;
-                }
-                m_Operation = dummy;
-
-                // Set control properties
-                m_Operation.FakeDetection = BiometricData.DetectFakeFinger();
-                m_Operation.FFDControl = true;
-                m_Operation.FARN = Int32.Parse(BiometricData.getFARnLevel().ToString());
-                m_Operation.Version = (BiometricData.getCompatibleVersion());
-                m_Operation.FastMode = BiometricData.fastMode;
-                ((FutronicEnrollment)m_Operation).MIOTControlOff = BiometricData.MIOT;
-                ((FutronicEnrollment)m_Operation).MaxModels = BiometricData.max_frame;
-
-                EnableControls(false);
-
-                // register events
-                m_Operation.OnPutOn += new OnPutOnHandler(this.OnPutOn);
-                m_Operation.OnTakeOff += new OnTakeOffHandler(this.OnTakeOff);
-                m_Operation.UpdateScreenImage += new UpdateScreenImageHandler(this.UpdateScreenImage);
-                m_Operation.OnFakeSource += new OnFakeSourceHandler(this.OnFakeSource);
-                ((FutronicEnrollment)m_Operation).OnEnrollmentComplete +=
-                    new OnEnrollmentCompleteHandler(this.OnEnrollmentComplete);
-
-                // start enrollment process
-                ((FutronicEnrollment)m_Operation).Enrollment();
             }
+            User.UserName = UserName;
+
+            m_OperationObj = User;
+            FutronicSdkBase dummy = new FutronicEnrollment();
+            if (m_Operation != null)
+            {
+                m_Operation.Dispose();
+                m_Operation = null;
+            }
+            m_Operation = dummy;
+
+            // Set control properties
+            m_Operation.FakeDetection = FingerprintConfig.detectFakeFinger;
+            m_Operation.FFDControl = true;
+            m_Operation.FARN = FingerprintConfig.FARNLevel;
+            m_Operation.Version = FingerprintConfig.version;
+            m_Operation.FastMode = FingerprintConfig.FastMode;
+            ((FutronicEnrollment)m_Operation).MIOTControlOff = FingerprintConfig.MIOT;
+            ((FutronicEnrollment)m_Operation).MaxModels = FingerprintConfig.MaxModels;
+
+            EnableControls(false);
+
+            // register events
+            m_Operation.OnPutOn += new OnPutOnHandler(this.OnPutOn);
+            m_Operation.OnTakeOff += new OnTakeOffHandler(this.OnTakeOff);
+            m_Operation.UpdateScreenImage += new UpdateScreenImageHandler(this.UpdateScreenImage);
+            m_Operation.OnFakeSource += new OnFakeSourceHandler(this.OnFakeSource);
+            ((FutronicEnrollment)m_Operation).OnEnrollmentComplete += new OnEnrollmentCompleteHandler(this.OnEnrollmentComplete);
+
+            // start enrollment process
+            ((FutronicEnrollment)m_Operation).Enrollment();
+        }
+        protected void EnableControls(Boolean state)
+        {
+            MessageBox.Show("Disable controls scanning is on going");
+        }
+
+        /**
+         * Fingerprint methods
+         * */
+        public static String GetDatabaseDir()
+        {
+            String szDbDir;
+            szDbDir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments, Environment.SpecialFolderOption.Create);
+            szDbDir = Path.Combine(szDbDir, kCompanyName);
+            if (!Directory.Exists(szDbDir))
+            {
+                Directory.CreateDirectory(szDbDir);
+            }
+            szDbDir = Path.Combine(szDbDir, kProductName);
+            if (!Directory.Exists(szDbDir))
+            {
+                Directory.CreateDirectory(szDbDir);
+            }
+
+            szDbDir = Path.Combine(szDbDir, kDbName);
+            if (!Directory.Exists(szDbDir))
+            {
+                Directory.CreateDirectory(szDbDir);
+            }
+
+            return szDbDir;
+        }
+        protected bool isUserExists(String UserName)
+        {
+            String szFileName;
+            szFileName = Path.Combine(m_DatabaseDir, UserName);
+            return File.Exists(szFileName);
+        }
+        protected void CreateFile(String UserName)
+        {
+            String szFileName;
+            szFileName = Path.Combine(m_DatabaseDir, UserName);
+            File.Create(szFileName).Close();
+            File.Delete(szFileName);
         }
         private void OnPutOn(FTR_PROGRESS Progress)
         {
@@ -374,14 +414,14 @@ namespace StudentRecordManagementSystem
             if (m_bExit)
                 return;
 
-            if (picLeftIndex.InvokeRequired)
+            if (PictureFingerPrint.InvokeRequired)
             {
                 SetImageCallback d = new SetImageCallback(this.UpdateScreenImage);
                 this.Invoke(d, new object[] { hBitmap });
             }
             else
             {
-                picLeftIndex.Image = hBitmap;
+                PictureFingerPrint.Image = hBitmap;
             }
         }
 
@@ -392,9 +432,26 @@ namespace StudentRecordManagementSystem
 
             DialogResult result;
             result = MessageBox.Show("Fake source detected. Do you want continue process?",
-                                     "C# example for Futronic SDK",
+                                     "Student Record MIS",
                                      MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             return (result == DialogResult.No);
+        }
+        private void SetStatusText(String text)
+        {
+            // Do not change the state control during application closing.
+            if (m_bExit)
+                return;
+
+            if (this.txtMessage.InvokeRequired)
+            {
+                SetTextCallback d = new SetTextCallback(this.SetStatusText);
+                this.Invoke(d, new object[] { text });
+            }
+            else
+            {
+                this.txtMessage.Text = text;
+                this.Update();
+            }
         }
         private void OnEnrollmentComplete(bool bSuccess, int nRetCode)
         {
@@ -402,7 +459,7 @@ namespace StudentRecordManagementSystem
             if (bSuccess)
             {
                 // set status string
-                szMessage.Append("Fingerprint registered successfully.");
+                szMessage.Append("Enrollment process finished successfully.");
                 szMessage.Append("Quality: ");
                 szMessage.Append(((FutronicEnrollment)m_Operation).Quality.ToString());
                 this.SetStatusText(szMessage.ToString());
@@ -415,7 +472,7 @@ namespace StudentRecordManagementSystem
                 if (!User.Save(szFileName))
                 {
                     MessageBox.Show("Can not save users's information to file " + szFileName,
-                                     "Error occured",
+                                     "Student Record MIS",
                                      MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
@@ -436,41 +493,6 @@ namespace StudentRecordManagementSystem
 
             m_OperationObj = null;
             EnableControls(true);
-        }
-        private void SetStatusText(String text)
-        {
-            // Do not change the state control during application closing.
-            if (m_bExit)
-                return;
-
-            if (this.txtFingerPrintMsg.InvokeRequired)
-            {
-                SetTextCallback d = new SetTextCallback(this.SetStatusText);
-                this.Invoke(d, new object[] { text });
-            }
-            else
-            {
-                this.txtFingerPrintMsg.Text = text;
-                this.Update();
-            }
-        }
-        public void EnableControls(bool state)
-        {
-
-        }
-        protected bool isUserExists(String UserName)
-        {
-            String szFileName;
-            szFileName = Path.Combine(m_DatabaseDir, UserName);
-            return File.Exists(szFileName);
-        }
-
-        protected void CreateFile(String UserName)
-        {
-            String szFileName;
-            szFileName = Path.Combine(m_DatabaseDir, UserName);
-            File.Create(szFileName).Close();
-            File.Delete(szFileName);
         }
     }
 }

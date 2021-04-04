@@ -66,30 +66,28 @@
             this.groupFingerprint = new System.Windows.Forms.GroupBox();
             this.lblFingerprintTitle = new MaterialSkin.Controls.MaterialLabel();
             this.lblLeftIndex = new MaterialSkin.Controls.MaterialLabel();
-            this.lblRightIndex = new MaterialSkin.Controls.MaterialLabel();
-            this.btnScanRight = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.PictureFingerPrint = new System.Windows.Forms.PictureBox();
             this.btnScanLeft = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.picRightIndex = new System.Windows.Forms.PictureBox();
-            this.picLeftIndex = new System.Windows.Forms.PictureBox();
             this.txtFingerPrintMsg = new MaterialSkin.Controls.MaterialLabel();
+            this.btnStop = new MaterialSkin.Controls.MaterialFlatButton();
+            this.txtMessage = new MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)(this.bioDataErrProvider)).BeginInit();
             this.groupGender.SuspendLayout();
             this.groupReligion.SuspendLayout();
             this.groupFingerprint.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picRightIndex)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLeftIndex)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureFingerPrint)).BeginInit();
             this.SuspendLayout();
             // 
             // lblSurname
             // 
             this.lblSurname.AutoSize = true;
             this.lblSurname.Depth = 0;
-            this.lblSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblSurname.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblSurname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblSurname.Location = new System.Drawing.Point(35, 75);
             this.lblSurname.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblSurname.Name = "lblSurname";
-            this.lblSurname.Size = new System.Drawing.Size(68, 18);
+            this.lblSurname.Size = new System.Drawing.Size(68, 19);
             this.lblSurname.TabIndex = 0;
             this.lblSurname.Text = "Surname";
             // 
@@ -127,12 +125,12 @@
             // 
             this.lblFirstName.AutoSize = true;
             this.lblFirstName.Depth = 0;
-            this.lblFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblFirstName.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblFirstName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblFirstName.Location = new System.Drawing.Point(270, 75);
             this.lblFirstName.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(81, 18);
+            this.lblFirstName.Size = new System.Drawing.Size(83, 19);
             this.lblFirstName.TabIndex = 2;
             this.lblFirstName.Text = "First Name";
             // 
@@ -140,12 +138,12 @@
             // 
             this.lblDateOfBirth.AutoSize = true;
             this.lblDateOfBirth.Depth = 0;
-            this.lblDateOfBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblDateOfBirth.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblDateOfBirth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblDateOfBirth.Location = new System.Drawing.Point(270, 123);
             this.lblDateOfBirth.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblDateOfBirth.Name = "lblDateOfBirth";
-            this.lblDateOfBirth.Size = new System.Drawing.Size(93, 18);
+            this.lblDateOfBirth.Size = new System.Drawing.Size(94, 19);
             this.lblDateOfBirth.TabIndex = 7;
             this.lblDateOfBirth.Text = "Date Of Birth";
             // 
@@ -160,12 +158,12 @@
             // 
             this.lblID.AutoSize = true;
             this.lblID.Depth = 0;
-            this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblID.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblID.Location = new System.Drawing.Point(38, 186);
             this.lblID.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(110, 18);
+            this.lblID.Size = new System.Drawing.Size(113, 19);
             this.lblID.TabIndex = 9;
             this.lblID.Text = "ID/Passport No";
             // 
@@ -188,12 +186,12 @@
             // 
             this.lblBox.AutoSize = true;
             this.lblBox.Depth = 0;
-            this.lblBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblBox.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblBox.Location = new System.Drawing.Point(38, 234);
             this.lblBox.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblBox.Name = "lblBox";
-            this.lblBox.Size = new System.Drawing.Size(64, 18);
+            this.lblBox.Size = new System.Drawing.Size(61, 19);
             this.lblBox.TabIndex = 11;
             this.lblBox.Text = "P.O Box";
             // 
@@ -216,12 +214,12 @@
             // 
             this.lblTown.AutoSize = true;
             this.lblTown.Depth = 0;
-            this.lblTown.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblTown.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblTown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblTown.Location = new System.Drawing.Point(273, 234);
             this.lblTown.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblTown.Name = "lblTown";
-            this.lblTown.Size = new System.Drawing.Size(45, 18);
+            this.lblTown.Size = new System.Drawing.Size(46, 19);
             this.lblTown.TabIndex = 13;
             this.lblTown.Text = "Town";
             // 
@@ -244,12 +242,12 @@
             // 
             this.lblPhone.AutoSize = true;
             this.lblPhone.Depth = 0;
-            this.lblPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblPhone.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblPhone.Location = new System.Drawing.Point(38, 282);
             this.lblPhone.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(75, 18);
+            this.lblPhone.Size = new System.Drawing.Size(75, 19);
             this.lblPhone.TabIndex = 15;
             this.lblPhone.Text = "Phone No";
             // 
@@ -272,12 +270,12 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Depth = 0;
-            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblEmail.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblEmail.Location = new System.Drawing.Point(273, 282);
             this.lblEmail.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(45, 18);
+            this.lblEmail.Size = new System.Drawing.Size(47, 19);
             this.lblEmail.TabIndex = 17;
             this.lblEmail.Text = "Email";
             // 
@@ -300,12 +298,12 @@
             // 
             this.lblVillage.AutoSize = true;
             this.lblVillage.Depth = 0;
-            this.lblVillage.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblVillage.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblVillage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblVillage.Location = new System.Drawing.Point(42, 398);
             this.lblVillage.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblVillage.Name = "lblVillage";
-            this.lblVillage.Size = new System.Drawing.Size(50, 18);
+            this.lblVillage.Size = new System.Drawing.Size(55, 19);
             this.lblVillage.TabIndex = 23;
             this.lblVillage.Text = "Village";
             // 
@@ -328,12 +326,12 @@
             // 
             this.lblLocation.AutoSize = true;
             this.lblLocation.Depth = 0;
-            this.lblLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblLocation.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblLocation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblLocation.Location = new System.Drawing.Point(277, 398);
             this.lblLocation.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblLocation.Name = "lblLocation";
-            this.lblLocation.Size = new System.Drawing.Size(65, 18);
+            this.lblLocation.Size = new System.Drawing.Size(68, 19);
             this.lblLocation.TabIndex = 25;
             this.lblLocation.Text = "Location";
             // 
@@ -396,12 +394,12 @@
             // 
             this.lblCounty.AutoSize = true;
             this.lblCounty.Depth = 0;
-            this.lblCounty.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblCounty.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblCounty.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblCounty.Location = new System.Drawing.Point(42, 446);
             this.lblCounty.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblCounty.Name = "lblCounty";
-            this.lblCounty.Size = new System.Drawing.Size(55, 18);
+            this.lblCounty.Size = new System.Drawing.Size(56, 19);
             this.lblCounty.TabIndex = 30;
             this.lblCounty.Text = "County";
             // 
@@ -425,7 +423,7 @@
             // 
             this.rdoOther.AutoSize = true;
             this.rdoOther.Depth = 0;
-            this.rdoOther.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.rdoOther.Font = new System.Drawing.Font("Roboto", 10F);
             this.rdoOther.Location = new System.Drawing.Point(136, 22);
             this.rdoOther.Margin = new System.Windows.Forms.Padding(0);
             this.rdoOther.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -442,7 +440,7 @@
             // 
             this.rdoFemale.AutoSize = true;
             this.rdoFemale.Depth = 0;
-            this.rdoFemale.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.rdoFemale.Font = new System.Drawing.Font("Roboto", 10F);
             this.rdoFemale.Location = new System.Drawing.Point(62, 22);
             this.rdoFemale.Margin = new System.Windows.Forms.Padding(0);
             this.rdoFemale.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -459,7 +457,7 @@
             // 
             this.rdoMale.AutoSize = true;
             this.rdoMale.Depth = 0;
-            this.rdoMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.rdoMale.Font = new System.Drawing.Font("Roboto", 10F);
             this.rdoMale.Location = new System.Drawing.Point(3, 22);
             this.rdoMale.Margin = new System.Windows.Forms.Padding(0);
             this.rdoMale.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -488,7 +486,7 @@
             // 
             this.lblButhist.AutoSize = true;
             this.lblButhist.Depth = 0;
-            this.lblButhist.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblButhist.Font = new System.Drawing.Font("Roboto", 10F);
             this.lblButhist.Location = new System.Drawing.Point(163, 22);
             this.lblButhist.Margin = new System.Windows.Forms.Padding(0);
             this.lblButhist.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -505,7 +503,7 @@
             // 
             this.rdoMuslim.AutoSize = true;
             this.rdoMuslim.Depth = 0;
-            this.rdoMuslim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.rdoMuslim.Font = new System.Drawing.Font("Roboto", 10F);
             this.rdoMuslim.Location = new System.Drawing.Point(88, 22);
             this.rdoMuslim.Margin = new System.Windows.Forms.Padding(0);
             this.rdoMuslim.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -522,7 +520,7 @@
             // 
             this.rdoChristian.AutoSize = true;
             this.rdoChristian.Depth = 0;
-            this.rdoChristian.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.rdoChristian.Font = new System.Drawing.Font("Roboto", 10F);
             this.rdoChristian.Location = new System.Drawing.Point(4, 22);
             this.rdoChristian.Margin = new System.Windows.Forms.Padding(0);
             this.rdoChristian.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -537,12 +535,10 @@
             // 
             // groupFingerprint
             // 
+            this.groupFingerprint.Controls.Add(this.btnStop);
             this.groupFingerprint.Controls.Add(this.lblFingerprintTitle);
             this.groupFingerprint.Controls.Add(this.lblLeftIndex);
-            this.groupFingerprint.Controls.Add(this.lblRightIndex);
-            this.groupFingerprint.Controls.Add(this.picRightIndex);
-            this.groupFingerprint.Controls.Add(this.picLeftIndex);
-            this.groupFingerprint.Controls.Add(this.btnScanRight);
+            this.groupFingerprint.Controls.Add(this.PictureFingerPrint);
             this.groupFingerprint.Controls.Add(this.btnScanLeft);
             this.groupFingerprint.Location = new System.Drawing.Point(514, 166);
             this.groupFingerprint.Name = "groupFingerprint";
@@ -554,12 +550,12 @@
             // 
             this.lblFingerprintTitle.AutoSize = true;
             this.lblFingerprintTitle.Depth = 0;
-            this.lblFingerprintTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblFingerprintTitle.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblFingerprintTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblFingerprintTitle.Location = new System.Drawing.Point(22, 22);
             this.lblFingerprintTitle.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblFingerprintTitle.Name = "lblFingerprintTitle";
-            this.lblFingerprintTitle.Size = new System.Drawing.Size(144, 18);
+            this.lblFingerprintTitle.Size = new System.Drawing.Size(148, 19);
             this.lblFingerprintTitle.TabIndex = 40;
             this.lblFingerprintTitle.Text = "Fingerprint Capturing";
             // 
@@ -567,46 +563,30 @@
             // 
             this.lblLeftIndex.AutoSize = true;
             this.lblLeftIndex.Depth = 0;
-            this.lblLeftIndex.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblLeftIndex.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblLeftIndex.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblLeftIndex.Location = new System.Drawing.Point(22, 68);
+            this.lblLeftIndex.Location = new System.Drawing.Point(147, 90);
             this.lblLeftIndex.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblLeftIndex.Name = "lblLeftIndex";
-            this.lblLeftIndex.Size = new System.Drawing.Size(70, 18);
+            this.lblLeftIndex.Size = new System.Drawing.Size(80, 19);
             this.lblLeftIndex.TabIndex = 38;
-            this.lblLeftIndex.Text = "Left Index";
+            this.lblLeftIndex.Text = "Fingerprint";
             // 
-            // lblRightIndex
+            // PictureFingerPrint
             // 
-            this.lblRightIndex.AutoSize = true;
-            this.lblRightIndex.Depth = 0;
-            this.lblRightIndex.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblRightIndex.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblRightIndex.Location = new System.Drawing.Point(161, 68);
-            this.lblRightIndex.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblRightIndex.Name = "lblRightIndex";
-            this.lblRightIndex.Size = new System.Drawing.Size(80, 18);
-            this.lblRightIndex.TabIndex = 39;
-            this.lblRightIndex.Text = "Right Index";
-            // 
-            // btnScanRight
-            // 
-            this.btnScanRight.BackColor = System.Drawing.Color.Red;
-            this.btnScanRight.Depth = 0;
-            this.btnScanRight.Location = new System.Drawing.Point(165, 213);
-            this.btnScanRight.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnScanRight.Name = "btnScanRight";
-            this.btnScanRight.Primary = true;
-            this.btnScanRight.Size = new System.Drawing.Size(119, 31);
-            this.btnScanRight.TabIndex = 1;
-            this.btnScanRight.Text = "Scan";
-            this.btnScanRight.UseVisualStyleBackColor = false;
+            this.PictureFingerPrint.Image = ((System.Drawing.Image)(resources.GetObject("PictureFingerPrint.Image")));
+            this.PictureFingerPrint.Location = new System.Drawing.Point(151, 112);
+            this.PictureFingerPrint.Name = "PictureFingerPrint";
+            this.PictureFingerPrint.Size = new System.Drawing.Size(119, 105);
+            this.PictureFingerPrint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureFingerPrint.TabIndex = 37;
+            this.PictureFingerPrint.TabStop = false;
             // 
             // btnScanLeft
             // 
             this.btnScanLeft.BackColor = System.Drawing.Color.Red;
             this.btnScanLeft.Depth = 0;
-            this.btnScanLeft.Location = new System.Drawing.Point(26, 213);
+            this.btnScanLeft.Location = new System.Drawing.Point(151, 235);
             this.btnScanLeft.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnScanLeft.Name = "btnScanLeft";
             this.btnScanLeft.Primary = true;
@@ -615,26 +595,6 @@
             this.btnScanLeft.Text = "Scan";
             this.btnScanLeft.UseVisualStyleBackColor = false;
             this.btnScanLeft.Click += new System.EventHandler(this.btnScanLeft_Click);
-            // 
-            // picRightIndex
-            // 
-            this.picRightIndex.Image = ((System.Drawing.Image)(resources.GetObject("picRightIndex.Image")));
-            this.picRightIndex.Location = new System.Drawing.Point(165, 90);
-            this.picRightIndex.Name = "picRightIndex";
-            this.picRightIndex.Size = new System.Drawing.Size(119, 105);
-            this.picRightIndex.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picRightIndex.TabIndex = 36;
-            this.picRightIndex.TabStop = false;
-            // 
-            // picLeftIndex
-            // 
-            this.picLeftIndex.Image = ((System.Drawing.Image)(resources.GetObject("picLeftIndex.Image")));
-            this.picLeftIndex.Location = new System.Drawing.Point(26, 90);
-            this.picLeftIndex.Name = "picLeftIndex";
-            this.picLeftIndex.Size = new System.Drawing.Size(119, 105);
-            this.picLeftIndex.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picLeftIndex.TabIndex = 37;
-            this.picLeftIndex.TabStop = false;
             // 
             // txtFingerPrintMsg
             // 
@@ -650,11 +610,39 @@
             this.txtFingerPrintMsg.TabIndex = 36;
             this.txtFingerPrintMsg.Text = "Place your finger";
             // 
+            // btnStop
+            // 
+            this.btnStop.AutoSize = true;
+            this.btnStop.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnStop.Depth = 0;
+            this.btnStop.Location = new System.Drawing.Point(52, 138);
+            this.btnStop.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnStop.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Primary = false;
+            this.btnStop.Size = new System.Drawing.Size(47, 36);
+            this.btnStop.TabIndex = 41;
+            this.btnStop.Text = "Stop";
+            this.btnStop.UseVisualStyleBackColor = true;
+            // 
+            // txtMessage
+            // 
+            this.txtMessage.AutoSize = true;
+            this.txtMessage.Depth = 0;
+            this.txtMessage.Font = new System.Drawing.Font("Roboto", 11F);
+            this.txtMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtMessage.Location = new System.Drawing.Point(510, 144);
+            this.txtMessage.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtMessage.Name = "txtMessage";
+            this.txtMessage.Size = new System.Drawing.Size(0, 19);
+            this.txtMessage.TabIndex = 37;
+            // 
             // BioDataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(832, 585);
+            this.Controls.Add(this.txtMessage);
             this.Controls.Add(this.txtFingerPrintMsg);
             this.Controls.Add(this.groupFingerprint);
             this.Controls.Add(this.groupReligion);
@@ -698,8 +686,7 @@
             this.groupReligion.PerformLayout();
             this.groupFingerprint.ResumeLayout(false);
             this.groupFingerprint.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picRightIndex)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLeftIndex)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureFingerPrint)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -743,11 +730,10 @@
         private System.Windows.Forms.GroupBox groupFingerprint;
         private MaterialSkin.Controls.MaterialLabel lblFingerprintTitle;
         private MaterialSkin.Controls.MaterialLabel lblLeftIndex;
-        private MaterialSkin.Controls.MaterialLabel lblRightIndex;
-        private System.Windows.Forms.PictureBox picRightIndex;
-        private System.Windows.Forms.PictureBox picLeftIndex;
-        private MaterialSkin.Controls.MaterialRaisedButton btnScanRight;
+        private System.Windows.Forms.PictureBox PictureFingerPrint;
         private MaterialSkin.Controls.MaterialRaisedButton btnScanLeft;
         private MaterialSkin.Controls.MaterialLabel txtFingerPrintMsg;
+        private MaterialSkin.Controls.MaterialFlatButton btnStop;
+        private MaterialSkin.Controls.MaterialLabel txtMessage;
     }
 }

@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentRecordManagementSyst
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DbConnection\DataAccess.csproj", "{283E0987-02EC-4B20-8E14-8E7734828224}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkedEx.NET", "..\Vs2012\WorkedEx\WorkedEx.NET.csproj", "{722DC745-18B7-4215-B2F3-A1C8AB552017}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkedEx.NET", "..\SDK 4.2\Examples\Net\Vs2013\WorkedEx\WorkedEx.NET.csproj", "{722DC745-18B7-4215-B2F3-A1C8AB552017}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,8 +21,8 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{53E38E96-97EB-4EFA-80B8-63B6FBE05940}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{53E38E96-97EB-4EFA-80B8-63B6FBE05940}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{53E38E96-97EB-4EFA-80B8-63B6FBE05940}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{53E38E96-97EB-4EFA-80B8-63B6FBE05940}.Debug|x64.Build.0 = Debug|Any CPU
+		{53E38E96-97EB-4EFA-80B8-63B6FBE05940}.Debug|x64.ActiveCfg = Debug|x64
+		{53E38E96-97EB-4EFA-80B8-63B6FBE05940}.Debug|x64.Build.0 = Debug|x64
 		{53E38E96-97EB-4EFA-80B8-63B6FBE05940}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{53E38E96-97EB-4EFA-80B8-63B6FBE05940}.Debug|x86.Build.0 = Debug|Any CPU
 		{53E38E96-97EB-4EFA-80B8-63B6FBE05940}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,8 +33,8 @@ Global
 		{53E38E96-97EB-4EFA-80B8-63B6FBE05940}.Release|x86.Build.0 = Release|Any CPU
 		{283E0987-02EC-4B20-8E14-8E7734828224}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{283E0987-02EC-4B20-8E14-8E7734828224}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{283E0987-02EC-4B20-8E14-8E7734828224}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{283E0987-02EC-4B20-8E14-8E7734828224}.Debug|x64.Build.0 = Debug|Any CPU
+		{283E0987-02EC-4B20-8E14-8E7734828224}.Debug|x64.ActiveCfg = Debug|x64
+		{283E0987-02EC-4B20-8E14-8E7734828224}.Debug|x64.Build.0 = Debug|x64
 		{283E0987-02EC-4B20-8E14-8E7734828224}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{283E0987-02EC-4B20-8E14-8E7734828224}.Debug|x86.Build.0 = Debug|Any CPU
 		{283E0987-02EC-4B20-8E14-8E7734828224}.Release|Any CPU.ActiveCfg = Release|Any CPU
