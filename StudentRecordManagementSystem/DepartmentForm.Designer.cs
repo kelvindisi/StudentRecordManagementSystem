@@ -28,28 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelButtons = new System.Windows.Forms.Panel();
             this.btnSave = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
+            this.btnClear = new MaterialSkin.Controls.MaterialFlatButton();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.materialSingleLineTextField1 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtDepartmentName = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.lblDeparmentName = new MaterialSkin.Controls.MaterialLabel();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelContainerGrid = new System.Windows.Forms.Panel();
             this.dtGridDepartment = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departmentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flowLayoutSearch = new System.Windows.Forms.FlowLayoutPanel();
             this.txtSearch = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.btnSearch = new MaterialSkin.Controls.MaterialFlatButton();
             this.panelTop = new System.Windows.Forms.Panel();
+            this.errProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel3.SuspendLayout();
             this.panelLeft.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelContainerGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridDepartment)).BeginInit();
             this.flowLayoutSearch.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // panelButtons
@@ -71,27 +72,28 @@
             this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // materialFlatButton1
+            // btnClear
             // 
-            this.materialFlatButton1.AutoSize = true;
-            this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton1.Depth = 0;
-            this.materialFlatButton1.Location = new System.Drawing.Point(168, 126);
-            this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton1.Name = "materialFlatButton1";
-            this.materialFlatButton1.Primary = false;
-            this.materialFlatButton1.Size = new System.Drawing.Size(54, 36);
-            this.materialFlatButton1.TabIndex = 0;
-            this.materialFlatButton1.Text = "Clear";
-            this.materialFlatButton1.UseVisualStyleBackColor = true;
+            this.btnClear.AutoSize = true;
+            this.btnClear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnClear.Depth = 0;
+            this.btnClear.Location = new System.Drawing.Point(168, 126);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnClear.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Primary = false;
+            this.btnClear.Size = new System.Drawing.Size(54, 36);
+            this.btnClear.TabIndex = 0;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.btnSave);
-            this.panel3.Controls.Add(this.materialFlatButton1);
-            this.panel3.Controls.Add(this.materialSingleLineTextField1);
+            this.panel3.Controls.Add(this.btnClear);
+            this.panel3.Controls.Add(this.txtDepartmentName);
             this.panel3.Controls.Add(this.lblDeparmentName);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
@@ -99,20 +101,20 @@
             this.panel3.Size = new System.Drawing.Size(266, 215);
             this.panel3.TabIndex = 1;
             // 
-            // materialSingleLineTextField1
+            // txtDepartmentName
             // 
-            this.materialSingleLineTextField1.Depth = 0;
-            this.materialSingleLineTextField1.Hint = "";
-            this.materialSingleLineTextField1.Location = new System.Drawing.Point(24, 97);
-            this.materialSingleLineTextField1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField1.Name = "materialSingleLineTextField1";
-            this.materialSingleLineTextField1.PasswordChar = '\0';
-            this.materialSingleLineTextField1.SelectedText = "";
-            this.materialSingleLineTextField1.SelectionLength = 0;
-            this.materialSingleLineTextField1.SelectionStart = 0;
-            this.materialSingleLineTextField1.Size = new System.Drawing.Size(198, 23);
-            this.materialSingleLineTextField1.TabIndex = 3;
-            this.materialSingleLineTextField1.UseSystemPasswordChar = false;
+            this.txtDepartmentName.Depth = 0;
+            this.txtDepartmentName.Hint = "";
+            this.txtDepartmentName.Location = new System.Drawing.Point(24, 97);
+            this.txtDepartmentName.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtDepartmentName.Name = "txtDepartmentName";
+            this.txtDepartmentName.PasswordChar = '\0';
+            this.txtDepartmentName.SelectedText = "";
+            this.txtDepartmentName.SelectionLength = 0;
+            this.txtDepartmentName.SelectionStart = 0;
+            this.txtDepartmentName.Size = new System.Drawing.Size(198, 23);
+            this.txtDepartmentName.TabIndex = 3;
+            this.txtDepartmentName.UseSystemPasswordChar = false;
             // 
             // lblDeparmentName
             // 
@@ -161,28 +163,12 @@
             this.dtGridDepartment.AllowUserToAddRows = false;
             this.dtGridDepartment.AllowUserToDeleteRows = false;
             this.dtGridDepartment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtGridDepartment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.departmentName});
             this.dtGridDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtGridDepartment.Location = new System.Drawing.Point(0, 0);
             this.dtGridDepartment.Name = "dtGridDepartment";
             this.dtGridDepartment.ReadOnly = true;
             this.dtGridDepartment.Size = new System.Drawing.Size(737, 342);
             this.dtGridDepartment.TabIndex = 1;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "No";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // departmentName
-            // 
-            this.departmentName.HeaderText = "Department Name";
-            this.departmentName.Name = "departmentName";
-            this.departmentName.ReadOnly = true;
-            this.departmentName.Width = 200;
             // 
             // flowLayoutSearch
             // 
@@ -235,6 +221,10 @@
             this.panelTop.Size = new System.Drawing.Size(737, 64);
             this.panelTop.TabIndex = 0;
             // 
+            // errProvider
+            // 
+            this.errProvider.ContainerControl = this;
+            // 
             // DepartmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -257,6 +247,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtGridDepartment)).EndInit();
             this.flowLayoutSearch.ResumeLayout(false);
             this.flowLayoutSearch.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -265,9 +256,9 @@
 
         private System.Windows.Forms.Panel panelButtons;
         private MaterialSkin.Controls.MaterialRaisedButton btnSave;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
+        private MaterialSkin.Controls.MaterialFlatButton btnClear;
         private System.Windows.Forms.Panel panel3;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField1;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtDepartmentName;
         private MaterialSkin.Controls.MaterialLabel lblDeparmentName;
         private System.Windows.Forms.Panel panelLeft;
         private System.Windows.Forms.Panel panel2;
@@ -275,9 +266,8 @@
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.Panel panelContainerGrid;
         private System.Windows.Forms.DataGridView dtGridDepartment;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn departmentName;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtSearch;
         private MaterialSkin.Controls.MaterialFlatButton btnSearch;
+        private System.Windows.Forms.ErrorProvider errProvider;
     }
 }

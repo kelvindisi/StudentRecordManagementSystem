@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataAccess;
 
 namespace StudentRecordManagementSystem
 {
@@ -18,6 +19,20 @@ namespace StudentRecordManagementSystem
             activeMenu.Height = btnDashboard.Height;
             activeMenu.Top = btnDashboard.Top;
             dashboardControl.BringToFront();
+
+            initializeAppDbConfig();
+        }
+
+        private void initializeAppDbConfig()
+        {
+            try
+            {
+                RolesManager.autoRoleConfig();
+            }
+            catch (Exception)
+            {
+                
+            }
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)

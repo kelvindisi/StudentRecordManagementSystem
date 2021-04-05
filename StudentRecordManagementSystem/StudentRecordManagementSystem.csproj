@@ -91,6 +91,7 @@
     <Compile Include="BioDataForm.Designer.cs">
       <DependentUpon>BioDataForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ComboBoxItem.cs" />
     <Compile Include="CoursesForm.cs">
       <SubType>Form</SubType>
     </Compile>

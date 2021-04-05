@@ -7,6 +7,7 @@ using Futronic.SDKHelper;
 using System.Drawing;
 using System.IO;
 using System.Text;
+using DataAccess.Models;
 
 namespace StudentRecordManagementSystem
 {
@@ -78,6 +79,7 @@ namespace StudentRecordManagementSystem
             FingerprintConfig.version = dummy.Version;
 
             btnStop.Enabled = false;
+            btnScanLeft.Enabled = false;
             try
             {
                 m_DatabaseDir = GetDatabaseDir();
@@ -128,21 +130,21 @@ namespace StudentRecordManagementSystem
                 return;
             }
 
-            BioDataModel bioData = new BioDataModel(
-                    txtSurname.Text, txtFirstName.Text, getGender(), txtPhone.Text,
-                    getDOB(), txtID.Text, txtBox.Text, txtTown.Text,
-                    txtEmail.Text, getReligion(), txtVillage.Text, txtLocation.Text,
-                    txtCounty.Text
-                );
+            BioDataModel bioData = getUserInput();
+            SaveBioData(bioData);
+        }
+
+        private void SaveBioData(BioDataModel bioData)
+        {
             try
             {
-                if (DbConnection.bioDataExists(bioData.PEmail))
+                if (StudentManager.bioDataExists(bioData.PEmail))
                 {
                     MessageBox.Show("Bio data with this email exists", "Bio Data Exists", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                if (DbConnection.saveBioData(bioData))
+                if (StudentManager.saveBioData(bioData))
                 {
                     MessageBox.Show("Bio Data saved successfully", "Successfull", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     bioDisableControls();
@@ -156,6 +158,16 @@ namespace StudentRecordManagementSystem
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private BioDataModel getUserInput()
+        {
+            return new BioDataModel(
+                                txtSurname.Text, txtFirstName.Text, getGender(), txtPhone.Text,
+                                getDOB(), txtID.Text, txtBox.Text, txtTown.Text,
+                                txtEmail.Text, getReligion(), txtVillage.Text, txtLocation.Text,
+                                txtCounty.Text
+                            );
         }
 
         private DateTime getDOB()

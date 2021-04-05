@@ -4,18 +4,14 @@ using System.Linq;
 using System.Text;
 using MySql.Data.MySqlClient;
 using System.Configuration;
+using System.Data;
+using System.Collections;
+using DataAccess.Models;
 
 namespace DataAccess
 {
-    public class DbConnection
+    public class StudentManager : DbConnector
     {
-        public static MySqlConnection conn;
-        private static MySqlCommand cmd;
-        private static string getConnectionString()
-        {
-            string connStr = ConfigurationManager.ConnectionStrings["students"].ToString();
-            return connStr;
-        }
         public static bool bioDataExists(string email)
         {
             using (conn = new MySqlConnection(getConnectionString()))
@@ -54,7 +50,7 @@ namespace DataAccess
                 cmd.Parameters.AddWithValue("phone", BioData.PPhone);
                 cmd.Parameters.AddWithValue("email", BioData.PEmail);
                 cmd.Parameters.AddWithValue("religion", BioData.PReligion);
-                cmd.Parameters.AddWithValue("village", BioData.PReligion);
+                cmd.Parameters.AddWithValue("village", BioData.Pvillage);
                 cmd.Parameters.AddWithValue("location", BioData.PLocation);
                 cmd.Parameters.AddWithValue("county", BioData.PCounty);
 

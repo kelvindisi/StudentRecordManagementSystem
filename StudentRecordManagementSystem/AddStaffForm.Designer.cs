@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblSurname = new MaterialSkin.Controls.MaterialLabel();
             this.txtSurname = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.lblFirstName = new MaterialSkin.Controls.MaterialLabel();
@@ -45,11 +46,13 @@
             this.btnSave = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnClear = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialCheckBox1 = new MaterialSkin.Controls.MaterialCheckBox();
-            this.materialCheckBox2 = new MaterialSkin.Controls.MaterialCheckBox();
-            this.materialCheckBox3 = new MaterialSkin.Controls.MaterialCheckBox();
+            this.cbxAdmin = new MaterialSkin.Controls.MaterialCheckBox();
+            this.cbxLecturer = new MaterialSkin.Controls.MaterialCheckBox();
+            this.cbxDepartmentAdmin = new MaterialSkin.Controls.MaterialCheckBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboDepartment = new System.Windows.Forms.ComboBox();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // lblSurname
@@ -226,7 +229,7 @@
             this.txtPassword.Location = new System.Drawing.Point(27, 314);
             this.txtPassword.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '\0';
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.SelectedText = "";
             this.txtPassword.SelectionLength = 0;
             this.txtPassword.SelectionStart = 0;
@@ -254,7 +257,7 @@
             this.txtPasswordConfirmation.Location = new System.Drawing.Point(295, 314);
             this.txtPasswordConfirmation.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtPasswordConfirmation.Name = "txtPasswordConfirmation";
-            this.txtPasswordConfirmation.PasswordChar = '\0';
+            this.txtPasswordConfirmation.PasswordChar = '*';
             this.txtPasswordConfirmation.SelectedText = "";
             this.txtPasswordConfirmation.SelectionLength = 0;
             this.txtPasswordConfirmation.SelectionStart = 0;
@@ -273,6 +276,7 @@
             this.btnSave.TabIndex = 14;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClear
             // 
@@ -299,53 +303,53 @@
             this.materialLabel1.TabIndex = 15;
             this.materialLabel1.Text = "Roles";
             // 
-            // materialCheckBox1
+            // cbxAdmin
             // 
-            this.materialCheckBox1.AutoSize = true;
-            this.materialCheckBox1.Depth = 0;
-            this.materialCheckBox1.Font = new System.Drawing.Font("Roboto", 10F);
-            this.materialCheckBox1.Location = new System.Drawing.Point(295, 162);
-            this.materialCheckBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.materialCheckBox1.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialCheckBox1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCheckBox1.Name = "materialCheckBox1";
-            this.materialCheckBox1.Ripple = true;
-            this.materialCheckBox1.Size = new System.Drawing.Size(70, 30);
-            this.materialCheckBox1.TabIndex = 16;
-            this.materialCheckBox1.Text = "Admin";
-            this.materialCheckBox1.UseVisualStyleBackColor = true;
+            this.cbxAdmin.AutoSize = true;
+            this.cbxAdmin.Depth = 0;
+            this.cbxAdmin.Font = new System.Drawing.Font("Roboto", 10F);
+            this.cbxAdmin.Location = new System.Drawing.Point(295, 162);
+            this.cbxAdmin.Margin = new System.Windows.Forms.Padding(0);
+            this.cbxAdmin.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.cbxAdmin.MouseState = MaterialSkin.MouseState.HOVER;
+            this.cbxAdmin.Name = "cbxAdmin";
+            this.cbxAdmin.Ripple = true;
+            this.cbxAdmin.Size = new System.Drawing.Size(70, 30);
+            this.cbxAdmin.TabIndex = 16;
+            this.cbxAdmin.Text = "Admin";
+            this.cbxAdmin.UseVisualStyleBackColor = true;
             // 
-            // materialCheckBox2
+            // cbxLecturer
             // 
-            this.materialCheckBox2.AutoSize = true;
-            this.materialCheckBox2.Depth = 0;
-            this.materialCheckBox2.Font = new System.Drawing.Font("Roboto", 10F);
-            this.materialCheckBox2.Location = new System.Drawing.Point(365, 162);
-            this.materialCheckBox2.Margin = new System.Windows.Forms.Padding(0);
-            this.materialCheckBox2.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialCheckBox2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCheckBox2.Name = "materialCheckBox2";
-            this.materialCheckBox2.Ripple = true;
-            this.materialCheckBox2.Size = new System.Drawing.Size(81, 30);
-            this.materialCheckBox2.TabIndex = 17;
-            this.materialCheckBox2.Text = "Lecturer";
-            this.materialCheckBox2.UseVisualStyleBackColor = true;
+            this.cbxLecturer.AutoSize = true;
+            this.cbxLecturer.Depth = 0;
+            this.cbxLecturer.Font = new System.Drawing.Font("Roboto", 10F);
+            this.cbxLecturer.Location = new System.Drawing.Point(365, 162);
+            this.cbxLecturer.Margin = new System.Windows.Forms.Padding(0);
+            this.cbxLecturer.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.cbxLecturer.MouseState = MaterialSkin.MouseState.HOVER;
+            this.cbxLecturer.Name = "cbxLecturer";
+            this.cbxLecturer.Ripple = true;
+            this.cbxLecturer.Size = new System.Drawing.Size(81, 30);
+            this.cbxLecturer.TabIndex = 17;
+            this.cbxLecturer.Text = "Lecturer";
+            this.cbxLecturer.UseVisualStyleBackColor = true;
             // 
-            // materialCheckBox3
+            // cbxDepartmentAdmin
             // 
-            this.materialCheckBox3.AutoSize = true;
-            this.materialCheckBox3.Depth = 0;
-            this.materialCheckBox3.Font = new System.Drawing.Font("Roboto", 10F);
-            this.materialCheckBox3.Location = new System.Drawing.Point(295, 192);
-            this.materialCheckBox3.Margin = new System.Windows.Forms.Padding(0);
-            this.materialCheckBox3.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialCheckBox3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCheckBox3.Name = "materialCheckBox3";
-            this.materialCheckBox3.Ripple = true;
-            this.materialCheckBox3.Size = new System.Drawing.Size(146, 30);
-            this.materialCheckBox3.TabIndex = 18;
-            this.materialCheckBox3.Text = "Department Admin";
-            this.materialCheckBox3.UseVisualStyleBackColor = true;
+            this.cbxDepartmentAdmin.AutoSize = true;
+            this.cbxDepartmentAdmin.Depth = 0;
+            this.cbxDepartmentAdmin.Font = new System.Drawing.Font("Roboto", 10F);
+            this.cbxDepartmentAdmin.Location = new System.Drawing.Point(295, 192);
+            this.cbxDepartmentAdmin.Margin = new System.Windows.Forms.Padding(0);
+            this.cbxDepartmentAdmin.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.cbxDepartmentAdmin.MouseState = MaterialSkin.MouseState.HOVER;
+            this.cbxDepartmentAdmin.Name = "cbxDepartmentAdmin";
+            this.cbxDepartmentAdmin.Ripple = true;
+            this.cbxDepartmentAdmin.Size = new System.Drawing.Size(146, 30);
+            this.cbxDepartmentAdmin.TabIndex = 18;
+            this.cbxDepartmentAdmin.Text = "Department Admin";
+            this.cbxDepartmentAdmin.UseVisualStyleBackColor = true;
             // 
             // materialLabel2
             // 
@@ -360,24 +364,28 @@
             this.materialLabel2.TabIndex = 19;
             this.materialLabel2.Text = "Department";
             // 
-            // comboBox1
+            // cboDepartment
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(27, 261);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(204, 28);
-            this.comboBox1.TabIndex = 20;
+            this.cboDepartment.FormattingEnabled = true;
+            this.cboDepartment.Location = new System.Drawing.Point(27, 261);
+            this.cboDepartment.Name = "cboDepartment";
+            this.cboDepartment.Size = new System.Drawing.Size(204, 28);
+            this.cboDepartment.TabIndex = 20;
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
             // 
             // AddStaffForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(583, 440);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cboDepartment);
             this.Controls.Add(this.materialLabel2);
-            this.Controls.Add(this.materialCheckBox3);
-            this.Controls.Add(this.materialCheckBox2);
-            this.Controls.Add(this.materialCheckBox1);
+            this.Controls.Add(this.cbxDepartmentAdmin);
+            this.Controls.Add(this.cbxLecturer);
+            this.Controls.Add(this.cbxAdmin);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSave);
@@ -400,8 +408,9 @@
             this.MaximizeBox = false;
             this.Name = "AddStaffForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddStaffForm";
+            this.Text = "Add Staff";
             this.Load += new System.EventHandler(this.AddStaffForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -426,10 +435,11 @@
         private MaterialSkin.Controls.MaterialRaisedButton btnSave;
         private MaterialSkin.Controls.MaterialRaisedButton btnClear;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private MaterialSkin.Controls.MaterialCheckBox materialCheckBox1;
-        private MaterialSkin.Controls.MaterialCheckBox materialCheckBox2;
-        private MaterialSkin.Controls.MaterialCheckBox materialCheckBox3;
+        private MaterialSkin.Controls.MaterialCheckBox cbxAdmin;
+        private MaterialSkin.Controls.MaterialCheckBox cbxLecturer;
+        private MaterialSkin.Controls.MaterialCheckBox cbxDepartmentAdmin;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboDepartment;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }
