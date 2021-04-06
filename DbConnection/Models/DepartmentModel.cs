@@ -10,7 +10,21 @@ namespace DataAccess.Models
     {
         private int departmentId;
         private string departmentName;
-        
+
+        public DepartmentModel()
+        {
+            this.departmentId = 0;
+            this.departmentName = "";
+        }
+        public DepartmentModel(string departmentName)
+        {
+            this.departmentName = departmentName;
+        }
+        public DepartmentModel(int departmentId, string departmentName)
+        {
+            this.departmentId = departmentId;
+            this.departmentName = departmentName;
+        }
         public string DepartmentName
         {
             get { return departmentName; }
@@ -21,16 +35,6 @@ namespace DataAccess.Models
         {
             get { return departmentId; }
             set { departmentId = value; }
-        }
-
-        public DepartmentModel(string departmentName)
-        {
-            this.departmentName = departmentName;
-        }
-        public DepartmentModel(int departmentId, string departmentName)
-        {
-            this.departmentId = departmentId;
-            this.departmentName = departmentName;
         }
 
     }

@@ -72,5 +72,25 @@ namespace DataAccess
 
             return table;
         }
+        public static DepartmentModel getDepartmentById(int id)
+        {
+            DepartmentModel department = new DepartmentModel();
+            using (conn = new MySqlConnection(getConnectionString()))
+            {
+                conn.Open();
+                string query = "SELECT * FROM departments WHERE id=@id";
+                cmd = new MySqlCommand(query, conn);
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("id", id);
+                MySqlDataReader rd = cmd.ExecuteReader();
+                if (rd.Read())
+                {
+                    department.DepartmentId = rd.GetInt32("id");
+                    department.DepartmentName = rd.GetString("departmentName");
+                } 
+            }
+
+            return department;
+        }
     }
 }

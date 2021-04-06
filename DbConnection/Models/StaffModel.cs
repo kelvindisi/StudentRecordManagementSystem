@@ -6,17 +6,20 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Models
 {
-    public class StaffModel
+    public class StaffModel: StaffPrimaryModel
     {
-        private int id;
-        private string firstName;
-        private string surname;
-        private string email;
-        private string gender;
-        private DepartmentModel department;
-        private string password;
-        private RoleModel[] roles;
+        protected DepartmentModel department;
+        protected RoleModel[] roles;
 
+        public StaffModel(StaffPrimaryModel staff)
+        {
+            ID = staff.ID;
+            Surname = staff.Surname;
+            FirstName = staff.FirstName;
+            Email = staff.Email;
+            Gender = staff.Gender;
+            Password = staff.Password;
+        }
         public StaffModel(string firstName, string surname, string email, 
             string gender, DepartmentModel department, string password, RoleModel[] roles)
         {
@@ -30,47 +33,14 @@ namespace DataAccess.Models
         }
         public RoleModel[] Roles
         {
-            get
-            {
-                return roles;
-            }
+            get { return roles; }
+            set { roles = value; }
         }
-        public string Password
-        {
-            get { return password; }
-            set { password = value; }
-        }
+
         public DepartmentModel Department
         {
             get { return department; }
             set { department = value; }
-        }
-        public string Gender
-        {
-            get { return gender; }
-            set { gender = value; }
-        }
-        public string Email
-        {
-            get { return email; }
-            set { email = value; }
-        }
-        public string Surname
-        {
-            get { return surname; }
-            set { surname = value; }
-        }
-        public string FirstName
-        {
-            get { return firstName; }
-            set { firstName = value; }
-        }
-        public int ID
-        {
-            get
-            {
-                return id;
-            }
         }
 
     }

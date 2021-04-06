@@ -1,4 +1,5 @@
 ﻿using System;
+using DataAccess.Models;
 using System.Collections;
 using MySql.Data.MySqlClient;
 
@@ -26,6 +27,27 @@ namespace DataAccess
             }
 
             return roles;
+        }
+
+        public static RoleModel getRoleById(int id)
+        {
+            RoleModel role = new RoleModel();
+            using (conn = new MySqlConnection(getConnectionString()))
+            {
+                conn.Open();
+                string query = "SELECT * FROM roles WHERE id=@id";
+                cmd = new MySqlCommand(query, conn);
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("id", id);
+                MySqlDataReader rd = cmd.ExecuteReader();
+
+                if (rd.Read())
+                {
+                    role.ID = rd.GetInt32("id");
+                    role.RoleName = rd.GetString("name");
+                }
+            }
+                return role;
         }
         public static void autoRoleConfig()
         {

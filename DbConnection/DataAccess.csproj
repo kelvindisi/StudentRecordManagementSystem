@@ -57,6 +57,7 @@
     <Compile Include="DbConnector.cs" />
     <Compile Include="DepartmentManager.cs" />
     <Compile Include="Models\BioDataModel.cs" />
+    <Compile Include="Models\StaffPrimaryModel.cs" />
     <Compile Include="RolesManager.cs" />
     <Compile Include="StaffManager.cs" />
     <Compile Include="StudentManager.cs" />

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.detailsPanel = new System.Windows.Forms.Panel();
             this.formPanel = new System.Windows.Forms.Panel();
@@ -36,10 +37,10 @@
             this.lblConfirmation = new MaterialSkin.Controls.MaterialLabel();
             this.txtPassword = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.lblNewPassword = new MaterialSkin.Controls.MaterialLabel();
-            this.txtDepartment = new System.Windows.Forms.ComboBox();
-            this.checkDepartmentAdmin = new MaterialSkin.Controls.MaterialCheckBox();
-            this.checkLecturer = new MaterialSkin.Controls.MaterialCheckBox();
-            this.checkAdmin = new MaterialSkin.Controls.MaterialCheckBox();
+            this.cboDepartment = new System.Windows.Forms.ComboBox();
+            this.cbxDepartmentAdmin = new MaterialSkin.Controls.MaterialCheckBox();
+            this.cbxLecturer = new MaterialSkin.Controls.MaterialCheckBox();
+            this.cbxAdmin = new MaterialSkin.Controls.MaterialCheckBox();
             this.lblDepartment = new MaterialSkin.Controls.MaterialLabel();
             this.lblRoles = new MaterialSkin.Controls.MaterialLabel();
             this.rdoOther = new MaterialSkin.Controls.MaterialRadioButton();
@@ -54,18 +55,20 @@
             this.btnUpdate = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnClear = new MaterialSkin.Controls.MaterialFlatButton();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtGridStaffs = new System.Windows.Forms.DataGridView();
             this.surname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.admin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departmentAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lecturer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblEmail = new MaterialSkin.Controls.MaterialLabel();
+            this.txtEmail = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.errProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.detailsPanel.SuspendLayout();
             this.formPanel.SuspendLayout();
             this.buttonPanel.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGridStaffs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -85,20 +88,22 @@
             this.detailsPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.detailsPanel.Location = new System.Drawing.Point(642, 66);
             this.detailsPanel.Name = "detailsPanel";
-            this.detailsPanel.Size = new System.Drawing.Size(336, 497);
+            this.detailsPanel.Size = new System.Drawing.Size(336, 541);
             this.detailsPanel.TabIndex = 1;
             // 
             // formPanel
             // 
+            this.formPanel.Controls.Add(this.txtEmail);
+            this.formPanel.Controls.Add(this.lblEmail);
             this.formPanel.Controls.Add(this.lblPasswordInfo);
             this.formPanel.Controls.Add(this.txtConfirmation);
             this.formPanel.Controls.Add(this.lblConfirmation);
             this.formPanel.Controls.Add(this.txtPassword);
             this.formPanel.Controls.Add(this.lblNewPassword);
-            this.formPanel.Controls.Add(this.txtDepartment);
-            this.formPanel.Controls.Add(this.checkDepartmentAdmin);
-            this.formPanel.Controls.Add(this.checkLecturer);
-            this.formPanel.Controls.Add(this.checkAdmin);
+            this.formPanel.Controls.Add(this.cboDepartment);
+            this.formPanel.Controls.Add(this.cbxDepartmentAdmin);
+            this.formPanel.Controls.Add(this.cbxLecturer);
+            this.formPanel.Controls.Add(this.cbxAdmin);
             this.formPanel.Controls.Add(this.lblDepartment);
             this.formPanel.Controls.Add(this.lblRoles);
             this.formPanel.Controls.Add(this.rdoOther);
@@ -112,7 +117,7 @@
             this.formPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.formPanel.Location = new System.Drawing.Point(0, 0);
             this.formPanel.Name = "formPanel";
-            this.formPanel.Size = new System.Drawing.Size(336, 444);
+            this.formPanel.Size = new System.Drawing.Size(336, 494);
             this.formPanel.TabIndex = 1;
             // 
             // lblPasswordInfo
@@ -130,10 +135,10 @@
             // 
             this.txtConfirmation.Depth = 0;
             this.txtConfirmation.Hint = "";
-            this.txtConfirmation.Location = new System.Drawing.Point(49, 415);
+            this.txtConfirmation.Location = new System.Drawing.Point(49, 463);
             this.txtConfirmation.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtConfirmation.Name = "txtConfirmation";
-            this.txtConfirmation.PasswordChar = '\0';
+            this.txtConfirmation.PasswordChar = '*';
             this.txtConfirmation.SelectedText = "";
             this.txtConfirmation.SelectionLength = 0;
             this.txtConfirmation.SelectionStart = 0;
@@ -147,7 +152,7 @@
             this.lblConfirmation.Depth = 0;
             this.lblConfirmation.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblConfirmation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblConfirmation.Location = new System.Drawing.Point(45, 393);
+            this.lblConfirmation.Location = new System.Drawing.Point(45, 441);
             this.lblConfirmation.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblConfirmation.Name = "lblConfirmation";
             this.lblConfirmation.Size = new System.Drawing.Size(133, 19);
@@ -158,10 +163,10 @@
             // 
             this.txtPassword.Depth = 0;
             this.txtPassword.Hint = "";
-            this.txtPassword.Location = new System.Drawing.Point(49, 367);
+            this.txtPassword.Location = new System.Drawing.Point(49, 415);
             this.txtPassword.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '\0';
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.SelectedText = "";
             this.txtPassword.SelectionLength = 0;
             this.txtPassword.SelectionStart = 0;
@@ -175,68 +180,68 @@
             this.lblNewPassword.Depth = 0;
             this.lblNewPassword.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblNewPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblNewPassword.Location = new System.Drawing.Point(46, 345);
+            this.lblNewPassword.Location = new System.Drawing.Point(46, 393);
             this.lblNewPassword.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblNewPassword.Name = "lblNewPassword";
             this.lblNewPassword.Size = new System.Drawing.Size(109, 19);
             this.lblNewPassword.TabIndex = 32;
             this.lblNewPassword.Text = "New Password";
             // 
-            // txtDepartment
+            // cboDepartment
             // 
-            this.txtDepartment.FormattingEnabled = true;
-            this.txtDepartment.Location = new System.Drawing.Point(49, 314);
-            this.txtDepartment.Name = "txtDepartment";
-            this.txtDepartment.Size = new System.Drawing.Size(247, 28);
-            this.txtDepartment.TabIndex = 31;
+            this.cboDepartment.FormattingEnabled = true;
+            this.cboDepartment.Location = new System.Drawing.Point(49, 362);
+            this.cboDepartment.Name = "cboDepartment";
+            this.cboDepartment.Size = new System.Drawing.Size(247, 28);
+            this.cboDepartment.TabIndex = 31;
             // 
-            // checkDepartmentAdmin
+            // cbxDepartmentAdmin
             // 
-            this.checkDepartmentAdmin.AutoSize = true;
-            this.checkDepartmentAdmin.Depth = 0;
-            this.checkDepartmentAdmin.Font = new System.Drawing.Font("Roboto", 10F);
-            this.checkDepartmentAdmin.Location = new System.Drawing.Point(45, 262);
-            this.checkDepartmentAdmin.Margin = new System.Windows.Forms.Padding(0);
-            this.checkDepartmentAdmin.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.checkDepartmentAdmin.MouseState = MaterialSkin.MouseState.HOVER;
-            this.checkDepartmentAdmin.Name = "checkDepartmentAdmin";
-            this.checkDepartmentAdmin.Ripple = true;
-            this.checkDepartmentAdmin.Size = new System.Drawing.Size(146, 30);
-            this.checkDepartmentAdmin.TabIndex = 30;
-            this.checkDepartmentAdmin.Text = "Department Admin";
-            this.checkDepartmentAdmin.UseVisualStyleBackColor = true;
+            this.cbxDepartmentAdmin.AutoSize = true;
+            this.cbxDepartmentAdmin.Depth = 0;
+            this.cbxDepartmentAdmin.Font = new System.Drawing.Font("Roboto", 10F);
+            this.cbxDepartmentAdmin.Location = new System.Drawing.Point(45, 310);
+            this.cbxDepartmentAdmin.Margin = new System.Windows.Forms.Padding(0);
+            this.cbxDepartmentAdmin.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.cbxDepartmentAdmin.MouseState = MaterialSkin.MouseState.HOVER;
+            this.cbxDepartmentAdmin.Name = "cbxDepartmentAdmin";
+            this.cbxDepartmentAdmin.Ripple = true;
+            this.cbxDepartmentAdmin.Size = new System.Drawing.Size(146, 30);
+            this.cbxDepartmentAdmin.TabIndex = 30;
+            this.cbxDepartmentAdmin.Text = "Department Admin";
+            this.cbxDepartmentAdmin.UseVisualStyleBackColor = true;
             // 
-            // checkLecturer
+            // cbxLecturer
             // 
-            this.checkLecturer.AutoSize = true;
-            this.checkLecturer.Depth = 0;
-            this.checkLecturer.Font = new System.Drawing.Font("Roboto", 10F);
-            this.checkLecturer.Location = new System.Drawing.Point(115, 232);
-            this.checkLecturer.Margin = new System.Windows.Forms.Padding(0);
-            this.checkLecturer.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.checkLecturer.MouseState = MaterialSkin.MouseState.HOVER;
-            this.checkLecturer.Name = "checkLecturer";
-            this.checkLecturer.Ripple = true;
-            this.checkLecturer.Size = new System.Drawing.Size(81, 30);
-            this.checkLecturer.TabIndex = 29;
-            this.checkLecturer.Text = "Lecturer";
-            this.checkLecturer.UseVisualStyleBackColor = true;
+            this.cbxLecturer.AutoSize = true;
+            this.cbxLecturer.Depth = 0;
+            this.cbxLecturer.Font = new System.Drawing.Font("Roboto", 10F);
+            this.cbxLecturer.Location = new System.Drawing.Point(115, 280);
+            this.cbxLecturer.Margin = new System.Windows.Forms.Padding(0);
+            this.cbxLecturer.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.cbxLecturer.MouseState = MaterialSkin.MouseState.HOVER;
+            this.cbxLecturer.Name = "cbxLecturer";
+            this.cbxLecturer.Ripple = true;
+            this.cbxLecturer.Size = new System.Drawing.Size(81, 30);
+            this.cbxLecturer.TabIndex = 29;
+            this.cbxLecturer.Text = "Lecturer";
+            this.cbxLecturer.UseVisualStyleBackColor = true;
             // 
-            // checkAdmin
+            // cbxAdmin
             // 
-            this.checkAdmin.AutoSize = true;
-            this.checkAdmin.Depth = 0;
-            this.checkAdmin.Font = new System.Drawing.Font("Roboto", 10F);
-            this.checkAdmin.Location = new System.Drawing.Point(45, 232);
-            this.checkAdmin.Margin = new System.Windows.Forms.Padding(0);
-            this.checkAdmin.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.checkAdmin.MouseState = MaterialSkin.MouseState.HOVER;
-            this.checkAdmin.Name = "checkAdmin";
-            this.checkAdmin.Ripple = true;
-            this.checkAdmin.Size = new System.Drawing.Size(70, 30);
-            this.checkAdmin.TabIndex = 28;
-            this.checkAdmin.Text = "Admin";
-            this.checkAdmin.UseVisualStyleBackColor = true;
+            this.cbxAdmin.AutoSize = true;
+            this.cbxAdmin.Depth = 0;
+            this.cbxAdmin.Font = new System.Drawing.Font("Roboto", 10F);
+            this.cbxAdmin.Location = new System.Drawing.Point(45, 280);
+            this.cbxAdmin.Margin = new System.Windows.Forms.Padding(0);
+            this.cbxAdmin.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.cbxAdmin.MouseState = MaterialSkin.MouseState.HOVER;
+            this.cbxAdmin.Name = "cbxAdmin";
+            this.cbxAdmin.Ripple = true;
+            this.cbxAdmin.Size = new System.Drawing.Size(70, 30);
+            this.cbxAdmin.TabIndex = 28;
+            this.cbxAdmin.Text = "Admin";
+            this.cbxAdmin.UseVisualStyleBackColor = true;
             // 
             // lblDepartment
             // 
@@ -244,7 +249,7 @@
             this.lblDepartment.Depth = 0;
             this.lblDepartment.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblDepartment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblDepartment.Location = new System.Drawing.Point(45, 292);
+            this.lblDepartment.Location = new System.Drawing.Point(45, 340);
             this.lblDepartment.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblDepartment.Name = "lblDepartment";
             this.lblDepartment.Size = new System.Drawing.Size(87, 19);
@@ -257,7 +262,7 @@
             this.lblRoles.Depth = 0;
             this.lblRoles.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblRoles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblRoles.Location = new System.Drawing.Point(45, 213);
+            this.lblRoles.Location = new System.Drawing.Point(45, 261);
             this.lblRoles.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblRoles.Name = "lblRoles";
             this.lblRoles.Size = new System.Drawing.Size(47, 19);
@@ -269,7 +274,7 @@
             this.rdoOther.AutoSize = true;
             this.rdoOther.Depth = 0;
             this.rdoOther.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rdoOther.Location = new System.Drawing.Point(178, 175);
+            this.rdoOther.Location = new System.Drawing.Point(178, 223);
             this.rdoOther.Margin = new System.Windows.Forms.Padding(0);
             this.rdoOther.MouseLocation = new System.Drawing.Point(-1, -1);
             this.rdoOther.MouseState = MaterialSkin.MouseState.HOVER;
@@ -286,7 +291,7 @@
             this.rdoFemale.AutoSize = true;
             this.rdoFemale.Depth = 0;
             this.rdoFemale.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rdoFemale.Location = new System.Drawing.Point(104, 175);
+            this.rdoFemale.Location = new System.Drawing.Point(104, 223);
             this.rdoFemale.Margin = new System.Windows.Forms.Padding(0);
             this.rdoFemale.MouseLocation = new System.Drawing.Point(-1, -1);
             this.rdoFemale.MouseState = MaterialSkin.MouseState.HOVER;
@@ -303,7 +308,7 @@
             this.rdoMale.AutoSize = true;
             this.rdoMale.Depth = 0;
             this.rdoMale.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rdoMale.Location = new System.Drawing.Point(45, 175);
+            this.rdoMale.Location = new System.Drawing.Point(45, 223);
             this.rdoMale.Margin = new System.Windows.Forms.Padding(0);
             this.rdoMale.MouseLocation = new System.Drawing.Point(-1, -1);
             this.rdoMale.MouseState = MaterialSkin.MouseState.HOVER;
@@ -364,7 +369,7 @@
             this.lblGender.Depth = 0;
             this.lblGender.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblGender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblGender.Location = new System.Drawing.Point(41, 156);
+            this.lblGender.Location = new System.Drawing.Point(41, 204);
             this.lblGender.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(56, 19);
@@ -389,9 +394,9 @@
             this.buttonPanel.Controls.Add(this.btnUpdate);
             this.buttonPanel.Controls.Add(this.btnClear);
             this.buttonPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.buttonPanel.Location = new System.Drawing.Point(0, 444);
+            this.buttonPanel.Location = new System.Drawing.Point(0, 494);
             this.buttonPanel.Name = "buttonPanel";
-            this.buttonPanel.Size = new System.Drawing.Size(336, 53);
+            this.buttonPanel.Size = new System.Drawing.Size(336, 47);
             this.buttonPanel.TabIndex = 0;
             // 
             // btnUpdate
@@ -405,6 +410,7 @@
             this.btnUpdate.TabIndex = 14;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnClear
             // 
@@ -423,32 +429,30 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.dataGridView1);
+            this.panel3.Controls.Add(this.dtGridStaffs);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 66);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(642, 497);
+            this.panel3.Size = new System.Drawing.Size(642, 541);
             this.panel3.TabIndex = 2;
             // 
-            // dataGridView1
+            // dtGridStaffs
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtGridStaffs.AllowUserToAddRows = false;
+            this.dtGridStaffs.AllowUserToDeleteRows = false;
+            this.dtGridStaffs.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dtGridStaffs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtGridStaffs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.surname,
             this.firstName,
             this.gender,
-            this.admin,
-            this.departmentAdmin,
-            this.lecturer});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(642, 497);
-            this.dataGridView1.TabIndex = 0;
+            this.admin});
+            this.dtGridStaffs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtGridStaffs.Location = new System.Drawing.Point(0, 0);
+            this.dtGridStaffs.Name = "dtGridStaffs";
+            this.dtGridStaffs.ReadOnly = true;
+            this.dtGridStaffs.Size = new System.Drawing.Size(642, 541);
+            this.dtGridStaffs.TabIndex = 0;
             // 
             // surname
             // 
@@ -470,27 +474,47 @@
             // 
             // admin
             // 
-            this.admin.HeaderText = "Admin";
+            this.admin.HeaderText = "Email";
             this.admin.Name = "admin";
             this.admin.ReadOnly = true;
             // 
-            // departmentAdmin
+            // lblEmail
             // 
-            this.departmentAdmin.HeaderText = "Department Admin";
-            this.departmentAdmin.Name = "departmentAdmin";
-            this.departmentAdmin.ReadOnly = true;
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Depth = 0;
+            this.lblEmail.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblEmail.Location = new System.Drawing.Point(41, 156);
+            this.lblEmail.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(47, 19);
+            this.lblEmail.TabIndex = 37;
+            this.lblEmail.Text = "Email";
             // 
-            // lecturer
+            // txtEmail
             // 
-            this.lecturer.HeaderText = "Lecturer";
-            this.lecturer.Name = "lecturer";
-            this.lecturer.ReadOnly = true;
+            this.txtEmail.Depth = 0;
+            this.txtEmail.Hint = "";
+            this.txtEmail.Location = new System.Drawing.Point(45, 178);
+            this.txtEmail.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.PasswordChar = '\0';
+            this.txtEmail.SelectedText = "";
+            this.txtEmail.SelectionLength = 0;
+            this.txtEmail.SelectionStart = 0;
+            this.txtEmail.Size = new System.Drawing.Size(246, 23);
+            this.txtEmail.TabIndex = 38;
+            this.txtEmail.UseSystemPasswordChar = false;
+            // 
+            // errProvider
+            // 
+            this.errProvider.ContainerControl = this;
             // 
             // ManageStaffForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(978, 563);
+            this.ClientSize = new System.Drawing.Size(978, 607);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.detailsPanel);
             this.Controls.Add(this.panel1);
@@ -498,7 +522,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ManageStaffForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ManageStaffForm";
+            this.Text = "Manage Staff";
             this.Load += new System.EventHandler(this.ManageStaffForm_Load);
             this.detailsPanel.ResumeLayout(false);
             this.formPanel.ResumeLayout(false);
@@ -506,7 +530,8 @@
             this.buttonPanel.ResumeLayout(false);
             this.buttonPanel.PerformLayout();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGridStaffs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -521,10 +546,10 @@
         private System.Windows.Forms.Panel formPanel;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtPassword;
         private MaterialSkin.Controls.MaterialLabel lblNewPassword;
-        private System.Windows.Forms.ComboBox txtDepartment;
-        private MaterialSkin.Controls.MaterialCheckBox checkDepartmentAdmin;
-        private MaterialSkin.Controls.MaterialCheckBox checkLecturer;
-        private MaterialSkin.Controls.MaterialCheckBox checkAdmin;
+        private System.Windows.Forms.ComboBox cboDepartment;
+        private MaterialSkin.Controls.MaterialCheckBox cbxDepartmentAdmin;
+        private MaterialSkin.Controls.MaterialCheckBox cbxLecturer;
+        private MaterialSkin.Controls.MaterialCheckBox cbxAdmin;
         private MaterialSkin.Controls.MaterialLabel lblDepartment;
         private MaterialSkin.Controls.MaterialLabel lblRoles;
         private MaterialSkin.Controls.MaterialRadioButton rdoOther;
@@ -538,12 +563,13 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField txtConfirmation;
         private MaterialSkin.Controls.MaterialLabel lblConfirmation;
         private System.Windows.Forms.Label lblPasswordInfo;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtGridStaffs;
         private System.Windows.Forms.DataGridViewTextBoxColumn surname;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn gender;
         private System.Windows.Forms.DataGridViewTextBoxColumn admin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn departmentAdmin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lecturer;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtEmail;
+        private MaterialSkin.Controls.MaterialLabel lblEmail;
+        private System.Windows.Forms.ErrorProvider errProvider;
     }
 }
