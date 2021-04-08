@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections;
 using DataAccess.Models;
 using DataAccess;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using System.Windows.Forms;
+using StudentRecordManagementSystem.GridMapper;
 
 namespace StudentRecordManagementSystem
 {
@@ -18,10 +20,21 @@ namespace StudentRecordManagementSystem
         private void CoursesForm_Load(object sender, EventArgs e)
         {
             // Grid Size Config
+            dtGridCourses.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtGridCourses.SelectionChanged += DtGridCourses_SelectionChanged;
+
+            dtGridCourses.AutoGenerateColumns = false;
+            dtGridCourses.Columns[0].DataPropertyName = "id";
+            dtGridCourses.Columns[1].DataPropertyName = "courseName";
+            dtGridCourses.Columns[2].DataPropertyName = "courseCode";
+            dtGridCourses.Columns[3].DataPropertyName = "semesters";
+            dtGridCourses.Columns[4].DataPropertyName = "department";
+
             dtGridCourses.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dtGridCourses.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dtGridCourses.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dtGridCourses.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dtGridCourses.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dtGridCourses.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
@@ -29,7 +42,20 @@ namespace StudentRecordManagementSystem
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue900, Primary.Blue700, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
 
             updateCourses();
+            fillGrid();
         }
+
+        private void DtGridCourses_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int selectedIndex = dtGridCourses.SelectedRows[0].Index;
+                if (selectedIndex >= 0)
+                    btnManageUnits.Enabled = true;
+            }
+            catch (Exception) { };
+        }
+
         private void updateCourses()
         {
             try
@@ -44,7 +70,32 @@ namespace StudentRecordManagementSystem
                 showErrorMessage("Failed to load departments");
             }
         }
+        private void fillGrid()
+        {
+            try
+            {
+                dtGridCourses.DataSource = null;
+                List<CourseModel>courses = CourseManager.getCourses();
+                List<CourseMap> gCourses = new List<CourseMap>();
+                int id = 1;
+                foreach(CourseModel course in courses)
+                {
+                    CourseMap gCourse = new CourseMap();
+                    gCourse.id = id;
+                    gCourse.courseName = course.CourseName;
+                    gCourse.courseCode = course.CourseCode;
+                    gCourse.semesters = course.Duration;
+                    gCourse.department = course.Department.DepartmentName;
+                    gCourses.Add(gCourse);
+                    id += 1;
+                }
+                dtGridCourses.DataSource = gCourses;
 
+            }catch(Exception ex)
+            {
+                showerrorMessage(ex.Message);
+            }
+        }
         private void showErrorMessage(string v)
         {
             MessageBox.Show(v, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -55,7 +106,10 @@ namespace StudentRecordManagementSystem
             if (!validateForm())
                 return;
             if (saveNewCourse())
-                MessageBox.Show("Saved new course details successfully", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            {
+                fillGrid();
+                MessageBox.Show("Successfully saved course details", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private bool saveNewCourse()
@@ -127,6 +181,11 @@ namespace StudentRecordManagementSystem
         private void showerrorMessage(string message)
         {
             MessageBox.Show(message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -37,5 +37,10 @@ namespace DataAccess.Models
             set { departmentId = value; }
         }
 
+        public override string ToString()
+        {
+            return this.departmentName;
+        }
+
     }
 }

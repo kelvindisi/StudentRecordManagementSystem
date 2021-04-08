@@ -118,6 +118,7 @@
       <DependentUpon>DepartmentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FingerprintConfig.cs" />
+    <Compile Include="GridMapper\CourseMap.cs" />
     <Compile Include="LecturerControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

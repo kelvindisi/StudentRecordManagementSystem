@@ -46,5 +46,28 @@ namespace DataAccess
                     throw new CourseAlreadyExistsException(courseCode);
             }
         }
+        public static List<CourseModel> getCourses()
+        {
+            List<CourseModel> courses = new List<CourseModel>();
+
+            using(conn = new MySqlConnection(getConnectionString()))
+            {
+                conn.Open();
+                cmd = new MySqlCommand("SELECT * FROM courses", conn);
+                MySqlDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    CourseModel course = new CourseModel();
+                    course.ID = rd.GetInt32("id");
+                    course.CourseCode = rd.GetString("course_code");
+                    course.CourseName = rd.GetString("course_name");
+                    course.Duration = rd.GetInt32("semesters");
+                    course.Department = DepartmentManager.getDepartmentById(rd.GetInt32("department_id"));
+                    courses.Add(course);
+                }
+            }
+
+            return courses;
+        }
     }
 }

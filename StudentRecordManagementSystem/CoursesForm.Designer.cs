@@ -29,34 +29,35 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.topPanel = new System.Windows.Forms.Panel();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.dtGridCourses = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.course = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.courseCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.semesters = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.department = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.leftPanel = new System.Windows.Forms.Panel();
+            this.txtSemesters = new System.Windows.Forms.NumericUpDown();
+            this.lblNoOfSemesters = new MaterialSkin.Controls.MaterialLabel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnManageUnits = new System.Windows.Forms.Button();
+            this.btnUpdate = new MaterialSkin.Controls.MaterialRaisedButton();
             this.txtCourseCode = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.lblCourseCode = new MaterialSkin.Controls.MaterialLabel();
-            this.btnClear = new MaterialSkin.Controls.MaterialFlatButton();
             this.btnSave = new MaterialSkin.Controls.MaterialRaisedButton();
             this.lblCourse = new MaterialSkin.Controls.MaterialLabel();
             this.txtCourse = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.cboDepartments = new System.Windows.Forms.ComboBox();
             this.lblDepartment = new MaterialSkin.Controls.MaterialLabel();
-            this.btnUpdate = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnManageUnits = new System.Windows.Forms.Button();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.lblNoOfSemesters = new MaterialSkin.Controls.MaterialLabel();
-            this.txtSemesters = new System.Windows.Forms.NumericUpDown();
             this.mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridCourses)).BeginInit();
             this.leftPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSemesters)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSemesters)).BeginInit();
             this.SuspendLayout();
             // 
             // topPanel
@@ -66,7 +67,7 @@
             this.topPanel.Enabled = false;
             this.topPanel.Location = new System.Drawing.Point(0, 0);
             this.topPanel.Name = "topPanel";
-            this.topPanel.Size = new System.Drawing.Size(997, 60);
+            this.topPanel.Size = new System.Drawing.Size(896, 60);
             this.topPanel.TabIndex = 0;
             // 
             // mainPanel
@@ -75,7 +76,7 @@
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(0, 60);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(997, 444);
+            this.mainPanel.Size = new System.Drawing.Size(896, 444);
             this.mainPanel.TabIndex = 1;
             // 
             // dtGridCourses
@@ -83,17 +84,26 @@
             this.dtGridCourses.AllowUserToAddRows = false;
             this.dtGridCourses.AllowUserToDeleteRows = false;
             this.dtGridCourses.BackgroundColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtGridCourses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtGridCourses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtGridCourses.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.course,
             this.courseCode,
+            this.semesters,
             this.department});
             this.dtGridCourses.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtGridCourses.Location = new System.Drawing.Point(0, 0);
             this.dtGridCourses.Name = "dtGridCourses";
             this.dtGridCourses.ReadOnly = true;
-            this.dtGridCourses.Size = new System.Drawing.Size(997, 444);
+            this.dtGridCourses.Size = new System.Drawing.Size(896, 444);
             this.dtGridCourses.TabIndex = 0;
             // 
             // id
@@ -108,13 +118,20 @@
             this.course.HeaderText = "Course";
             this.course.Name = "course";
             this.course.ReadOnly = true;
-            this.course.Width = 270;
+            this.course.Width = 150;
             // 
             // courseCode
             // 
-            this.courseCode.HeaderText = "Course Code";
+            this.courseCode.HeaderText = "Course-Code";
             this.courseCode.Name = "courseCode";
             this.courseCode.ReadOnly = true;
+            this.courseCode.Width = 150;
+            // 
+            // semesters
+            // 
+            this.semesters.HeaderText = "Semesters";
+            this.semesters.Name = "semesters";
+            this.semesters.ReadOnly = true;
             // 
             // department
             // 
@@ -131,17 +148,71 @@
             this.leftPanel.Controls.Add(this.btnUpdate);
             this.leftPanel.Controls.Add(this.txtCourseCode);
             this.leftPanel.Controls.Add(this.lblCourseCode);
-            this.leftPanel.Controls.Add(this.btnClear);
             this.leftPanel.Controls.Add(this.btnSave);
             this.leftPanel.Controls.Add(this.lblCourse);
             this.leftPanel.Controls.Add(this.txtCourse);
             this.leftPanel.Controls.Add(this.cboDepartments);
             this.leftPanel.Controls.Add(this.lblDepartment);
             this.leftPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.leftPanel.Location = new System.Drawing.Point(700, 60);
+            this.leftPanel.Location = new System.Drawing.Point(599, 60);
             this.leftPanel.Name = "leftPanel";
             this.leftPanel.Size = new System.Drawing.Size(297, 444);
             this.leftPanel.TabIndex = 2;
+            // 
+            // txtSemesters
+            // 
+            this.txtSemesters.Location = new System.Drawing.Point(31, 186);
+            this.txtSemesters.Name = "txtSemesters";
+            this.txtSemesters.Size = new System.Drawing.Size(147, 26);
+            this.txtSemesters.TabIndex = 11;
+            // 
+            // lblNoOfSemesters
+            // 
+            this.lblNoOfSemesters.AutoSize = true;
+            this.lblNoOfSemesters.Depth = 0;
+            this.lblNoOfSemesters.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblNoOfSemesters.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblNoOfSemesters.Location = new System.Drawing.Point(28, 164);
+            this.lblNoOfSemesters.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblNoOfSemesters.Name = "lblNoOfSemesters";
+            this.lblNoOfSemesters.Size = new System.Drawing.Size(184, 19);
+            this.lblNoOfSemesters.TabIndex = 10;
+            this.lblNoOfSemesters.Text = "Duration|No of Semesters";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnManageUnits);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 350);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(297, 94);
+            this.panel1.TabIndex = 9;
+            // 
+            // btnManageUnits
+            // 
+            this.btnManageUnits.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnManageUnits.Enabled = false;
+            this.btnManageUnits.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManageUnits.ForeColor = System.Drawing.Color.White;
+            this.btnManageUnits.Location = new System.Drawing.Point(31, 3);
+            this.btnManageUnits.Name = "btnManageUnits";
+            this.btnManageUnits.Size = new System.Drawing.Size(238, 45);
+            this.btnManageUnits.TabIndex = 0;
+            this.btnManageUnits.Text = "Manage Units";
+            this.btnManageUnits.UseVisualStyleBackColor = false;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Depth = 0;
+            this.btnUpdate.Location = new System.Drawing.Point(32, 260);
+            this.btnUpdate.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Primary = true;
+            this.btnUpdate.Size = new System.Drawing.Size(238, 36);
+            this.btnUpdate.TabIndex = 8;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // txtCourseCode
             // 
@@ -170,21 +241,6 @@
             this.lblCourseCode.Size = new System.Drawing.Size(96, 19);
             this.lblCourseCode.TabIndex = 6;
             this.lblCourseCode.Text = "Course Code";
-            // 
-            // btnClear
-            // 
-            this.btnClear.AutoSize = true;
-            this.btnClear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnClear.Depth = 0;
-            this.btnClear.Location = new System.Drawing.Point(31, 305);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnClear.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Primary = false;
-            this.btnClear.Size = new System.Drawing.Size(54, 36);
-            this.btnClear.TabIndex = 5;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
             // 
             // btnSave
             // 
@@ -248,69 +304,15 @@
             this.lblDepartment.TabIndex = 0;
             this.lblDepartment.Text = "Department";
             // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Depth = 0;
-            this.btnUpdate.Location = new System.Drawing.Point(32, 260);
-            this.btnUpdate.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Primary = true;
-            this.btnUpdate.Size = new System.Drawing.Size(238, 36);
-            this.btnUpdate.TabIndex = 8;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnManageUnits);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 388);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(297, 56);
-            this.panel1.TabIndex = 9;
-            // 
-            // btnManageUnits
-            // 
-            this.btnManageUnits.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnManageUnits.Enabled = false;
-            this.btnManageUnits.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManageUnits.ForeColor = System.Drawing.Color.White;
-            this.btnManageUnits.Location = new System.Drawing.Point(32, 33);
-            this.btnManageUnits.Name = "btnManageUnits";
-            this.btnManageUnits.Size = new System.Drawing.Size(238, 45);
-            this.btnManageUnits.TabIndex = 0;
-            this.btnManageUnits.Text = "Manage Units";
-            this.btnManageUnits.UseVisualStyleBackColor = false;
-            // 
             // errorProvider
             // 
             this.errorProvider.ContainerControl = this;
-            // 
-            // lblNoOfSemesters
-            // 
-            this.lblNoOfSemesters.AutoSize = true;
-            this.lblNoOfSemesters.Depth = 0;
-            this.lblNoOfSemesters.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblNoOfSemesters.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblNoOfSemesters.Location = new System.Drawing.Point(28, 164);
-            this.lblNoOfSemesters.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblNoOfSemesters.Name = "lblNoOfSemesters";
-            this.lblNoOfSemesters.Size = new System.Drawing.Size(184, 19);
-            this.lblNoOfSemesters.TabIndex = 10;
-            this.lblNoOfSemesters.Text = "Duration|No of Semesters";
-            // 
-            // txtSemesters
-            // 
-            this.txtSemesters.Location = new System.Drawing.Point(31, 186);
-            this.txtSemesters.Name = "txtSemesters";
-            this.txtSemesters.Size = new System.Drawing.Size(147, 26);
-            this.txtSemesters.TabIndex = 11;
             // 
             // CoursesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(997, 504);
+            this.ClientSize = new System.Drawing.Size(896, 504);
             this.Controls.Add(this.leftPanel);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.topPanel);
@@ -324,9 +326,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtGridCourses)).EndInit();
             this.leftPanel.ResumeLayout(false);
             this.leftPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSemesters)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSemesters)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -337,7 +339,6 @@
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.DataGridView dtGridCourses;
         private System.Windows.Forms.Panel leftPanel;
-        private MaterialSkin.Controls.MaterialFlatButton btnClear;
         private MaterialSkin.Controls.MaterialRaisedButton btnSave;
         private MaterialSkin.Controls.MaterialLabel lblCourse;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtCourse;
@@ -345,15 +346,16 @@
         private MaterialSkin.Controls.MaterialLabel lblDepartment;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtCourseCode;
         private MaterialSkin.Controls.MaterialLabel lblCourseCode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn course;
-        private System.Windows.Forms.DataGridViewTextBoxColumn courseCode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn department;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnManageUnits;
         private MaterialSkin.Controls.MaterialRaisedButton btnUpdate;
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.NumericUpDown txtSemesters;
         private MaterialSkin.Controls.MaterialLabel lblNoOfSemesters;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn course;
+        private System.Windows.Forms.DataGridViewTextBoxColumn courseCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn semesters;
+        private System.Windows.Forms.DataGridViewTextBoxColumn department;
     }
 }
