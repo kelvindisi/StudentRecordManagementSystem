@@ -12,6 +12,7 @@ namespace StudentRecordManagementSystem
 {
     public partial class CoursesForm : MaterialForm
     {
+        private int course_id = 0;
         public CoursesForm()
         {
             InitializeComponent();
@@ -49,11 +50,33 @@ namespace StudentRecordManagementSystem
         {
             try
             {
+                course_id = 0;
                 int selectedIndex = dtGridCourses.SelectedRows[0].Index;
                 if (selectedIndex >= 0)
                     btnManageUnits.Enabled = true;
+                updateFormData();
             }
             catch (Exception) { };
+        }
+        private void updateFormData()
+        {
+            string courseCode = dtGridCourses.SelectedRows[0].Cells[2].Value.ToString();
+            CourseModel course = CourseManager.getCourseByCode(courseCode);
+            if (course.ID != 0)
+                this.course_id = course.ID;
+
+            txtCourse.Text = dtGridCourses.SelectedRows[0].Cells[1].Value.ToString() ;
+            txtCourseCode.Text = courseCode;
+            txtSemesters.Value = (int) dtGridCourses.SelectedRows[0].Cells[3].Value;
+            DepartmentModel department = (DepartmentModel)dtGridCourses.SelectedRows[0].Cells[4].Value;
+            int selectedIndex = 0;
+
+            foreach(ComboBoxItem item in cboDepartments.Items)
+            {
+                if ((int)item.Tag == department.DepartmentId)
+                    selectedIndex = cboDepartments.Items.IndexOf(item);
+            }
+            cboDepartments.SelectedIndex = selectedIndex;
         }
 
         private void updateCourses()
@@ -85,7 +108,7 @@ namespace StudentRecordManagementSystem
                     gCourse.courseName = course.CourseName;
                     gCourse.courseCode = course.CourseCode;
                     gCourse.semesters = course.Duration;
-                    gCourse.department = course.Department.DepartmentName;
+                    gCourse.department = course.Department;
                     gCourses.Add(gCourse);
                     id += 1;
                 }
@@ -185,7 +208,20 @@ namespace StudentRecordManagementSystem
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                CourseModel input = getCourseInputData();
+                input.ID = this.course_id;
+                bool updated = CourseManager.updateCourseDetails(input);
+                if (updated)
+                {
+                    fillGrid();
+                    MessageBox.Show("Updated course details successfully", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }catch(Exception ex)
+            {
+                showerrorMessage(ex.Message);
+            }
         }
     }
 }
