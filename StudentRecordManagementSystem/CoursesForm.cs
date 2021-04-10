@@ -223,5 +223,11 @@ namespace StudentRecordManagementSystem
                 showerrorMessage(ex.Message);
             }
         }
+
+        private void btnManageUnits_Click(object sender, EventArgs e)
+        {
+            CourseUnitsManager unitsManager = new CourseUnitsManager();
+            unitsManager.ShowDialog();
+        }
     }
 }

@@ -98,6 +98,12 @@
     <Compile Include="CoursesForm.Designer.cs">
       <DependentUpon>CoursesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CourseUnitsManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CourseUnitsManager.Designer.cs">
+      <DependentUpon>CourseUnitsManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -150,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CoursesForm.resx">
       <DependentUpon>CoursesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CourseUnitsManager.resx">
+      <DependentUpon>CourseUnitsManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
