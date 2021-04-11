@@ -226,7 +226,7 @@ namespace StudentRecordManagementSystem
 
         private void btnManageUnits_Click(object sender, EventArgs e)
         {
-            CourseUnitsManager unitsManager = new CourseUnitsManager();
+            CourseUnitsManager unitsManager = new CourseUnitsManager(this.course_id);
             unitsManager.ShowDialog();
         }
     }
