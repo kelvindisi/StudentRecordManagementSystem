@@ -45,5 +45,11 @@ namespace StudentRecordManagementSystem
             CoursesForm courseForm = new CoursesForm();
             courseForm.ShowDialog();
         }
+
+        private void btnSession_Click(object sender, EventArgs e)
+        {
+            SessionManagerForm sessionForm = new SessionManagerForm();
+            sessionForm.ShowDialog();
+        }
     }
 }

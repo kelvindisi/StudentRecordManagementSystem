@@ -55,6 +55,7 @@ namespace StudentRecordManagementSystem
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+                fillDepartmentGrid();
                 MessageBox.Show("Saved department details successfully", "Student Record MIS",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 // update gridview

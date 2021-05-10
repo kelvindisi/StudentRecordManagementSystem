@@ -10,7 +10,7 @@ using MySql.Data.MySqlClient;
 
 namespace DataAccess
 {
-    class SessionManager: DbConnector
+    public class SessionManager: DbConnector
     {
         public static List<SessionModel> getSessions()
         {

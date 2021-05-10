@@ -33,6 +33,7 @@
             this.btnManageStaff = new System.Windows.Forms.Button();
             this.btnCourses = new System.Windows.Forms.Button();
             this.btnDepartments = new System.Windows.Forms.Button();
+            this.btnSession = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAddStaff
@@ -95,6 +96,7 @@
             // btnDepartments
             // 
             this.btnDepartments.BackColor = System.Drawing.Color.Black;
+            this.btnDepartments.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.btnDepartments.FlatAppearance.BorderSize = 0;
             this.btnDepartments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDepartments.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -111,11 +113,31 @@
             this.btnDepartments.UseVisualStyleBackColor = false;
             this.btnDepartments.Click += new System.EventHandler(this.btnDepartments_Click);
             // 
+            // btnSession
+            // 
+            this.btnSession.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnSession.FlatAppearance.BorderSize = 0;
+            this.btnSession.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSession.ForeColor = System.Drawing.Color.White;
+            this.btnSession.Image = ((System.Drawing.Image)(resources.GetObject("btnSession.Image")));
+            this.btnSession.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSession.Location = new System.Drawing.Point(36, 295);
+            this.btnSession.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSession.Name = "btnSession";
+            this.btnSession.Size = new System.Drawing.Size(235, 68);
+            this.btnSession.TabIndex = 3;
+            this.btnSession.Text = "    Session";
+            this.btnSession.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSession.UseVisualStyleBackColor = false;
+            this.btnSession.Click += new System.EventHandler(this.btnSession_Click);
+            // 
             // AdminControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.Controls.Add(this.btnSession);
             this.Controls.Add(this.btnCourses);
             this.Controls.Add(this.btnDepartments);
             this.Controls.Add(this.btnManageStaff);
@@ -135,5 +157,6 @@
         private System.Windows.Forms.Button btnManageStaff;
         private System.Windows.Forms.Button btnCourses;
         private System.Windows.Forms.Button btnDepartments;
+        private System.Windows.Forms.Button btnSession;
     }
 }

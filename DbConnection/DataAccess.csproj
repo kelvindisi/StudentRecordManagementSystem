@@ -59,14 +59,17 @@
     <Compile Include="Exceptions\CourseAlreadyExistsException.cs" />
     <Compile Include="Exceptions\CourseDoesNotExistException.cs" />
     <Compile Include="Exceptions\CourseHasNoUnitsException.cs" />
+    <Compile Include="Exceptions\SessionAlreadyExistsException.cs" />
     <Compile Include="Exceptions\UnitAlreadyExistsException.cs" />
     <Compile Include="Exceptions\UnitDoesNotExistException.cs" />
     <Compile Include="Models\BioDataModel.cs" />
     <Compile Include="CourseManager.cs" />
     <Compile Include="Models\CourseModel.cs" />
+    <Compile Include="Models\SessionModel.cs" />
     <Compile Include="Models\StaffPrimaryModel.cs" />
     <Compile Include="Models\UnitModel.cs" />
     <Compile Include="RolesManager.cs" />
+    <Compile Include="SessionManager.cs" />
     <Compile Include="StaffManager.cs" />
     <Compile Include="StudentManager.cs" />
     <Compile Include="Models\DepartmentModel.cs" />

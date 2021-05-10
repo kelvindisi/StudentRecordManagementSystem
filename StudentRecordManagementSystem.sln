@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentRecordManagementSyst
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DbConnection\DataAccess.csproj", "{283E0987-02EC-4B20-8E14-8E7734828224}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkedEx.NET", "..\SDK 4.2\Examples\Net\Vs2013\WorkedEx\WorkedEx.NET.csproj", "{722DC745-18B7-4215-B2F3-A1C8AB552017}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,16 +41,6 @@ Global
 		{283E0987-02EC-4B20-8E14-8E7734828224}.Release|x64.Build.0 = Release|Any CPU
 		{283E0987-02EC-4B20-8E14-8E7734828224}.Release|x86.ActiveCfg = Release|Any CPU
 		{283E0987-02EC-4B20-8E14-8E7734828224}.Release|x86.Build.0 = Release|Any CPU
-		{722DC745-18B7-4215-B2F3-A1C8AB552017}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{722DC745-18B7-4215-B2F3-A1C8AB552017}.Debug|x64.ActiveCfg = Debug|x64
-		{722DC745-18B7-4215-B2F3-A1C8AB552017}.Debug|x64.Build.0 = Debug|x64
-		{722DC745-18B7-4215-B2F3-A1C8AB552017}.Debug|x86.ActiveCfg = Debug|x86
-		{722DC745-18B7-4215-B2F3-A1C8AB552017}.Debug|x86.Build.0 = Debug|x86
-		{722DC745-18B7-4215-B2F3-A1C8AB552017}.Release|Any CPU.ActiveCfg = Release|x86
-		{722DC745-18B7-4215-B2F3-A1C8AB552017}.Release|x64.ActiveCfg = Release|x64
-		{722DC745-18B7-4215-B2F3-A1C8AB552017}.Release|x64.Build.0 = Release|x64
-		{722DC745-18B7-4215-B2F3-A1C8AB552017}.Release|x86.ActiveCfg = Release|x86
-		{722DC745-18B7-4215-B2F3-A1C8AB552017}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
