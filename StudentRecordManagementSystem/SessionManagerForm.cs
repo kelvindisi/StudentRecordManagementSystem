@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using DataAccess.Exceptions;
 using DataAccess.Models;
 using DataAccess;
 using System.Windows.Forms;
@@ -49,15 +50,26 @@ namespace StudentRecordManagementSystem
             try
             {
                 int allGridRows = dtGridSession.RowCount;
-                if (allGridRows < 2)
-                    return;
-                int id = (int)dtGridSession.SelectedRows[0].Cells[0].Value;
-                selectedId = id;
+                if (allGridRows > 1 && dtGridSession.SelectedRows.Count > 0)
+                {
+                    int id = (int)dtGridSession.SelectedRows[0].Cells[0].Value;
+                    selectedId = id;
+                    updateSelectedToForm();
+                }
             }
             catch (Exception ex)
             {
                 showErrorMessage(ex.Message);
             }
+        }
+
+        private void updateSelectedToForm()
+        {
+            int selectedYear = (int)dtGridSession.SelectedRows[0].Cells[1].Value;
+            int selectedMonth = (int)dtGridSession.SelectedRows[0].Cells[2].Value;
+
+            numMonth.Value = selectedMonth;
+            numYear.Value = selectedYear;
         }
 
         public void fillGrid()
@@ -104,16 +116,25 @@ namespace StudentRecordManagementSystem
         {
             try
             {
+                checkIfSelectedToUpdate();
                 SessionModel session = getSessionInput();
                 session.ID = selectedId;
                 SessionManager.updateSession(session);
-                MessageBox.Show("Updated successfully", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Updated successfully", this.Text, 
+                    MessageBoxButtons.OK, MessageBoxIcon.None);
                 fillGrid();
+                selectedId = 0;
             }
             catch (Exception ex)
             {
                 showErrorMessage(ex.Message);
             }
+        }
+
+        private void checkIfSelectedToUpdate()
+        {
+            if (selectedId == 0)
+                throw new NotSelectedUpdateException("session");
         }
     }
 }

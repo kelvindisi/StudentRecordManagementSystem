@@ -45,6 +45,7 @@ namespace DataAccess
                 cmd.Prepare();
                 cmd.Parameters.AddWithValue("year", session.Year);
                 cmd.Parameters.AddWithValue("month", session.Month);
+                cmd.Parameters.AddWithValue("ID", session.ID);
 
                 cmd.ExecuteNonQuery();
             }
