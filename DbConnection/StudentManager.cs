@@ -7,12 +7,13 @@ using System.Configuration;
 using System.Data;
 using System.Collections;
 using DataAccess.Models;
+using DataAccess.Exceptions;
 
 namespace DataAccess
 {
     public class StudentManager : DbConnector
     {
-        public static bool bioDataExists(string email)
+        public static void bioDataExists(string email)
         {
             using (conn = new MySqlConnection(getConnectionString()))
             {
@@ -22,19 +23,17 @@ namespace DataAccess
                 cmd.CommandText = "SELECT * FROM `student_bio` WHERE `email`=@email";
                 cmd.Prepare();
                 cmd.Parameters.AddWithValue("email", email);
-                if (cmd.ExecuteReader().HasRows)
-                {
-                    return true;
-                }
+                MySqlDataReader rd = cmd.ExecuteReader();
+                if (rd.HasRows)
+                    throw new StudentAlreadyExistsException(email);
             }
-            return false;
         }
         public static bool saveBioData(BioDataModel BioData)
         {
             string query = "INSERT INTO `student_bio`(`surname`, `first_name`, `gender`, `date_of_birth`, `passport_no`, `box`, `town`, `phone`, `email`, `religion`, `village`, `location`, `county`)"
                 + "VALUES (@surname,@firstName,@gender,@dob,@passport,@box,@town,@phone,"
                 + "@email,@religion,@village,@location,@county)";
-
+            bioDataExists(BioData.PEmail); //check biodata exists
             using (conn = new MySqlConnection(getConnectionString()))
             {
                 conn.Open();
@@ -58,6 +57,20 @@ namespace DataAccess
                     return true;
             }
             return false;
+        }
+
+        public static void deleteBioData(string email)
+        {
+            using (conn = new MySqlConnection(getConnectionString()))
+            {
+                conn.Open();
+                string query = "DELETE FROM student_bio WHERE email=@email";
+                cmd = new MySqlCommand(query, conn);
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("email", email);
+
+                cmd.ExecuteNonQuery();
+            }
         }
     }
 }

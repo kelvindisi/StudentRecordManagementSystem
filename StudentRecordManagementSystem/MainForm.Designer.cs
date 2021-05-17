@@ -38,18 +38,18 @@
             this.btnDashboard = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.menu = new System.Windows.Forms.ToolStrip();
             this.btnSignOut = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.strpLblName = new System.Windows.Forms.ToolStripLabel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.adminControl = new StudentRecordManagementSystem.AdminControl();
             this.dashboardControl = new StudentRecordManagementSystem.Dashboard();
-            this.departmentControl = new StudentRecordManagementSystem.DepartmentControl();
             this.lecturerControl = new StudentRecordManagementSystem.LecturerControl();
+            this.departmentControl = new StudentRecordManagementSystem.DepartmentControl();
+            this.adminControl = new StudentRecordManagementSystem.AdminControl();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
+            this.menu.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -168,26 +168,27 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.toolStrip1);
+            this.panel4.Controls.Add(this.menu);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 11);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(552, 30);
             this.panel4.TabIndex = 1;
             // 
-            // toolStrip1
+            // menu
             // 
-            this.toolStrip1.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menu.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnSignOut,
             this.toolStripSeparator1,
-            this.toolStripLabel1});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.toolStrip1.Size = new System.Drawing.Size(552, 25);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
+            this.strpLblName});
+            this.menu.Location = new System.Drawing.Point(0, 0);
+            this.menu.Name = "menu";
+            this.menu.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.menu.Size = new System.Drawing.Size(552, 31);
+            this.menu.TabIndex = 0;
+            this.menu.Text = "toolStrip1";
             // 
             // btnSignOut
             // 
@@ -195,20 +196,20 @@
             this.btnSignOut.Image = ((System.Drawing.Image)(resources.GetObject("btnSignOut.Image")));
             this.btnSignOut.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSignOut.Name = "btnSignOut";
-            this.btnSignOut.Size = new System.Drawing.Size(23, 22);
+            this.btnSignOut.Size = new System.Drawing.Size(28, 28);
             this.btnSignOut.Text = "Sign-Out";
             this.btnSignOut.Click += new System.EventHandler(this.btnSignOut_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
-            // toolStripLabel1
+            // strpLblName
             // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(78, 22);
-            this.toolStripLabel1.Text = "Kelvin Ndisi";
+            this.strpLblName.Name = "strpLblName";
+            this.strpLblName.Size = new System.Drawing.Size(48, 28);
+            this.strpLblName.Text = "User";
             // 
             // panel2
             // 
@@ -218,17 +219,7 @@
             this.panel2.Location = new System.Drawing.Point(238, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(552, 42);
-            this.panel2.TabIndex = 1;
-            // 
-            // adminControl
-            // 
-            this.adminControl.AutoSize = true;
-            this.adminControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminControl.Location = new System.Drawing.Point(238, 41);
-            this.adminControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.adminControl.Name = "adminControl";
-            this.adminControl.Size = new System.Drawing.Size(552, 426);
-            this.adminControl.TabIndex = 3;
+            this.panel2.TabIndex = 0;
             // 
             // dashboardControl
             // 
@@ -237,16 +228,7 @@
             this.dashboardControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dashboardControl.Name = "dashboardControl";
             this.dashboardControl.Size = new System.Drawing.Size(552, 420);
-            this.dashboardControl.TabIndex = 2;
-            // 
-            // departmentControl
-            // 
-            this.departmentControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.departmentControl.Location = new System.Drawing.Point(238, 47);
-            this.departmentControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.departmentControl.Name = "departmentControl";
-            this.departmentControl.Size = new System.Drawing.Size(552, 420);
-            this.departmentControl.TabIndex = 4;
+            this.dashboardControl.TabIndex = 4;
             // 
             // lecturerControl
             // 
@@ -255,17 +237,36 @@
             this.lecturerControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lecturerControl.Name = "lecturerControl";
             this.lecturerControl.Size = new System.Drawing.Size(552, 420);
-            this.lecturerControl.TabIndex = 5;
+            this.lecturerControl.TabIndex = 3;
+            // 
+            // departmentControl
+            // 
+            this.departmentControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.departmentControl.Location = new System.Drawing.Point(238, 47);
+            this.departmentControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.departmentControl.Name = "departmentControl";
+            this.departmentControl.Size = new System.Drawing.Size(552, 420);
+            this.departmentControl.TabIndex = 2;
+            // 
+            // adminControl
+            // 
+            this.adminControl.AutoSize = true;
+            this.adminControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminControl.Location = new System.Drawing.Point(238, 47);
+            this.adminControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.adminControl.Name = "adminControl";
+            this.adminControl.Size = new System.Drawing.Size(552, 420);
+            this.adminControl.TabIndex = 1;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(790, 467);
+            this.Controls.Add(this.dashboardControl);
             this.Controls.Add(this.lecturerControl);
             this.Controls.Add(this.departmentControl);
             this.Controls.Add(this.adminControl);
-            this.Controls.Add(this.dashboardControl);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -273,12 +274,13 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MainFrom";
+            this.Text = "Dashboard";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.menu.ResumeLayout(false);
+            this.menu.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -290,10 +292,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStrip menu;
         private System.Windows.Forms.ToolStripButton btnSignOut;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripLabel strpLblName;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnHospital;
         private System.Windows.Forms.Button btnLecturer;
@@ -301,9 +303,9 @@
         private System.Windows.Forms.Button btnAdmin;
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Panel activeMenu;
-        private Dashboard dashboardControl;
         private AdminControl adminControl;
         private DepartmentControl departmentControl;
         private LecturerControl lecturerControl;
+        private Dashboard dashboardControl;
     }
 }

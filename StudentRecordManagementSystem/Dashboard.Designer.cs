@@ -28,24 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkAdmin = new System.Windows.Forms.CheckBox();
+            this.checkDepartmentAdmin = new System.Windows.Forms.CheckBox();
+            this.checkLecture = new System.Windows.Forms.CheckBox();
             this.lblPermissionsList = new System.Windows.Forms.Label();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
-            // checkBox1
+            // checkAdmin
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Enabled = false;
-            this.checkBox1.Location = new System.Drawing.Point(204, 121);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(73, 24);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Admin";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkAdmin.AutoSize = true;
+            this.checkAdmin.Enabled = false;
+            this.checkAdmin.Location = new System.Drawing.Point(174, 130);
+            this.checkAdmin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.checkAdmin.Name = "checkAdmin";
+            this.checkAdmin.Size = new System.Drawing.Size(107, 33);
+            this.checkAdmin.TabIndex = 0;
+            this.checkAdmin.Text = "Admin";
+            this.checkAdmin.UseVisualStyleBackColor = true;
+            // 
+            // checkDepartmentAdmin
+            // 
+            this.checkDepartmentAdmin.AutoSize = true;
+            this.checkDepartmentAdmin.Enabled = false;
+            this.checkDepartmentAdmin.Location = new System.Drawing.Point(174, 173);
+            this.checkDepartmentAdmin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.checkDepartmentAdmin.Name = "checkDepartmentAdmin";
+            this.checkDepartmentAdmin.Size = new System.Drawing.Size(238, 33);
+            this.checkDepartmentAdmin.TabIndex = 0;
+            this.checkDepartmentAdmin.Text = "Department Admin";
+            this.checkDepartmentAdmin.UseVisualStyleBackColor = true;
+            // 
+            // checkLecture
+            // 
+            this.checkLecture.AutoSize = true;
+            this.checkLecture.Enabled = false;
+            this.checkLecture.Location = new System.Drawing.Point(174, 216);
+            this.checkLecture.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.checkLecture.Name = "checkLecture";
+            this.checkLecture.Size = new System.Drawing.Size(127, 33);
+            this.checkLecture.TabIndex = 0;
+            this.checkLecture.Text = "Lecturer";
+            this.checkLecture.UseVisualStyleBackColor = true;
             // 
             // lblPermissionsList
             // 
@@ -53,55 +76,18 @@
             this.lblPermissionsList.Location = new System.Drawing.Point(138, 96);
             this.lblPermissionsList.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPermissionsList.Name = "lblPermissionsList";
-            this.lblPermissionsList.Size = new System.Drawing.Size(164, 20);
+            this.lblPermissionsList.Size = new System.Drawing.Size(252, 29);
             this.lblPermissionsList.TabIndex = 1;
             this.lblPermissionsList.Text = "Permissions Assigned";
             // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Enabled = false;
-            this.checkBox2.Location = new System.Drawing.Point(204, 156);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(162, 24);
-            this.checkBox2.TabIndex = 0;
-            this.checkBox2.Text = "Department Admin";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Enabled = false;
-            this.checkBox3.Location = new System.Drawing.Point(204, 191);
-            this.checkBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(87, 24);
-            this.checkBox3.TabIndex = 0;
-            this.checkBox3.Text = "Lecturer";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Enabled = false;
-            this.checkBox4.Location = new System.Drawing.Point(204, 227);
-            this.checkBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(125, 24);
-            this.checkBox4.TabIndex = 0;
-            this.checkBox4.Text = "Hospital Staff";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
             // Dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lblPermissionsList);
-            this.Controls.Add(this.checkBox4);
-            this.Controls.Add(this.checkBox3);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.checkLecture);
+            this.Controls.Add(this.checkDepartmentAdmin);
+            this.Controls.Add(this.checkAdmin);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Dashboard";
@@ -114,10 +100,9 @@
 
         #endregion
 
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkAdmin;
+        private System.Windows.Forms.CheckBox checkDepartmentAdmin;
+        private System.Windows.Forms.CheckBox checkLecture;
         private System.Windows.Forms.Label lblPermissionsList;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
     }
 }

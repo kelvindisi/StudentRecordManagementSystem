@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BioDataForm));
             this.lblSurname = new MaterialSkin.Controls.MaterialLabel();
             this.txtSurname = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtFirstName = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -46,36 +45,34 @@
             this.txtPhone = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.lblEmail = new MaterialSkin.Controls.MaterialLabel();
             this.txtEmail = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.lblVillage = new MaterialSkin.Controls.MaterialLabel();
-            this.txtVillage = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.lblLocation = new MaterialSkin.Controls.MaterialLabel();
-            this.txtLocation = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.txtCounty = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.btnSave = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnClear = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.lblCounty = new MaterialSkin.Controls.MaterialLabel();
             this.bioDataErrProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupGender = new System.Windows.Forms.GroupBox();
             this.rdoOther = new MaterialSkin.Controls.MaterialRadioButton();
-            this.rdoFemale = new MaterialSkin.Controls.MaterialRadioButton();
             this.rdoMale = new MaterialSkin.Controls.MaterialRadioButton();
+            this.rdoFemale = new MaterialSkin.Controls.MaterialRadioButton();
             this.groupReligion = new System.Windows.Forms.GroupBox();
-            this.lblButhist = new MaterialSkin.Controls.MaterialRadioButton();
+            this.rdoButhist = new MaterialSkin.Controls.MaterialRadioButton();
             this.rdoMuslim = new MaterialSkin.Controls.MaterialRadioButton();
             this.rdoChristian = new MaterialSkin.Controls.MaterialRadioButton();
-            this.groupFingerprint = new System.Windows.Forms.GroupBox();
-            this.lblFingerprintTitle = new MaterialSkin.Controls.MaterialLabel();
-            this.lblLeftIndex = new MaterialSkin.Controls.MaterialLabel();
-            this.PictureFingerPrint = new System.Windows.Forms.PictureBox();
-            this.btnScanLeft = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.txtFingerPrintMsg = new MaterialSkin.Controls.MaterialLabel();
-            this.btnStop = new MaterialSkin.Controls.MaterialFlatButton();
-            this.txtMessage = new MaterialSkin.Controls.MaterialLabel();
+            this.name = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblCounty = new MaterialSkin.Controls.MaterialLabel();
+            this.txtCounty = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtLocation = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.lblLocation = new MaterialSkin.Controls.MaterialLabel();
+            this.txtVillage = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.lblVillage = new MaterialSkin.Controls.MaterialLabel();
+            this.btnClear = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnSave = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.bioDataErrProvider)).BeginInit();
             this.groupGender.SuspendLayout();
             this.groupReligion.SuspendLayout();
-            this.groupFingerprint.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureFingerPrint)).BeginInit();
+            this.name.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblSurname
@@ -84,10 +81,10 @@
             this.lblSurname.Depth = 0;
             this.lblSurname.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblSurname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblSurname.Location = new System.Drawing.Point(35, 75);
+            this.lblSurname.Location = new System.Drawing.Point(422, 27);
             this.lblSurname.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblSurname.Name = "lblSurname";
-            this.lblSurname.Size = new System.Drawing.Size(68, 19);
+            this.lblSurname.Size = new System.Drawing.Size(99, 27);
             this.lblSurname.TabIndex = 0;
             this.lblSurname.Text = "Surname";
             // 
@@ -95,30 +92,30 @@
             // 
             this.txtSurname.Depth = 0;
             this.txtSurname.Hint = "";
-            this.txtSurname.Location = new System.Drawing.Point(39, 97);
+            this.txtSurname.Location = new System.Drawing.Point(512, 22);
             this.txtSurname.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.PasswordChar = '\0';
             this.txtSurname.SelectedText = "";
             this.txtSurname.SelectionLength = 0;
             this.txtSurname.SelectionStart = 0;
-            this.txtSurname.Size = new System.Drawing.Size(216, 23);
-            this.txtSurname.TabIndex = 0;
+            this.txtSurname.Size = new System.Drawing.Size(224, 32);
+            this.txtSurname.TabIndex = 1;
             this.txtSurname.UseSystemPasswordChar = false;
             // 
             // txtFirstName
             // 
             this.txtFirstName.Depth = 0;
             this.txtFirstName.Hint = "";
-            this.txtFirstName.Location = new System.Drawing.Point(274, 97);
+            this.txtFirstName.Location = new System.Drawing.Point(135, 22);
             this.txtFirstName.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.PasswordChar = '\0';
             this.txtFirstName.SelectedText = "";
             this.txtFirstName.SelectionLength = 0;
             this.txtFirstName.SelectionStart = 0;
-            this.txtFirstName.Size = new System.Drawing.Size(216, 23);
-            this.txtFirstName.TabIndex = 1;
+            this.txtFirstName.Size = new System.Drawing.Size(228, 32);
+            this.txtFirstName.TabIndex = 0;
             this.txtFirstName.UseSystemPasswordChar = false;
             // 
             // lblFirstName
@@ -127,10 +124,10 @@
             this.lblFirstName.Depth = 0;
             this.lblFirstName.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblFirstName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblFirstName.Location = new System.Drawing.Point(270, 75);
+            this.lblFirstName.Location = new System.Drawing.Point(28, 27);
             this.lblFirstName.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(83, 19);
+            this.lblFirstName.Size = new System.Drawing.Size(118, 27);
             this.lblFirstName.TabIndex = 2;
             this.lblFirstName.Text = "First Name";
             // 
@@ -140,19 +137,19 @@
             this.lblDateOfBirth.Depth = 0;
             this.lblDateOfBirth.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblDateOfBirth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblDateOfBirth.Location = new System.Drawing.Point(270, 123);
+            this.lblDateOfBirth.Location = new System.Drawing.Point(14, 62);
             this.lblDateOfBirth.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblDateOfBirth.Name = "lblDateOfBirth";
-            this.lblDateOfBirth.Size = new System.Drawing.Size(94, 19);
+            this.lblDateOfBirth.Size = new System.Drawing.Size(135, 27);
             this.lblDateOfBirth.TabIndex = 7;
             this.lblDateOfBirth.Text = "Date Of Birth";
             // 
             // datePickerDOB
             // 
-            this.datePickerDOB.Location = new System.Drawing.Point(274, 145);
+            this.datePickerDOB.Location = new System.Drawing.Point(135, 55);
             this.datePickerDOB.Name = "datePickerDOB";
-            this.datePickerDOB.Size = new System.Drawing.Size(216, 26);
-            this.datePickerDOB.TabIndex = 5;
+            this.datePickerDOB.Size = new System.Drawing.Size(229, 30);
+            this.datePickerDOB.TabIndex = 2;
             // 
             // lblID
             // 
@@ -160,10 +157,10 @@
             this.lblID.Depth = 0;
             this.lblID.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblID.Location = new System.Drawing.Point(38, 186);
+            this.lblID.Location = new System.Drawing.Point(368, 59);
             this.lblID.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(113, 19);
+            this.lblID.Size = new System.Drawing.Size(162, 27);
             this.lblID.TabIndex = 9;
             this.lblID.Text = "ID/Passport No";
             // 
@@ -171,15 +168,15 @@
             // 
             this.txtID.Depth = 0;
             this.txtID.Hint = "";
-            this.txtID.Location = new System.Drawing.Point(42, 208);
+            this.txtID.Location = new System.Drawing.Point(512, 55);
             this.txtID.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtID.Name = "txtID";
             this.txtID.PasswordChar = '\0';
             this.txtID.SelectedText = "";
             this.txtID.SelectionLength = 0;
             this.txtID.SelectionStart = 0;
-            this.txtID.Size = new System.Drawing.Size(325, 23);
-            this.txtID.TabIndex = 6;
+            this.txtID.Size = new System.Drawing.Size(224, 32);
+            this.txtID.TabIndex = 3;
             this.txtID.UseSystemPasswordChar = false;
             // 
             // lblBox
@@ -188,10 +185,10 @@
             this.lblBox.Depth = 0;
             this.lblBox.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblBox.Location = new System.Drawing.Point(38, 234);
+            this.lblBox.Location = new System.Drawing.Point(52, 27);
             this.lblBox.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblBox.Name = "lblBox";
-            this.lblBox.Size = new System.Drawing.Size(61, 19);
+            this.lblBox.Size = new System.Drawing.Size(90, 27);
             this.lblBox.TabIndex = 11;
             this.lblBox.Text = "P.O Box";
             // 
@@ -199,14 +196,14 @@
             // 
             this.txtBox.Depth = 0;
             this.txtBox.Hint = "";
-            this.txtBox.Location = new System.Drawing.Point(42, 256);
+            this.txtBox.Location = new System.Drawing.Point(135, 22);
             this.txtBox.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtBox.Name = "txtBox";
             this.txtBox.PasswordChar = '\0';
             this.txtBox.SelectedText = "";
             this.txtBox.SelectionLength = 0;
             this.txtBox.SelectionStart = 0;
-            this.txtBox.Size = new System.Drawing.Size(216, 23);
+            this.txtBox.Size = new System.Drawing.Size(228, 32);
             this.txtBox.TabIndex = 7;
             this.txtBox.UseSystemPasswordChar = false;
             // 
@@ -216,10 +213,10 @@
             this.lblTown.Depth = 0;
             this.lblTown.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblTown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblTown.Location = new System.Drawing.Point(273, 234);
+            this.lblTown.Location = new System.Drawing.Point(439, 27);
             this.lblTown.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblTown.Name = "lblTown";
-            this.lblTown.Size = new System.Drawing.Size(46, 19);
+            this.lblTown.Size = new System.Drawing.Size(67, 27);
             this.lblTown.TabIndex = 13;
             this.lblTown.Text = "Town";
             // 
@@ -227,14 +224,14 @@
             // 
             this.txtTown.Depth = 0;
             this.txtTown.Hint = "";
-            this.txtTown.Location = new System.Drawing.Point(277, 256);
+            this.txtTown.Location = new System.Drawing.Point(501, 22);
             this.txtTown.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtTown.Name = "txtTown";
             this.txtTown.PasswordChar = '\0';
             this.txtTown.SelectedText = "";
             this.txtTown.SelectionLength = 0;
             this.txtTown.SelectionStart = 0;
-            this.txtTown.Size = new System.Drawing.Size(216, 23);
+            this.txtTown.Size = new System.Drawing.Size(228, 32);
             this.txtTown.TabIndex = 8;
             this.txtTown.UseSystemPasswordChar = false;
             // 
@@ -244,10 +241,10 @@
             this.lblPhone.Depth = 0;
             this.lblPhone.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblPhone.Location = new System.Drawing.Point(38, 282);
+            this.lblPhone.Location = new System.Drawing.Point(36, 28);
             this.lblPhone.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(75, 19);
+            this.lblPhone.Size = new System.Drawing.Size(109, 27);
             this.lblPhone.TabIndex = 15;
             this.lblPhone.Text = "Phone No";
             // 
@@ -255,14 +252,14 @@
             // 
             this.txtPhone.Depth = 0;
             this.txtPhone.Hint = "";
-            this.txtPhone.Location = new System.Drawing.Point(42, 304);
+            this.txtPhone.Location = new System.Drawing.Point(135, 23);
             this.txtPhone.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.PasswordChar = '\0';
             this.txtPhone.SelectedText = "";
             this.txtPhone.SelectionLength = 0;
             this.txtPhone.SelectionStart = 0;
-            this.txtPhone.Size = new System.Drawing.Size(216, 23);
+            this.txtPhone.Size = new System.Drawing.Size(228, 32);
             this.txtPhone.TabIndex = 9;
             this.txtPhone.UseSystemPasswordChar = false;
             // 
@@ -272,10 +269,10 @@
             this.lblEmail.Depth = 0;
             this.lblEmail.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblEmail.Location = new System.Drawing.Point(273, 282);
+            this.lblEmail.Location = new System.Drawing.Point(440, 19);
             this.lblEmail.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(47, 19);
+            this.lblEmail.Size = new System.Drawing.Size(66, 27);
             this.lblEmail.TabIndex = 17;
             this.lblEmail.Text = "Email";
             // 
@@ -283,125 +280,16 @@
             // 
             this.txtEmail.Depth = 0;
             this.txtEmail.Hint = "";
-            this.txtEmail.Location = new System.Drawing.Point(277, 304);
+            this.txtEmail.Location = new System.Drawing.Point(501, 15);
             this.txtEmail.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
             this.txtEmail.SelectedText = "";
             this.txtEmail.SelectionLength = 0;
             this.txtEmail.SelectionStart = 0;
-            this.txtEmail.Size = new System.Drawing.Size(216, 23);
+            this.txtEmail.Size = new System.Drawing.Size(228, 32);
             this.txtEmail.TabIndex = 10;
             this.txtEmail.UseSystemPasswordChar = false;
-            // 
-            // lblVillage
-            // 
-            this.lblVillage.AutoSize = true;
-            this.lblVillage.Depth = 0;
-            this.lblVillage.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblVillage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblVillage.Location = new System.Drawing.Point(42, 398);
-            this.lblVillage.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblVillage.Name = "lblVillage";
-            this.lblVillage.Size = new System.Drawing.Size(55, 19);
-            this.lblVillage.TabIndex = 23;
-            this.lblVillage.Text = "Village";
-            // 
-            // txtVillage
-            // 
-            this.txtVillage.Depth = 0;
-            this.txtVillage.Hint = "";
-            this.txtVillage.Location = new System.Drawing.Point(46, 420);
-            this.txtVillage.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtVillage.Name = "txtVillage";
-            this.txtVillage.PasswordChar = '\0';
-            this.txtVillage.SelectedText = "";
-            this.txtVillage.SelectionLength = 0;
-            this.txtVillage.SelectionStart = 0;
-            this.txtVillage.Size = new System.Drawing.Size(216, 23);
-            this.txtVillage.TabIndex = 14;
-            this.txtVillage.UseSystemPasswordChar = false;
-            // 
-            // lblLocation
-            // 
-            this.lblLocation.AutoSize = true;
-            this.lblLocation.Depth = 0;
-            this.lblLocation.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblLocation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblLocation.Location = new System.Drawing.Point(277, 398);
-            this.lblLocation.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblLocation.Name = "lblLocation";
-            this.lblLocation.Size = new System.Drawing.Size(68, 19);
-            this.lblLocation.TabIndex = 25;
-            this.lblLocation.Text = "Location";
-            // 
-            // txtLocation
-            // 
-            this.txtLocation.Depth = 0;
-            this.txtLocation.Hint = "";
-            this.txtLocation.Location = new System.Drawing.Point(281, 420);
-            this.txtLocation.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtLocation.Name = "txtLocation";
-            this.txtLocation.PasswordChar = '\0';
-            this.txtLocation.SelectedText = "";
-            this.txtLocation.SelectionLength = 0;
-            this.txtLocation.SelectionStart = 0;
-            this.txtLocation.Size = new System.Drawing.Size(216, 23);
-            this.txtLocation.TabIndex = 15;
-            this.txtLocation.UseSystemPasswordChar = false;
-            // 
-            // txtCounty
-            // 
-            this.txtCounty.Depth = 0;
-            this.txtCounty.Hint = "";
-            this.txtCounty.Location = new System.Drawing.Point(46, 468);
-            this.txtCounty.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtCounty.Name = "txtCounty";
-            this.txtCounty.PasswordChar = '\0';
-            this.txtCounty.SelectedText = "";
-            this.txtCounty.SelectionLength = 0;
-            this.txtCounty.SelectionStart = 0;
-            this.txtCounty.Size = new System.Drawing.Size(216, 23);
-            this.txtCounty.TabIndex = 16;
-            this.txtCounty.UseSystemPasswordChar = false;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Depth = 0;
-            this.btnSave.Location = new System.Drawing.Point(39, 522);
-            this.btnSave.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Primary = true;
-            this.btnSave.Size = new System.Drawing.Size(216, 42);
-            this.btnSave.TabIndex = 17;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnClear
-            // 
-            this.btnClear.Depth = 0;
-            this.btnClear.Location = new System.Drawing.Point(274, 522);
-            this.btnClear.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Primary = true;
-            this.btnClear.Size = new System.Drawing.Size(216, 42);
-            this.btnClear.TabIndex = 18;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            // 
-            // lblCounty
-            // 
-            this.lblCounty.AutoSize = true;
-            this.lblCounty.Depth = 0;
-            this.lblCounty.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblCounty.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblCounty.Location = new System.Drawing.Point(42, 446);
-            this.lblCounty.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblCounty.Name = "lblCounty";
-            this.lblCounty.Size = new System.Drawing.Size(56, 19);
-            this.lblCounty.TabIndex = 30;
-            this.lblCounty.Text = "County";
             // 
             // bioDataErrProvider
             // 
@@ -410,11 +298,11 @@
             // groupGender
             // 
             this.groupGender.Controls.Add(this.rdoOther);
-            this.groupGender.Controls.Add(this.rdoFemale);
             this.groupGender.Controls.Add(this.rdoMale);
-            this.groupGender.Location = new System.Drawing.Point(39, 126);
+            this.groupGender.Controls.Add(this.rdoFemale);
+            this.groupGender.Location = new System.Drawing.Point(11, 91);
             this.groupGender.Name = "groupGender";
-            this.groupGender.Size = new System.Drawing.Size(216, 57);
+            this.groupGender.Size = new System.Drawing.Size(274, 49);
             this.groupGender.TabIndex = 34;
             this.groupGender.TabStop = false;
             this.groupGender.Text = "Gender";
@@ -424,94 +312,94 @@
             this.rdoOther.AutoSize = true;
             this.rdoOther.Depth = 0;
             this.rdoOther.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rdoOther.Location = new System.Drawing.Point(136, 22);
+            this.rdoOther.Location = new System.Drawing.Point(157, 19);
             this.rdoOther.Margin = new System.Windows.Forms.Padding(0);
             this.rdoOther.MouseLocation = new System.Drawing.Point(-1, -1);
             this.rdoOther.MouseState = MaterialSkin.MouseState.HOVER;
             this.rdoOther.Name = "rdoOther";
             this.rdoOther.Ripple = true;
-            this.rdoOther.Size = new System.Drawing.Size(63, 30);
-            this.rdoOther.TabIndex = 4;
+            this.rdoOther.Size = new System.Drawing.Size(82, 30);
+            this.rdoOther.TabIndex = 6;
             this.rdoOther.TabStop = true;
             this.rdoOther.Text = "Other";
             this.rdoOther.UseVisualStyleBackColor = true;
-            // 
-            // rdoFemale
-            // 
-            this.rdoFemale.AutoSize = true;
-            this.rdoFemale.Depth = 0;
-            this.rdoFemale.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rdoFemale.Location = new System.Drawing.Point(62, 22);
-            this.rdoFemale.Margin = new System.Windows.Forms.Padding(0);
-            this.rdoFemale.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.rdoFemale.MouseState = MaterialSkin.MouseState.HOVER;
-            this.rdoFemale.Name = "rdoFemale";
-            this.rdoFemale.Ripple = true;
-            this.rdoFemale.Size = new System.Drawing.Size(74, 30);
-            this.rdoFemale.TabIndex = 3;
-            this.rdoFemale.TabStop = true;
-            this.rdoFemale.Text = "Female";
-            this.rdoFemale.UseVisualStyleBackColor = true;
             // 
             // rdoMale
             // 
             this.rdoMale.AutoSize = true;
             this.rdoMale.Depth = 0;
             this.rdoMale.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rdoMale.Location = new System.Drawing.Point(3, 22);
+            this.rdoMale.Location = new System.Drawing.Point(3, 19);
             this.rdoMale.Margin = new System.Windows.Forms.Padding(0);
             this.rdoMale.MouseLocation = new System.Drawing.Point(-1, -1);
             this.rdoMale.MouseState = MaterialSkin.MouseState.HOVER;
             this.rdoMale.Name = "rdoMale";
             this.rdoMale.Ripple = true;
-            this.rdoMale.Size = new System.Drawing.Size(59, 30);
-            this.rdoMale.TabIndex = 2;
+            this.rdoMale.Size = new System.Drawing.Size(77, 30);
+            this.rdoMale.TabIndex = 4;
             this.rdoMale.TabStop = true;
             this.rdoMale.Text = "Male";
             this.rdoMale.UseVisualStyleBackColor = true;
             // 
+            // rdoFemale
+            // 
+            this.rdoFemale.AutoSize = true;
+            this.rdoFemale.Depth = 0;
+            this.rdoFemale.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rdoFemale.Location = new System.Drawing.Point(72, 19);
+            this.rdoFemale.Margin = new System.Windows.Forms.Padding(0);
+            this.rdoFemale.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rdoFemale.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rdoFemale.Name = "rdoFemale";
+            this.rdoFemale.Ripple = true;
+            this.rdoFemale.Size = new System.Drawing.Size(99, 30);
+            this.rdoFemale.TabIndex = 5;
+            this.rdoFemale.TabStop = true;
+            this.rdoFemale.Text = "Female";
+            this.rdoFemale.UseVisualStyleBackColor = true;
+            // 
             // groupReligion
             // 
-            this.groupReligion.Controls.Add(this.lblButhist);
+            this.groupReligion.Controls.Add(this.rdoButhist);
             this.groupReligion.Controls.Add(this.rdoMuslim);
             this.groupReligion.Controls.Add(this.rdoChristian);
-            this.groupReligion.Location = new System.Drawing.Point(42, 333);
+            this.groupReligion.Location = new System.Drawing.Point(372, 91);
             this.groupReligion.Name = "groupReligion";
-            this.groupReligion.Size = new System.Drawing.Size(244, 62);
+            this.groupReligion.Size = new System.Drawing.Size(378, 53);
             this.groupReligion.TabIndex = 35;
             this.groupReligion.TabStop = false;
             this.groupReligion.Text = "Religion";
             // 
-            // lblButhist
+            // rdoButhist
             // 
-            this.lblButhist.AutoSize = true;
-            this.lblButhist.Depth = 0;
-            this.lblButhist.Font = new System.Drawing.Font("Roboto", 10F);
-            this.lblButhist.Location = new System.Drawing.Point(163, 22);
-            this.lblButhist.Margin = new System.Windows.Forms.Padding(0);
-            this.lblButhist.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.lblButhist.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblButhist.Name = "lblButhist";
-            this.lblButhist.Ripple = true;
-            this.lblButhist.Size = new System.Drawing.Size(73, 30);
-            this.lblButhist.TabIndex = 13;
-            this.lblButhist.TabStop = true;
-            this.lblButhist.Text = "Buthist";
-            this.lblButhist.UseVisualStyleBackColor = true;
+            this.rdoButhist.AutoSize = true;
+            this.rdoButhist.Depth = 0;
+            this.rdoButhist.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rdoButhist.Location = new System.Drawing.Point(187, 19);
+            this.rdoButhist.Margin = new System.Windows.Forms.Padding(0);
+            this.rdoButhist.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rdoButhist.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rdoButhist.Name = "rdoButhist";
+            this.rdoButhist.Ripple = true;
+            this.rdoButhist.Size = new System.Drawing.Size(97, 30);
+            this.rdoButhist.TabIndex = 9;
+            this.rdoButhist.TabStop = true;
+            this.rdoButhist.Text = "Buthist";
+            this.rdoButhist.UseVisualStyleBackColor = true;
             // 
             // rdoMuslim
             // 
             this.rdoMuslim.AutoSize = true;
             this.rdoMuslim.Depth = 0;
             this.rdoMuslim.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rdoMuslim.Location = new System.Drawing.Point(88, 22);
+            this.rdoMuslim.Location = new System.Drawing.Point(101, 19);
             this.rdoMuslim.Margin = new System.Windows.Forms.Padding(0);
             this.rdoMuslim.MouseLocation = new System.Drawing.Point(-1, -1);
             this.rdoMuslim.MouseState = MaterialSkin.MouseState.HOVER;
             this.rdoMuslim.Name = "rdoMuslim";
             this.rdoMuslim.Ripple = true;
-            this.rdoMuslim.Size = new System.Drawing.Size(75, 30);
-            this.rdoMuslim.TabIndex = 12;
+            this.rdoMuslim.Size = new System.Drawing.Size(100, 30);
+            this.rdoMuslim.TabIndex = 8;
             this.rdoMuslim.TabStop = true;
             this.rdoMuslim.Text = "Muslim";
             this.rdoMuslim.UseVisualStyleBackColor = true;
@@ -521,174 +409,221 @@
             this.rdoChristian.AutoSize = true;
             this.rdoChristian.Depth = 0;
             this.rdoChristian.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rdoChristian.Location = new System.Drawing.Point(4, 22);
+            this.rdoChristian.Location = new System.Drawing.Point(3, 19);
             this.rdoChristian.Margin = new System.Windows.Forms.Padding(0);
             this.rdoChristian.MouseLocation = new System.Drawing.Point(-1, -1);
             this.rdoChristian.MouseState = MaterialSkin.MouseState.HOVER;
             this.rdoChristian.Name = "rdoChristian";
             this.rdoChristian.Ripple = true;
-            this.rdoChristian.Size = new System.Drawing.Size(84, 30);
-            this.rdoChristian.TabIndex = 11;
+            this.rdoChristian.Size = new System.Drawing.Size(114, 30);
+            this.rdoChristian.TabIndex = 7;
             this.rdoChristian.TabStop = true;
             this.rdoChristian.Text = "Christian";
             this.rdoChristian.UseVisualStyleBackColor = true;
             // 
-            // groupFingerprint
+            // name
             // 
-            this.groupFingerprint.Controls.Add(this.btnStop);
-            this.groupFingerprint.Controls.Add(this.lblFingerprintTitle);
-            this.groupFingerprint.Controls.Add(this.lblLeftIndex);
-            this.groupFingerprint.Controls.Add(this.PictureFingerPrint);
-            this.groupFingerprint.Controls.Add(this.btnScanLeft);
-            this.groupFingerprint.Location = new System.Drawing.Point(514, 166);
-            this.groupFingerprint.Name = "groupFingerprint";
-            this.groupFingerprint.Size = new System.Drawing.Size(306, 325);
-            this.groupFingerprint.TabIndex = 19;
-            this.groupFingerprint.TabStop = false;
+            this.name.Controls.Add(this.lblSurname);
+            this.name.Controls.Add(this.txtSurname);
+            this.name.Controls.Add(this.groupReligion);
+            this.name.Controls.Add(this.groupGender);
+            this.name.Controls.Add(this.lblFirstName);
+            this.name.Controls.Add(this.txtFirstName);
+            this.name.Controls.Add(this.lblDateOfBirth);
+            this.name.Controls.Add(this.datePickerDOB);
+            this.name.Controls.Add(this.lblID);
+            this.name.Controls.Add(this.txtID);
+            this.name.Location = new System.Drawing.Point(31, 70);
+            this.name.Name = "name";
+            this.name.Size = new System.Drawing.Size(755, 157);
+            this.name.TabIndex = 36;
+            this.name.TabStop = false;
+            this.name.Text = "Personal Details";
             // 
-            // lblFingerprintTitle
+            // groupBox1
             // 
-            this.lblFingerprintTitle.AutoSize = true;
-            this.lblFingerprintTitle.Depth = 0;
-            this.lblFingerprintTitle.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblFingerprintTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblFingerprintTitle.Location = new System.Drawing.Point(22, 22);
-            this.lblFingerprintTitle.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblFingerprintTitle.Name = "lblFingerprintTitle";
-            this.lblFingerprintTitle.Size = new System.Drawing.Size(148, 19);
-            this.lblFingerprintTitle.TabIndex = 40;
-            this.lblFingerprintTitle.Text = "Fingerprint Capturing";
+            this.groupBox1.Controls.Add(this.lblBox);
+            this.groupBox1.Controls.Add(this.txtBox);
+            this.groupBox1.Controls.Add(this.lblTown);
+            this.groupBox1.Controls.Add(this.txtTown);
+            this.groupBox1.Location = new System.Drawing.Point(31, 232);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(755, 80);
+            this.groupBox1.TabIndex = 37;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Box Address";
             // 
-            // lblLeftIndex
+            // groupBox2
             // 
-            this.lblLeftIndex.AutoSize = true;
-            this.lblLeftIndex.Depth = 0;
-            this.lblLeftIndex.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblLeftIndex.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblLeftIndex.Location = new System.Drawing.Point(147, 90);
-            this.lblLeftIndex.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblLeftIndex.Name = "lblLeftIndex";
-            this.lblLeftIndex.Size = new System.Drawing.Size(80, 19);
-            this.lblLeftIndex.TabIndex = 38;
-            this.lblLeftIndex.Text = "Fingerprint";
+            this.groupBox2.Controls.Add(this.lblPhone);
+            this.groupBox2.Controls.Add(this.txtPhone);
+            this.groupBox2.Controls.Add(this.lblEmail);
+            this.groupBox2.Controls.Add(this.txtEmail);
+            this.groupBox2.Location = new System.Drawing.Point(31, 317);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(755, 56);
+            this.groupBox2.TabIndex = 38;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Contacts";
             // 
-            // PictureFingerPrint
+            // groupBox3
             // 
-            this.PictureFingerPrint.Image = ((System.Drawing.Image)(resources.GetObject("PictureFingerPrint.Image")));
-            this.PictureFingerPrint.Location = new System.Drawing.Point(151, 112);
-            this.PictureFingerPrint.Name = "PictureFingerPrint";
-            this.PictureFingerPrint.Size = new System.Drawing.Size(119, 105);
-            this.PictureFingerPrint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PictureFingerPrint.TabIndex = 37;
-            this.PictureFingerPrint.TabStop = false;
+            this.groupBox3.Controls.Add(this.lblCounty);
+            this.groupBox3.Controls.Add(this.txtCounty);
+            this.groupBox3.Controls.Add(this.txtLocation);
+            this.groupBox3.Controls.Add(this.lblLocation);
+            this.groupBox3.Controls.Add(this.txtVillage);
+            this.groupBox3.Controls.Add(this.lblVillage);
+            this.groupBox3.Location = new System.Drawing.Point(31, 378);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(755, 115);
+            this.groupBox3.TabIndex = 39;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Home Address";
             // 
-            // btnScanLeft
+            // lblCounty
             // 
-            this.btnScanLeft.BackColor = System.Drawing.Color.Red;
-            this.btnScanLeft.Depth = 0;
-            this.btnScanLeft.Location = new System.Drawing.Point(151, 235);
-            this.btnScanLeft.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnScanLeft.Name = "btnScanLeft";
-            this.btnScanLeft.Primary = true;
-            this.btnScanLeft.Size = new System.Drawing.Size(119, 31);
-            this.btnScanLeft.TabIndex = 0;
-            this.btnScanLeft.Text = "Scan";
-            this.btnScanLeft.UseVisualStyleBackColor = false;
-            this.btnScanLeft.Click += new System.EventHandler(this.btnScanLeft_Click);
+            this.lblCounty.AutoSize = true;
+            this.lblCounty.Depth = 0;
+            this.lblCounty.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblCounty.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblCounty.Location = new System.Drawing.Point(61, 64);
+            this.lblCounty.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblCounty.Name = "lblCounty";
+            this.lblCounty.Size = new System.Drawing.Size(80, 27);
+            this.lblCounty.TabIndex = 38;
+            this.lblCounty.Text = "County";
             // 
-            // txtFingerPrintMsg
+            // txtCounty
             // 
-            this.txtFingerPrintMsg.AutoSize = true;
-            this.txtFingerPrintMsg.Depth = 0;
-            this.txtFingerPrintMsg.Font = new System.Drawing.Font("Roboto", 11F);
-            this.txtFingerPrintMsg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtFingerPrintMsg.Location = new System.Drawing.Point(510, 97);
-            this.txtFingerPrintMsg.MaximumSize = new System.Drawing.Size(306, 0);
-            this.txtFingerPrintMsg.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtFingerPrintMsg.Name = "txtFingerPrintMsg";
-            this.txtFingerPrintMsg.Size = new System.Drawing.Size(121, 19);
-            this.txtFingerPrintMsg.TabIndex = 36;
-            this.txtFingerPrintMsg.Text = "Place your finger";
+            this.txtCounty.Depth = 0;
+            this.txtCounty.Hint = "";
+            this.txtCounty.Location = new System.Drawing.Point(135, 59);
+            this.txtCounty.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtCounty.Name = "txtCounty";
+            this.txtCounty.PasswordChar = '\0';
+            this.txtCounty.SelectedText = "";
+            this.txtCounty.SelectionLength = 0;
+            this.txtCounty.SelectionStart = 0;
+            this.txtCounty.Size = new System.Drawing.Size(228, 32);
+            this.txtCounty.TabIndex = 33;
+            this.txtCounty.UseSystemPasswordChar = false;
             // 
-            // btnStop
+            // txtLocation
             // 
-            this.btnStop.AutoSize = true;
-            this.btnStop.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnStop.Depth = 0;
-            this.btnStop.Location = new System.Drawing.Point(52, 138);
-            this.btnStop.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnStop.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnStop.Name = "btnStop";
-            this.btnStop.Primary = false;
-            this.btnStop.Size = new System.Drawing.Size(47, 36);
-            this.btnStop.TabIndex = 41;
-            this.btnStop.Text = "Stop";
-            this.btnStop.UseVisualStyleBackColor = true;
+            this.txtLocation.Depth = 0;
+            this.txtLocation.Hint = "";
+            this.txtLocation.Location = new System.Drawing.Point(501, 22);
+            this.txtLocation.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtLocation.Name = "txtLocation";
+            this.txtLocation.PasswordChar = '\0';
+            this.txtLocation.SelectedText = "";
+            this.txtLocation.SelectionLength = 0;
+            this.txtLocation.SelectionStart = 0;
+            this.txtLocation.Size = new System.Drawing.Size(228, 32);
+            this.txtLocation.TabIndex = 32;
+            this.txtLocation.UseSystemPasswordChar = false;
             // 
-            // txtMessage
+            // lblLocation
             // 
-            this.txtMessage.AutoSize = true;
-            this.txtMessage.Depth = 0;
-            this.txtMessage.Font = new System.Drawing.Font("Roboto", 11F);
-            this.txtMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtMessage.Location = new System.Drawing.Point(510, 144);
-            this.txtMessage.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtMessage.Name = "txtMessage";
-            this.txtMessage.Size = new System.Drawing.Size(0, 19);
-            this.txtMessage.TabIndex = 37;
+            this.lblLocation.AutoSize = true;
+            this.lblLocation.Depth = 0;
+            this.lblLocation.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblLocation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblLocation.Location = new System.Drawing.Point(412, 27);
+            this.lblLocation.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblLocation.Name = "lblLocation";
+            this.lblLocation.Size = new System.Drawing.Size(98, 27);
+            this.lblLocation.TabIndex = 37;
+            this.lblLocation.Text = "Location";
+            // 
+            // txtVillage
+            // 
+            this.txtVillage.Depth = 0;
+            this.txtVillage.Hint = "";
+            this.txtVillage.Location = new System.Drawing.Point(135, 22);
+            this.txtVillage.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtVillage.Name = "txtVillage";
+            this.txtVillage.PasswordChar = '\0';
+            this.txtVillage.SelectedText = "";
+            this.txtVillage.SelectionLength = 0;
+            this.txtVillage.SelectionStart = 0;
+            this.txtVillage.Size = new System.Drawing.Size(228, 32);
+            this.txtVillage.TabIndex = 31;
+            this.txtVillage.UseSystemPasswordChar = false;
+            // 
+            // lblVillage
+            // 
+            this.lblVillage.AutoSize = true;
+            this.lblVillage.Depth = 0;
+            this.lblVillage.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblVillage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblVillage.Location = new System.Drawing.Point(63, 27);
+            this.lblVillage.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblVillage.Name = "lblVillage";
+            this.lblVillage.Size = new System.Drawing.Size(77, 27);
+            this.lblVillage.TabIndex = 36;
+            this.lblVillage.Text = "Village";
+            // 
+            // btnClear
+            // 
+            this.btnClear.Depth = 0;
+            this.btnClear.Location = new System.Drawing.Point(435, 498);
+            this.btnClear.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Primary = true;
+            this.btnClear.Size = new System.Drawing.Size(185, 36);
+            this.btnClear.TabIndex = 35;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Depth = 0;
+            this.btnSave.Location = new System.Drawing.Point(234, 498);
+            this.btnSave.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Primary = true;
+            this.btnSave.Size = new System.Drawing.Size(185, 36);
+            this.btnSave.TabIndex = 34;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // BioDataForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(832, 585);
-            this.Controls.Add(this.txtMessage);
-            this.Controls.Add(this.txtFingerPrintMsg);
-            this.Controls.Add(this.groupFingerprint);
-            this.Controls.Add(this.groupReligion);
-            this.Controls.Add(this.groupGender);
-            this.Controls.Add(this.lblCounty);
-            this.Controls.Add(this.btnClear);
+            this.ClientSize = new System.Drawing.Size(810, 551);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.txtCounty);
-            this.Controls.Add(this.txtLocation);
-            this.Controls.Add(this.lblLocation);
-            this.Controls.Add(this.txtVillage);
-            this.Controls.Add(this.lblVillage);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.lblEmail);
-            this.Controls.Add(this.txtPhone);
-            this.Controls.Add(this.lblPhone);
-            this.Controls.Add(this.txtTown);
-            this.Controls.Add(this.lblTown);
-            this.Controls.Add(this.txtBox);
-            this.Controls.Add(this.lblBox);
-            this.Controls.Add(this.txtID);
-            this.Controls.Add(this.lblID);
-            this.Controls.Add(this.datePickerDOB);
-            this.Controls.Add(this.lblDateOfBirth);
-            this.Controls.Add(this.lblFirstName);
-            this.Controls.Add(this.txtFirstName);
-            this.Controls.Add(this.txtSurname);
-            this.Controls.Add(this.lblSurname);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.name);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "BioDataForm";
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student Bio Data";
             this.Load += new System.EventHandler(this.BioDataForm_Load);
+            this.Enter += new System.EventHandler(this.btnSave_Click);
             ((System.ComponentModel.ISupportInitialize)(this.bioDataErrProvider)).EndInit();
             this.groupGender.ResumeLayout(false);
             this.groupGender.PerformLayout();
             this.groupReligion.ResumeLayout(false);
             this.groupReligion.PerformLayout();
-            this.groupFingerprint.ResumeLayout(false);
-            this.groupFingerprint.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureFingerPrint)).EndInit();
+            this.name.ResumeLayout(false);
+            this.name.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -710,30 +645,26 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField txtPhone;
         private MaterialSkin.Controls.MaterialLabel lblEmail;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtEmail;
-        private MaterialSkin.Controls.MaterialLabel lblVillage;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtVillage;
-        private MaterialSkin.Controls.MaterialLabel lblLocation;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtLocation;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtCounty;
-        private MaterialSkin.Controls.MaterialRaisedButton btnSave;
-        private MaterialSkin.Controls.MaterialRaisedButton btnClear;
-        private MaterialSkin.Controls.MaterialLabel lblCounty;
         private System.Windows.Forms.ErrorProvider bioDataErrProvider;
         private System.Windows.Forms.GroupBox groupReligion;
-        private MaterialSkin.Controls.MaterialRadioButton lblButhist;
+        private MaterialSkin.Controls.MaterialRadioButton rdoButhist;
         private MaterialSkin.Controls.MaterialRadioButton rdoMuslim;
         private MaterialSkin.Controls.MaterialRadioButton rdoChristian;
         private System.Windows.Forms.GroupBox groupGender;
         private MaterialSkin.Controls.MaterialRadioButton rdoOther;
         private MaterialSkin.Controls.MaterialRadioButton rdoFemale;
         private MaterialSkin.Controls.MaterialRadioButton rdoMale;
-        private System.Windows.Forms.GroupBox groupFingerprint;
-        private MaterialSkin.Controls.MaterialLabel lblFingerprintTitle;
-        private MaterialSkin.Controls.MaterialLabel lblLeftIndex;
-        private System.Windows.Forms.PictureBox PictureFingerPrint;
-        private MaterialSkin.Controls.MaterialRaisedButton btnScanLeft;
-        private MaterialSkin.Controls.MaterialLabel txtFingerPrintMsg;
-        private MaterialSkin.Controls.MaterialFlatButton btnStop;
-        private MaterialSkin.Controls.MaterialLabel txtMessage;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private MaterialSkin.Controls.MaterialLabel lblCounty;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtCounty;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtLocation;
+        private MaterialSkin.Controls.MaterialLabel lblLocation;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtVillage;
+        private MaterialSkin.Controls.MaterialLabel lblVillage;
+        private MaterialSkin.Controls.MaterialRaisedButton btnSave;
+        private MaterialSkin.Controls.MaterialRaisedButton btnClear;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox name;
     }
 }
