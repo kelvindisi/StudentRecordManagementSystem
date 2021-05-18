@@ -33,5 +33,11 @@ namespace StudentRecordManagementSystem
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btnAssignCourse_Click(object sender, EventArgs e)
+        {
+            StudentBioManager students = new StudentBioManager();
+            students.ShowDialog();
+        }
     }
 }

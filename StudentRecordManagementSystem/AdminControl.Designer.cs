@@ -45,7 +45,7 @@
             this.btnAddStaff.ForeColor = System.Drawing.Color.White;
             this.btnAddStaff.Image = ((System.Drawing.Image)(resources.GetObject("btnAddStaff.Image")));
             this.btnAddStaff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddStaff.Location = new System.Drawing.Point(36, 96);
+            this.btnAddStaff.Location = new System.Drawing.Point(33, 45);
             this.btnAddStaff.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAddStaff.Name = "btnAddStaff";
             this.btnAddStaff.Size = new System.Drawing.Size(235, 65);
@@ -64,7 +64,7 @@
             this.btnManageStaff.ForeColor = System.Drawing.Color.White;
             this.btnManageStaff.Image = ((System.Drawing.Image)(resources.GetObject("btnManageStaff.Image")));
             this.btnManageStaff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnManageStaff.Location = new System.Drawing.Point(289, 96);
+            this.btnManageStaff.Location = new System.Drawing.Point(286, 45);
             this.btnManageStaff.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnManageStaff.Name = "btnManageStaff";
             this.btnManageStaff.Size = new System.Drawing.Size(235, 65);
@@ -83,7 +83,7 @@
             this.btnCourses.ForeColor = System.Drawing.Color.White;
             this.btnCourses.Image = ((System.Drawing.Image)(resources.GetObject("btnCourses.Image")));
             this.btnCourses.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCourses.Location = new System.Drawing.Point(289, 195);
+            this.btnCourses.Location = new System.Drawing.Point(286, 120);
             this.btnCourses.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCourses.Name = "btnCourses";
             this.btnCourses.Size = new System.Drawing.Size(235, 65);
@@ -103,7 +103,7 @@
             this.btnDepartments.ForeColor = System.Drawing.Color.White;
             this.btnDepartments.Image = ((System.Drawing.Image)(resources.GetObject("btnDepartments.Image")));
             this.btnDepartments.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDepartments.Location = new System.Drawing.Point(36, 195);
+            this.btnDepartments.Location = new System.Drawing.Point(33, 120);
             this.btnDepartments.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDepartments.Name = "btnDepartments";
             this.btnDepartments.Size = new System.Drawing.Size(235, 65);
@@ -122,7 +122,7 @@
             this.btnSession.ForeColor = System.Drawing.Color.White;
             this.btnSession.Image = ((System.Drawing.Image)(resources.GetObject("btnSession.Image")));
             this.btnSession.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSession.Location = new System.Drawing.Point(36, 295);
+            this.btnSession.Location = new System.Drawing.Point(33, 195);
             this.btnSession.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSession.Name = "btnSession";
             this.btnSession.Size = new System.Drawing.Size(235, 68);

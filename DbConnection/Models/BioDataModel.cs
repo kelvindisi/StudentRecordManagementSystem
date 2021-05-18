@@ -21,7 +21,10 @@ namespace DataAccess.Models
         private string location;
         private string county;
         private string phone;
-                
+        private int id;
+
+
+
         public string PPhone
         {
             get { return phone; }
@@ -47,6 +50,15 @@ namespace DataAccess.Models
             Pvillage = village;
             PLocation = location;
             PCounty = county;
+        }
+        public BioDataModel()
+        {
+            // default instance creator
+        }
+        public int ID
+        {
+            get { return id; }
+            set { id = value; }
         }
         public string PCounty
         {

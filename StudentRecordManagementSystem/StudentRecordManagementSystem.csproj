@@ -124,6 +124,7 @@
     <Compile Include="DepartmentForm.Designer.cs">
       <DependentUpon>DepartmentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Exceptions\FingerprintNotRecordedException.cs" />
     <Compile Include="Exceptions\InvalidInputException.cs" />
     <Compile Include="FingerprintCancelBioDelete.cs">
       <SubType>Form</SubType>
@@ -144,6 +145,7 @@
     <Compile Include="FingerPrintScanner.Designer.cs">
       <DependentUpon>FingerPrintScanner.cs</DependentUpon>
     </Compile>
+    <Compile Include="Futronic\FingerprintManager.cs" />
     <Compile Include="GridMapper\CourseMap.cs" />
     <Compile Include="LecturerControl.cs">
       <SubType>UserControl</SubType>
@@ -175,6 +177,18 @@
     <Compile Include="ManageStudent.Designer.cs">
       <DependentUpon>ManageStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="NoFingerprintCaptured.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NoFingerprintCaptured.Designer.cs">
+      <DependentUpon>NoFingerprintCaptured.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentBioManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentBioManager.Designer.cs">
+      <DependentUpon>StudentBioManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SessionManagerForm.cs">
@@ -182,6 +196,12 @@
     </Compile>
     <Compile Include="SessionManagerForm.Designer.cs">
       <DependentUpon>SessionManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateStudentBioData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateStudentBioData.Designer.cs">
+      <DependentUpon>UpdateStudentBioData.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AddStaffForm.resx">
       <DependentUpon>AddStaffForm.cs</DependentUpon>
@@ -231,6 +251,12 @@
     <EmbeddedResource Include="ManageStudent.resx">
       <DependentUpon>ManageStudent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NoFingerprintCaptured.resx">
+      <DependentUpon>NoFingerprintCaptured.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentBioManager.resx">
+      <DependentUpon>StudentBioManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -242,6 +268,9 @@
     </Compile>
     <EmbeddedResource Include="SessionManagerForm.resx">
       <DependentUpon>SessionManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateStudentBioData.resx">
+      <DependentUpon>UpdateStudentBioData.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

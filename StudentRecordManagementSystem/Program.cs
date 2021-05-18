@@ -16,7 +16,7 @@ namespace StudentRecordManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BioDataForm());
+            Application.Run(new Login());
         }
     }
 }

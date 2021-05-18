@@ -45,9 +45,9 @@
             this.btnAssessment.ForeColor = System.Drawing.Color.White;
             this.btnAssessment.Image = ((System.Drawing.Image)(resources.GetObject("btnAssessment.Image")));
             this.btnAssessment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAssessment.Location = new System.Drawing.Point(277, 265);
+            this.btnAssessment.Location = new System.Drawing.Point(286, 187);
             this.btnAssessment.Name = "btnAssessment";
-            this.btnAssessment.Size = new System.Drawing.Size(226, 68);
+            this.btnAssessment.Size = new System.Drawing.Size(235, 65);
             this.btnAssessment.TabIndex = 1;
             this.btnAssessment.Text = "    Assessment";
             this.btnAssessment.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -61,9 +61,9 @@
             this.btnAttendanceReport.ForeColor = System.Drawing.Color.White;
             this.btnAttendanceReport.Image = ((System.Drawing.Image)(resources.GetObject("btnAttendanceReport.Image")));
             this.btnAttendanceReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAttendanceReport.Location = new System.Drawing.Point(33, 265);
+            this.btnAttendanceReport.Location = new System.Drawing.Point(33, 187);
             this.btnAttendanceReport.Name = "btnAttendanceReport";
-            this.btnAttendanceReport.Size = new System.Drawing.Size(226, 68);
+            this.btnAttendanceReport.Size = new System.Drawing.Size(235, 65);
             this.btnAttendanceReport.TabIndex = 2;
             this.btnAttendanceReport.Text = "    Attendance Reports";
             this.btnAttendanceReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -77,9 +77,9 @@
             this.btnDepartmentCourses.ForeColor = System.Drawing.Color.White;
             this.btnDepartmentCourses.Image = ((System.Drawing.Image)(resources.GetObject("btnDepartmentCourses.Image")));
             this.btnDepartmentCourses.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDepartmentCourses.Location = new System.Drawing.Point(277, 156);
+            this.btnDepartmentCourses.Location = new System.Drawing.Point(286, 116);
             this.btnDepartmentCourses.Name = "btnDepartmentCourses";
-            this.btnDepartmentCourses.Size = new System.Drawing.Size(226, 68);
+            this.btnDepartmentCourses.Size = new System.Drawing.Size(235, 65);
             this.btnDepartmentCourses.TabIndex = 0;
             this.btnDepartmentCourses.Text = "    Department Courses";
             this.btnDepartmentCourses.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -93,9 +93,9 @@
             this.btnEnrollStudent.ForeColor = System.Drawing.Color.White;
             this.btnEnrollStudent.Image = ((System.Drawing.Image)(resources.GetObject("btnEnrollStudent.Image")));
             this.btnEnrollStudent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEnrollStudent.Location = new System.Drawing.Point(33, 59);
+            this.btnEnrollStudent.Location = new System.Drawing.Point(33, 45);
             this.btnEnrollStudent.Name = "btnEnrollStudent";
-            this.btnEnrollStudent.Size = new System.Drawing.Size(226, 68);
+            this.btnEnrollStudent.Size = new System.Drawing.Size(235, 65);
             this.btnEnrollStudent.TabIndex = 3;
             this.btnEnrollStudent.Text = "    New Student";
             this.btnEnrollStudent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -110,13 +110,14 @@
             this.btnAssignCourse.ForeColor = System.Drawing.Color.White;
             this.btnAssignCourse.Image = ((System.Drawing.Image)(resources.GetObject("btnAssignCourse.Image")));
             this.btnAssignCourse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAssignCourse.Location = new System.Drawing.Point(277, 59);
+            this.btnAssignCourse.Location = new System.Drawing.Point(286, 45);
             this.btnAssignCourse.Name = "btnAssignCourse";
-            this.btnAssignCourse.Size = new System.Drawing.Size(226, 68);
+            this.btnAssignCourse.Size = new System.Drawing.Size(235, 65);
             this.btnAssignCourse.TabIndex = 0;
-            this.btnAssignCourse.Text = "    Assign Course";
+            this.btnAssignCourse.Text = "    Manage Students";
             this.btnAssignCourse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAssignCourse.UseVisualStyleBackColor = false;
+            this.btnAssignCourse.Click += new System.EventHandler(this.btnAssignCourse_Click);
             // 
             // btnEnrollCourse
             // 
@@ -126,9 +127,9 @@
             this.btnEnrollCourse.ForeColor = System.Drawing.Color.White;
             this.btnEnrollCourse.Image = ((System.Drawing.Image)(resources.GetObject("btnEnrollCourse.Image")));
             this.btnEnrollCourse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEnrollCourse.Location = new System.Drawing.Point(33, 156);
+            this.btnEnrollCourse.Location = new System.Drawing.Point(33, 116);
             this.btnEnrollCourse.Name = "btnEnrollCourse";
-            this.btnEnrollCourse.Size = new System.Drawing.Size(226, 68);
+            this.btnEnrollCourse.Size = new System.Drawing.Size(235, 65);
             this.btnEnrollCourse.TabIndex = 0;
             this.btnEnrollCourse.Text = "    Enroll Course";
             this.btnEnrollCourse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -136,7 +137,7 @@
             // 
             // DepartmentControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnEnrollStudent);
             this.Controls.Add(this.btnAttendanceReport);

@@ -6,6 +6,7 @@ using Futronic.SDKHelper;
 using MaterialSkin.Controls;
 using MaterialSkin;
 using System.Windows.Forms;
+using StudentRecordManagementSystem.Futronic;
 
 namespace StudentRecordManagementSystem
 {
@@ -13,7 +14,7 @@ namespace StudentRecordManagementSystem
     {
         const string kCompanyName = "Futronic";
         const string kProductName = "SDK 4.0";
-        private static string kDbName;
+        public static string kDbName = "";
         public bool recorded { get; set; } = false;
         public string email { get; set; }
         /// <summary>
@@ -127,7 +128,7 @@ namespace StudentRecordManagementSystem
         private void btnScan_Click(object sender, EventArgs e)
         {
             DbRecord User = new DbRecord();
-            string UserName = email;
+            string UserName = FingerprintManager.validFileName(email);
 
             if (UserName.Length == 0)
             {
@@ -199,6 +200,7 @@ namespace StudentRecordManagementSystem
             String szDbDir;
             szDbDir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments, Environment.SpecialFolderOption.Create);
             szDbDir = Path.Combine(szDbDir, kCompanyName);
+
             if (!Directory.Exists(szDbDir))
             {
                 Directory.CreateDirectory(szDbDir);
@@ -217,6 +219,7 @@ namespace StudentRecordManagementSystem
 
             return szDbDir;
         }
+
         protected bool isUserExists(String UserName)
         {
             String szFileName;

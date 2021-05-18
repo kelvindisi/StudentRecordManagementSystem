@@ -26,9 +26,9 @@ namespace StudentRecordManagementSystem
         {
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
-            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new 
-                ColorScheme(Primary.Green900, Primary.Green700, 
+                ColorScheme(Primary.Blue900, Primary.Blue700, 
                 Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
 
         }
@@ -49,7 +49,7 @@ namespace StudentRecordManagementSystem
                 main.Show();
             }catch(Exception ex)
             {
-                showErrorMessage(ex.StackTrace);
+                showErrorMessage(ex.Message);
             }
         }
 
