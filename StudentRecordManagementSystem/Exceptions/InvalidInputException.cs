@@ -9,8 +9,6 @@ namespace StudentRecordManagementSystem.Exceptions
     [Serializable]
     class InvalidInputException: Exception
     {
-        private int v;
-
         public InvalidInputException()
             : base("You entered invalid input") { }
         public InvalidInputException(string field)

@@ -14,6 +14,14 @@ namespace DataAccess.Models
         private List<RoleModel> roles;
         private string fName;
         private string sName;
+        private int department;
+
+        public int DepartmentId
+        {
+            get { return department; }
+            set { department = value; }
+        }
+
 
         public string Surname
         {

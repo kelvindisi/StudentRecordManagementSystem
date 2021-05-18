@@ -47,6 +47,33 @@ namespace DataAccess
             }
         }
 
+        public static List<CourseModel> getCoursesByDepartment(int departmentId)
+        {
+            List<CourseModel> courses = new List<CourseModel>();
+            using (conn = new MySqlConnection(getConnectionString()))
+            {
+                conn.Open();
+                string query = "SELECT * FROM courses WHERE department_id=@department";
+                cmd = new MySqlCommand(query, conn);
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("department", departmentId);
+
+                MySqlDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    CourseModel course = new CourseModel();
+                    course.ID = rd.GetInt32("id");
+                    course.CourseName = rd.GetString("course_name");
+                    course.CourseCode = rd.GetString("course_code");
+                    course.Duration = rd.GetInt32("semesters");
+                    course.Department = DepartmentManager
+                        .getDepartmentById(departmentId);
+                    courses.Add(course);
+                }
+            }
+            return courses;
+        }
+
         public static CourseModel getCourseById(int courseId)
         {
             CourseModel course = new CourseModel();

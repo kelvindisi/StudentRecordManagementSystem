@@ -7,19 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using StudentRecordManagementSystem.Department;
 
 namespace StudentRecordManagementSystem
 {
     public partial class DepartmentControl : UserControl
     {
+        public static int department { get; set; }
         public DepartmentControl()
         {
             InitializeComponent();
-        }
-
-        private void DepartmentControl_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnEnrollStudent_Click(object sender, EventArgs e)
@@ -38,6 +35,13 @@ namespace StudentRecordManagementSystem
         {
             StudentBioManager students = new StudentBioManager();
             students.ShowDialog();
+        }
+
+        private void btnEnrollCourse_Click(object sender, EventArgs e)
+        {
+            EnrollCourse courses = new EnrollCourse();
+            courses.department = department;
+            courses.ShowDialog();
         }
     }
 }

@@ -46,7 +46,7 @@ namespace StudentRecordManagementSystem
                 string email = dtGridStaffs.SelectedRows[0].Cells[3].Value.ToString();
                 fetchUpdateForm(email);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                // pass
             }

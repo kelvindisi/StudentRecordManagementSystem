@@ -77,7 +77,7 @@
             this.btnDepartmentCourses.ForeColor = System.Drawing.Color.White;
             this.btnDepartmentCourses.Image = ((System.Drawing.Image)(resources.GetObject("btnDepartmentCourses.Image")));
             this.btnDepartmentCourses.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDepartmentCourses.Location = new System.Drawing.Point(286, 116);
+            this.btnDepartmentCourses.Location = new System.Drawing.Point(33, 116);
             this.btnDepartmentCourses.Name = "btnDepartmentCourses";
             this.btnDepartmentCourses.Size = new System.Drawing.Size(235, 65);
             this.btnDepartmentCourses.TabIndex = 0;
@@ -127,13 +127,14 @@
             this.btnEnrollCourse.ForeColor = System.Drawing.Color.White;
             this.btnEnrollCourse.Image = ((System.Drawing.Image)(resources.GetObject("btnEnrollCourse.Image")));
             this.btnEnrollCourse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEnrollCourse.Location = new System.Drawing.Point(33, 116);
+            this.btnEnrollCourse.Location = new System.Drawing.Point(286, 116);
             this.btnEnrollCourse.Name = "btnEnrollCourse";
             this.btnEnrollCourse.Size = new System.Drawing.Size(235, 65);
             this.btnEnrollCourse.TabIndex = 0;
             this.btnEnrollCourse.Text = "    Enroll Course";
             this.btnEnrollCourse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEnrollCourse.UseVisualStyleBackColor = false;
+            this.btnEnrollCourse.Click += new System.EventHandler(this.btnEnrollCourse_Click);
             // 
             // DepartmentControl
             // 
@@ -149,7 +150,6 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "DepartmentControl";
             this.Size = new System.Drawing.Size(552, 420);
-            this.Load += new System.EventHandler(this.DepartmentControl_Load);
             this.ResumeLayout(false);
 
         }

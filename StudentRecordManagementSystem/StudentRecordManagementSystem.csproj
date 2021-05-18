@@ -73,84 +73,90 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddStaffForm.cs">
+    <Compile Include="Admin\AddStaffForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddStaffForm.Designer.cs">
+    <Compile Include="Admin\AddStaffForm.Designer.cs">
       <DependentUpon>AddStaffForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminControl.cs">
+    <Compile Include="Controls\AdminControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AdminControl.Designer.cs">
+    <Compile Include="Controls\AdminControl.Designer.cs">
       <DependentUpon>AdminControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="BioDataForm.cs">
+    <Compile Include="Department\BioDataForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BioDataForm.Designer.cs">
+    <Compile Include="Department\BioDataForm.Designer.cs">
       <DependentUpon>BioDataForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ComboBoxItem.cs" />
-    <Compile Include="CoursesForm.cs">
+    <Compile Include="Common\ComboBoxItem.cs" />
+    <Compile Include="Admin\CoursesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CoursesForm.Designer.cs">
+    <Compile Include="Admin\CoursesForm.Designer.cs">
       <DependentUpon>CoursesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CourseUnitsManager.cs">
+    <Compile Include="Admin\CourseUnitsManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CourseUnitsManager.Designer.cs">
+    <Compile Include="Admin\CourseUnitsManager.Designer.cs">
       <DependentUpon>CourseUnitsManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dashboard.cs">
+    <Compile Include="Controls\Dashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Dashboard.Designer.cs">
+    <Compile Include="Controls\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="DbName.cs" />
-    <Compile Include="DbRecord.cs" />
-    <Compile Include="DepartmentControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="DepartmentControl.Designer.cs">
-      <DependentUpon>DepartmentControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DepartmentForm.cs">
+    <Compile Include="Department\EnrollCourse.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DepartmentForm.Designer.cs">
+    <Compile Include="Department\EnrollCourse.Designer.cs">
+      <DependentUpon>EnrollCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Futronic\DbName.cs" />
+    <Compile Include="Futronic\DbRecord.cs" />
+    <Compile Include="Controls\DepartmentControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DepartmentControl.Designer.cs">
+      <DependentUpon>DepartmentControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DepartmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\DepartmentForm.Designer.cs">
       <DependentUpon>DepartmentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Exceptions\FingerprintNotRecordedException.cs" />
     <Compile Include="Exceptions\InvalidInputException.cs" />
-    <Compile Include="FingerprintCancelBioDelete.cs">
+    <Compile Include="Common\FingerprintCancelBioDelete.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FingerprintCancelBioDelete.Designer.cs">
+    <Compile Include="Common\FingerprintCancelBioDelete.Designer.cs">
       <DependentUpon>FingerprintCancelBioDelete.cs</DependentUpon>
     </Compile>
-    <Compile Include="FingerprintConfig.cs" />
-    <Compile Include="FingerPrintNotRecorded.cs">
+    <Compile Include="Futronic\FingerprintConfig.cs" />
+    <Compile Include="Common\FingerPrintNotRecorded.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FingerPrintNotRecorded.Designer.cs">
+    <Compile Include="Common\FingerPrintNotRecorded.Designer.cs">
       <DependentUpon>FingerPrintNotRecorded.cs</DependentUpon>
     </Compile>
-    <Compile Include="FingerPrintScanner.cs">
+    <Compile Include="Common\FingerPrintScanner.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FingerPrintScanner.Designer.cs">
+    <Compile Include="Common\FingerPrintScanner.Designer.cs">
       <DependentUpon>FingerPrintScanner.cs</DependentUpon>
     </Compile>
     <Compile Include="Futronic\FingerprintManager.cs" />
     <Compile Include="GridMapper\CourseMap.cs" />
-    <Compile Include="LecturerControl.cs">
+    <Compile Include="Controls\LecturerControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="LecturerControl.Designer.cs">
+    <Compile Include="Controls\LecturerControl.Designer.cs">
       <DependentUpon>LecturerControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
@@ -165,79 +171,82 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManageStaffForm.cs">
+    <Compile Include="Admin\ManageStaffForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManageStaffForm.Designer.cs">
+    <Compile Include="Admin\ManageStaffForm.Designer.cs">
       <DependentUpon>ManageStaffForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManageStudent.cs">
+    <Compile Include="Department\ManageStudent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManageStudent.Designer.cs">
+    <Compile Include="Department\ManageStudent.Designer.cs">
       <DependentUpon>ManageStudent.cs</DependentUpon>
     </Compile>
-    <Compile Include="NoFingerprintCaptured.cs">
+    <Compile Include="Common\NoFingerprintCaptured.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NoFingerprintCaptured.Designer.cs">
+    <Compile Include="Common\NoFingerprintCaptured.Designer.cs">
       <DependentUpon>NoFingerprintCaptured.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentBioManager.cs">
+    <Compile Include="Department\StudentBioManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StudentBioManager.Designer.cs">
+    <Compile Include="Department\StudentBioManager.Designer.cs">
       <DependentUpon>StudentBioManager.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SessionManagerForm.cs">
+    <Compile Include="Admin\SessionManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SessionManagerForm.Designer.cs">
+    <Compile Include="Admin\SessionManagerForm.Designer.cs">
       <DependentUpon>SessionManagerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UpdateStudentBioData.cs">
+    <Compile Include="Department\UpdateStudentBioData.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpdateStudentBioData.Designer.cs">
+    <Compile Include="Department\UpdateStudentBioData.Designer.cs">
       <DependentUpon>UpdateStudentBioData.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddStaffForm.resx">
+    <EmbeddedResource Include="Admin\AddStaffForm.resx">
       <DependentUpon>AddStaffForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminControl.resx">
+    <EmbeddedResource Include="Controls\AdminControl.resx">
       <DependentUpon>AdminControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BioDataForm.resx">
+    <EmbeddedResource Include="Department\BioDataForm.resx">
       <DependentUpon>BioDataForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CoursesForm.resx">
+    <EmbeddedResource Include="Admin\CoursesForm.resx">
       <DependentUpon>CoursesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CourseUnitsManager.resx">
+    <EmbeddedResource Include="Admin\CourseUnitsManager.resx">
       <DependentUpon>CourseUnitsManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dashboard.resx">
+    <EmbeddedResource Include="Controls\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DepartmentControl.resx">
+    <EmbeddedResource Include="Controls\DepartmentControl.resx">
       <DependentUpon>DepartmentControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DepartmentForm.resx">
+    <EmbeddedResource Include="Admin\DepartmentForm.resx">
       <DependentUpon>DepartmentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FingerprintCancelBioDelete.resx">
+    <EmbeddedResource Include="Common\FingerprintCancelBioDelete.resx">
       <DependentUpon>FingerprintCancelBioDelete.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FingerPrintNotRecorded.resx">
+    <EmbeddedResource Include="Common\FingerPrintNotRecorded.resx">
       <DependentUpon>FingerPrintNotRecorded.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FingerPrintScanner.resx">
+    <EmbeddedResource Include="Common\FingerPrintScanner.resx">
       <DependentUpon>FingerPrintScanner.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LecturerControl.resx">
+    <EmbeddedResource Include="Controls\LecturerControl.resx">
       <DependentUpon>LecturerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Department\EnrollCourse.resx">
+      <DependentUpon>EnrollCourse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -245,16 +254,16 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManageStaffForm.resx">
+    <EmbeddedResource Include="Admin\ManageStaffForm.resx">
       <DependentUpon>ManageStaffForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManageStudent.resx">
+    <EmbeddedResource Include="Department\ManageStudent.resx">
       <DependentUpon>ManageStudent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NoFingerprintCaptured.resx">
+    <EmbeddedResource Include="Common\NoFingerprintCaptured.resx">
       <DependentUpon>NoFingerprintCaptured.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StudentBioManager.resx">
+    <EmbeddedResource Include="Department\StudentBioManager.resx">
       <DependentUpon>StudentBioManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -266,10 +275,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="SessionManagerForm.resx">
+    <EmbeddedResource Include="Admin\SessionManagerForm.resx">
       <DependentUpon>SessionManagerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UpdateStudentBioData.resx">
+    <EmbeddedResource Include="Department\UpdateStudentBioData.resx">
       <DependentUpon>UpdateStudentBioData.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -292,7 +301,9 @@
       <Name>DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Lecturer\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

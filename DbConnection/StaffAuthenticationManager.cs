@@ -31,6 +31,7 @@ namespace DataAccess
                 staff.Roles = getStaffRoles(staff.ID);
                 staff.FirstName = rd.GetString("first_name");
                 staff.Surname = rd.GetString("surname");
+                staff.DepartmentId = rd.GetInt32("department_id");
             }
 
             return staff;

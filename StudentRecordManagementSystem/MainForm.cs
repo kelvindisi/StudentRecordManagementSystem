@@ -25,6 +25,27 @@ namespace StudentRecordManagementSystem
             initializeAppDbConfig();
         }
 
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                strpLblName.Text = staff.FirstName;
+                updateRoles();
+                updateMainFormInterface();
+                updateControllerDetails();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, this.Text,
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void updateControllerDetails()
+        {
+            DepartmentControl.department = this.staff.DepartmentId;
+        }
+
         private void initializeAppDbConfig()
         {
             try
@@ -76,20 +97,6 @@ namespace StudentRecordManagementSystem
             loginForm.clearInput();
             loginForm.Show();
             this.Close();
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                strpLblName.Text = staff.FirstName;
-                updateRoles();
-                updateMainFormInterface();
-            }catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message, this.Text, 
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         private void updateMainFormInterface()
