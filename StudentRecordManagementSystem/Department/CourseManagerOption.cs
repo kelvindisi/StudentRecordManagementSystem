@@ -69,5 +69,31 @@ namespace StudentRecordManagementSystem.Department
             MessageBox.Show(message, this.Text,
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        private void btnRegisterUnit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int sessionId = getSessionId();
+                RegisterUnits formRegister = new RegisterUnits();
+                formRegister.sessionId = sessionId;
+                formRegister.courseId = courseId;
+                formRegister.Show();
+            }catch(Exception ex)
+            {
+                showErrorMessage(ex.Message);
+            }
+
+        }
+
+        private int getSessionId()
+        {
+            SessionPick selectedSession = new SessionPick();
+            selectedSession.ShowDialog();
+            int sessionId = selectedSession.session.ID;
+            validateSelectedSession(sessionId);
+
+            return sessionId;
+        }
     }
 }

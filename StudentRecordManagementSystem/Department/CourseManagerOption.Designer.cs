@@ -104,6 +104,7 @@
             this.btnRegisterUnit.Text = "    Register Units";
             this.btnRegisterUnit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRegisterUnit.UseVisualStyleBackColor = false;
+            this.btnRegisterUnit.Click += new System.EventHandler(this.btnRegisterUnit_Click);
             // 
             // btnSessionUnits
             // 

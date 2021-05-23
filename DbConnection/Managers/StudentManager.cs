@@ -202,5 +202,30 @@ namespace DataAccess
                 cmd.ExecuteNonQuery();
             }
         }
+
+        public static DataTable getCourseStudents(int courseId, string search)
+        {
+            DataTable table = new DataTable();
+            using (conn = new MySqlConnection(getConnectionString()))
+            {
+                conn.Open();
+                string q = "SELECT enrollment.id,regNo, first_name, surname, "
+                    + "email FROM enrollment "
+                    + "JOIN student_bio ON "
+                    + "enrollment.student_id = student_bio.id"
+                    + " WHERE `enrollment`.`course_id`= @course AND ("
+                    + " email LIKE @search OR"
+                    + " regNo LIKE @search OR"
+                    + " first_name LIKE @search OR"
+                    + " surname LIKE @search)";
+                cmd = new MySqlCommand(q, conn);
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("search", $"%{search}%");
+                cmd.Parameters.AddWithValue("course", courseId);
+                MySqlDataAdapter dapt = new MySqlDataAdapter(cmd);
+                dapt.Fill(table);
+            }
+            return table;
+        }
     }
 }
