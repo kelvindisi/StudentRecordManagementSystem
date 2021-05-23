@@ -7,6 +7,7 @@ using System.Linq;
 
 using System.Windows.Forms;
 using System.Text;
+using System.Collections.Generic;
 
 namespace DataAccess
 {
@@ -119,16 +120,12 @@ namespace DataAccess
                         staff.Gender = rd.GetString("gender");
                         staff.DepartmentId = rd.GetInt32("department_id");
                     }
-                }else
-                {
-                    return null;
                 }
             }
-            
 
             return staff;
         }
-        private static StaffPrimaryModel getById(int id)
+        public static StaffPrimaryModel getById(int id)
         {
             StaffPrimaryModel staff = new StaffPrimaryModel();
 
@@ -153,12 +150,7 @@ namespace DataAccess
                         staff.Password = rd.GetString("password");
                     }
                 }
-                else
-                {
-                    return null;
-                }
             }
-
 
             return staff;
         }
@@ -291,6 +283,38 @@ namespace DataAccess
             }
 
             return updated;
+        }
+        public static DataTable getLecturers(string search)
+        {
+            DataTable table = new DataTable();
+            List<StaffPrimaryModel> lecturers = new List<StaffPrimaryModel>();
+            string q = "SELECT staffs.id, staffs.first_name, staffs.surname, "
+                + "staffs.email, departments.departmentName "
+                + "FROM `roles_staff` "
+                + "JOIN staffs ON staffs.id=roles_staff.staff_id "
+                + "JOIN departments ON departments.id=staffs.department_id "
+                + "WHERE `roles_staff`.`role_id`="
+                + "(SELECT id FROM `roles` WHERE `roles`.`name`='lecturer') "
+                + "AND ("
+                + "    staffs.first_name LIKE @search OR "
+                + "    staffs.surname LIKE @search OR "
+                + "    staffs.email LIKE @search OR "
+                + "    departments.departmentName LIKE @search) ";
+            using (conn = new MySqlConnection(getConnectionString()))
+            {
+                conn.Open();
+                cmd = new MySqlCommand(q, conn);
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("search", $"%{search}%");
+                MySqlDataAdapter dapt = new MySqlDataAdapter(cmd);
+                dapt.Fill(table);
+            }
+            return table;
+        }
+
+        private static void showMessage(string v)
+        {
+            MessageBox.Show(string.Format("Total no of search is {0}", v));
         }
     }
 }

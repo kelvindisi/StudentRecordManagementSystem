@@ -79,11 +79,23 @@
     <Compile Include="Admin\AddStaffForm.Designer.cs">
       <DependentUpon>AddStaffForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Common\SessionPick.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\SessionPick.Designer.cs">
+      <DependentUpon>SessionPick.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\AdminControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\AdminControl.Designer.cs">
       <DependentUpon>AdminControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DepartmentCourseManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DepartmentCourseManager.Designer.cs">
+      <DependentUpon>DepartmentCourseManager.cs</DependentUpon>
     </Compile>
     <Compile Include="Department\BioDataForm.cs">
       <SubType>Form</SubType>
@@ -110,11 +122,31 @@
     <Compile Include="Controls\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Department\EnrollCourse.cs">
+    <Compile Include="Department\CourseManagerOption.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Department\EnrollCourse.Designer.cs">
-      <DependentUpon>EnrollCourse.cs</DependentUpon>
+    <Compile Include="Department\CourseManagerOption.Designer.cs">
+      <DependentUpon>CourseManagerOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Department\CourseList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Department\CourseList.Designer.cs">
+      <DependentUpon>CourseList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Department\Model\GridSessionUnit.cs" />
+    <Compile Include="Department\Model\GridSessionUnitModel.cs" />
+    <Compile Include="Department\SessionCourseUnitList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Department\SessionCourseUnitList.Designer.cs">
+      <DependentUpon>SessionCourseUnitList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Department\EnrollStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Department\EnrollStudent.Designer.cs">
+      <DependentUpon>EnrollStudent.cs</DependentUpon>
     </Compile>
     <Compile Include="Futronic\DbName.cs" />
     <Compile Include="Futronic\DbRecord.cs" />
@@ -209,11 +241,23 @@
     <Compile Include="Department\UpdateStudentBioData.Designer.cs">
       <DependentUpon>UpdateStudentBioData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Department\SelectLecturer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Department\SelectLecturer.Designer.cs">
+      <DependentUpon>SelectLecturer.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Admin\AddStaffForm.resx">
       <DependentUpon>AddStaffForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Common\SessionPick.resx">
+      <DependentUpon>SessionPick.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\AdminControl.resx">
       <DependentUpon>AdminControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DepartmentCourseManager.resx">
+      <DependentUpon>DepartmentCourseManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Department\BioDataForm.resx">
       <DependentUpon>BioDataForm.cs</DependentUpon>
@@ -245,8 +289,17 @@
     <EmbeddedResource Include="Controls\LecturerControl.resx">
       <DependentUpon>LecturerControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Department\EnrollCourse.resx">
-      <DependentUpon>EnrollCourse.cs</DependentUpon>
+    <EmbeddedResource Include="Department\CourseManagerOption.resx">
+      <DependentUpon>CourseManagerOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Department\CourseList.resx">
+      <DependentUpon>CourseList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Department\SessionCourseUnitList.resx">
+      <DependentUpon>SessionCourseUnitList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Department\EnrollStudent.resx">
+      <DependentUpon>EnrollStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -280,6 +333,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Department\UpdateStudentBioData.resx">
       <DependentUpon>UpdateStudentBioData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Department\SelectLecturer.resx">
+      <DependentUpon>SelectLecturer.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

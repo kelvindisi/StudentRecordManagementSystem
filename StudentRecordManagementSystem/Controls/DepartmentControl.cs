@@ -39,7 +39,7 @@ namespace StudentRecordManagementSystem
 
         private void btnEnrollCourse_Click(object sender, EventArgs e)
         {
-            EnrollCourse courses = new EnrollCourse();
+            CourseList courses = new CourseList();
             courses.department = department;
             courses.ShowDialog();
         }

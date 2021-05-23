@@ -1,6 +1,6 @@
 ﻿namespace StudentRecordManagementSystem.Department
 {
-    partial class EnrollCourse
+    partial class SessionCourseUnitList
     {
         /// <summary>
         /// Required designer variable.
@@ -31,10 +31,13 @@
             this.topPanel = new System.Windows.Forms.Panel();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.dtGridCourses = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.courseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.units = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sessUnitId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.added = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.UnitId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.semester = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lecturer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridCourses)).BeginInit();
             this.SuspendLayout();
@@ -46,7 +49,7 @@
             this.topPanel.Enabled = false;
             this.topPanel.Location = new System.Drawing.Point(0, 0);
             this.topPanel.Name = "topPanel";
-            this.topPanel.Size = new System.Drawing.Size(904, 80);
+            this.topPanel.Size = new System.Drawing.Size(1031, 79);
             this.topPanel.TabIndex = 0;
             // 
             // mainPanel
@@ -54,9 +57,9 @@
             this.mainPanel.BackColor = System.Drawing.Color.Transparent;
             this.mainPanel.Controls.Add(this.dtGridCourses);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(0, 80);
+            this.mainPanel.Location = new System.Drawing.Point(0, 79);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(904, 513);
+            this.mainPanel.Size = new System.Drawing.Size(1031, 477);
             this.mainPanel.TabIndex = 1;
             // 
             // dtGridCourses
@@ -65,56 +68,72 @@
             this.dtGridCourses.AllowUserToDeleteRows = false;
             this.dtGridCourses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtGridCourses.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.code,
-            this.courseName,
-            this.units});
+            this.sessUnitId,
+            this.added,
+            this.UnitId,
+            this.unitCode,
+            this.unitName,
+            this.semester,
+            this.lecturer});
             this.dtGridCourses.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtGridCourses.Location = new System.Drawing.Point(0, 0);
             this.dtGridCourses.Name = "dtGridCourses";
-            this.dtGridCourses.ReadOnly = true;
             this.dtGridCourses.RowTemplate.Height = 28;
-            this.dtGridCourses.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtGridCourses.Size = new System.Drawing.Size(904, 513);
-            this.dtGridCourses.TabIndex = 1;
+            this.dtGridCourses.Size = new System.Drawing.Size(1031, 477);
+            this.dtGridCourses.TabIndex = 0;
             // 
-            // id
+            // sessUnitId
             // 
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
+            this.sessUnitId.HeaderText = "Session Unit Id";
+            this.sessUnitId.Name = "sessUnitId";
             // 
-            // code
+            // added
             // 
-            this.code.HeaderText = "Course Code";
-            this.code.Name = "code";
-            this.code.ReadOnly = true;
-            this.code.Width = 300;
+            this.added.HeaderText = "Active";
+            this.added.Name = "added";
+            this.added.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.added.Width = 150;
             // 
-            // courseName
+            // UnitId
             // 
-            this.courseName.HeaderText = "Course Name";
-            this.courseName.Name = "courseName";
-            this.courseName.ReadOnly = true;
-            this.courseName.Width = 300;
+            this.UnitId.HeaderText = "Unit ID";
+            this.UnitId.Name = "UnitId";
+            this.UnitId.ReadOnly = true;
             // 
-            // units
+            // unitCode
             // 
-            this.units.HeaderText = "Units";
-            this.units.Name = "units";
-            this.units.ReadOnly = true;
+            this.unitCode.HeaderText = "Unit Code";
+            this.unitCode.Name = "unitCode";
+            this.unitCode.Width = 200;
             // 
-            // EnrollCourse
+            // unitName
+            // 
+            this.unitName.HeaderText = "Unit Name";
+            this.unitName.Name = "unitName";
+            this.unitName.Width = 400;
+            // 
+            // semester
+            // 
+            this.semester.HeaderText = "Semester";
+            this.semester.Name = "semester";
+            // 
+            // lecturer
+            // 
+            this.lecturer.HeaderText = "Lecturer";
+            this.lecturer.Name = "lecturer";
+            // 
+            // SessionCourseUnitList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(904, 593);
+            this.ClientSize = new System.Drawing.Size(1031, 556);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.topPanel);
-            this.Name = "EnrollCourse";
+            this.Name = "SessionCourseUnitList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Enroll Student";
-            this.Load += new System.EventHandler(this.EnrollCourse_Load);
+            this.Text = "CourseUnitList";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.CourseUnitList_Load);
             this.mainPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtGridCourses)).EndInit();
             this.ResumeLayout(false);
@@ -126,9 +145,12 @@
         private System.Windows.Forms.Panel topPanel;
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.DataGridView dtGridCourses;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn code;
-        private System.Windows.Forms.DataGridViewTextBoxColumn courseName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn units;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sessUnitId;
+        private System.Windows.Forms.DataGridViewButtonColumn added;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UnitId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unitCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unitName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn semester;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lecturer;
     }
 }

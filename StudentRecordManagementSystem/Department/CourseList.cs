@@ -14,10 +14,10 @@ using DataAccess.Models;
 
 namespace StudentRecordManagementSystem.Department
 {
-    public partial class EnrollCourse : MaterialForm
+    public partial class CourseList : MaterialForm
     {
         public int department { get; set; }
-        public EnrollCourse()
+        public CourseList()
         {
             InitializeComponent();
         }
@@ -38,6 +38,7 @@ namespace StudentRecordManagementSystem.Department
             // ID, CourseName, CourseCode, Duration, Department
             dtGridCourses.AutoGenerateColumns = false;
             dtGridCourses.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtGridCourses.CellDoubleClick += DtGridCourses_CellDoubleClick;
             dtGridCourses.Columns[0].DataPropertyName = "ID";
             dtGridCourses.Columns[1].DataPropertyName = "CourseCode";
             dtGridCourses.Columns[2].DataPropertyName = "CourseName";
@@ -47,6 +48,25 @@ namespace StudentRecordManagementSystem.Department
             dtGridCourses.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dtGridCourses.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dtGridCourses.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        }
+
+        private void DtGridCourses_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int rowId = e.RowIndex;
+                if (rowId < 0)
+                    return;
+                int courseId = (int)dtGridCourses.Rows[rowId].Cells[0].Value;
+                CourseManagerOption manager = new CourseManagerOption();
+                manager.courseId = courseId;
+                manager.departmentId = department;
+                manager.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                showErrorMessage(ex.Message);
+            }
         }
 
         private void fillGridData()

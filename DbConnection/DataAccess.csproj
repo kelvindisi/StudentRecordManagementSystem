@@ -54,8 +54,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DbConnector.cs" />
-    <Compile Include="DepartmentManager.cs" />
+    <Compile Include="Managers\DbConnector.cs" />
+    <Compile Include="Managers\DepartmentManager.cs" />
+    <Compile Include="Managers\EnrollmentManager.cs" />
     <Compile Include="Exceptions\CourseAlreadyExistsException.cs" />
     <Compile Include="Exceptions\CourseDoesNotExistException.cs" />
     <Compile Include="Exceptions\CourseHasNoUnitsException.cs" />
@@ -66,22 +67,25 @@
     <Compile Include="Exceptions\UnitDoesNotExistException.cs" />
     <Compile Include="Exceptions\WrongUsernamePasswordException.cs" />
     <Compile Include="Models\BioDataModel.cs" />
-    <Compile Include="CourseManager.cs" />
+    <Compile Include="Managers\CourseManager.cs" />
     <Compile Include="Models\CourseModel.cs" />
+    <Compile Include="Models\EnrollmentModel.cs" />
     <Compile Include="Models\SessionModel.cs" />
+    <Compile Include="Models\SessionUnitModel.cs" />
     <Compile Include="Models\StaffAuthModel.cs" />
     <Compile Include="Models\StaffPrimaryModel.cs" />
     <Compile Include="Models\UnitModel.cs" />
-    <Compile Include="RolesManager.cs" />
-    <Compile Include="SessionManager.cs" />
-    <Compile Include="StaffAuthenticationManager.cs" />
-    <Compile Include="StaffManager.cs" />
-    <Compile Include="StudentManager.cs" />
+    <Compile Include="Managers\RolesManager.cs" />
+    <Compile Include="Managers\SessionManager.cs" />
+    <Compile Include="Managers\SessionUnitManager.cs" />
+    <Compile Include="Managers\StaffAuthenticationManager.cs" />
+    <Compile Include="Managers\StaffManager.cs" />
+    <Compile Include="Managers\StudentManager.cs" />
     <Compile Include="Models\DepartmentModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\RoleModel.cs" />
     <Compile Include="Models\StaffModel.cs" />
-    <Compile Include="UnitManager.cs" />
+    <Compile Include="Managers\UnitManager.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
