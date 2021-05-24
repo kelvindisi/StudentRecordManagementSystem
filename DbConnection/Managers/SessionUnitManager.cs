@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace DataAccess
 {
@@ -190,6 +191,107 @@ namespace DataAccess
             }
 
             return activeUnitIds;
+        }
+        public static DataTable getSessionCourseUnits
+            (int session, int courseId, string find)
+        {
+            DataTable table = new DataTable();
+            using (conn = new MySqlConnection(getConnectionString()))
+            {
+                conn.Open();
+                string q = "SELECT session_units.id, units.id as unit_id, "
+                   + "unit_code, unit_name, "
+                   + "'Enroll' as msg FROM session_units "
+                   + "JOIN units ON session_units.unit_id = units.id "
+                   + "WHERE session_units.session_id = @sessId "
+                   + "AND units.course_id = @courseId AND "
+                   + "(units.unit_code LIKE @find OR "
+                   + "units.unit_name LIKE @find);";
+                cmd = new MySqlCommand(q, conn);
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("sessId", session);
+                cmd.Parameters.AddWithValue("courseId", courseId);
+                cmd.Parameters.AddWithValue("find", $"%{find}%");
+
+                MySqlDataAdapter dapt = new MySqlDataAdapter(cmd);
+                dapt.Fill(table);
+            }
+
+            return table;
+        }
+        public static List<int> registeredUnitsId(int sess, int course, int stud)
+        {
+            List<int> registered = new List<int>();
+            using (conn = new MySqlConnection(getConnectionString()))
+            {
+                conn.Open();
+                string q = "SELECT session_units.unit_id FROM registered_units "
+                    + "JOIN session_units ON session_units.id = "
+                    + "registered_units.session_unit_id "
+                    + "JOIN units ON units.id = session_units.unit_id "
+                    + "WHERE units.course_id = @course AND "
+                    + "session_units.session_id = @sess AND "
+                    + "registered_units.student_id = @stud";
+                cmd = new MySqlCommand(q, conn);
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("course", course);
+                cmd.Parameters.AddWithValue("sess", sess);
+                cmd.Parameters.AddWithValue("stud", stud);
+                MySqlDataReader rd = cmd.ExecuteReader();
+                while(rd.Read())
+                {
+                    registered.Add(rd.GetInt32("unit_id"));
+                }
+            }
+            return registered;
+        }
+        public static void DisenrollSessUnit(int student, int session)
+        {
+            using (conn = new MySqlConnection(getConnectionString()))
+            {
+                conn.Open();
+                string q = "DELETE FROM `registered_units` WHERE "
+                    + "`student_id`=@student AND `session_unit_id`=@session";
+                cmd = new MySqlCommand(q, conn);
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("student", student);
+                cmd.Parameters.AddWithValue("session", session);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+        public static bool isEnrolledSessUnit(int student, int session)
+        {
+            bool exists = false;
+            using(conn = new MySqlConnection(getConnectionString()))
+            {
+                conn.Open();
+                string q = "SELECT * FROM `registered_units` WHERE "
+                    + "`student_id`=@student AND `session_unit_id`=@session";
+                cmd = new MySqlCommand(q, conn);
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("student", student);
+                cmd.Parameters.AddWithValue("session", session);
+
+                MySqlDataReader rd = cmd.ExecuteReader();
+                if (rd.HasRows)
+                    exists = true;
+            }
+            return exists;
+        }
+        public static void enrollSessUnit(int student, int session)
+        {
+            using (conn = new MySqlConnection(getConnectionString()))
+            {
+                conn.Open();
+                string q = "INSERT INTO `registered_units`(`student_id`, "
+                    + "`session_unit_id`) VALUES (@student,@session)";
+                cmd = new MySqlCommand(q, conn);
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("student", student);
+                cmd.Parameters.AddWithValue("session", session);
+                cmd.ExecuteNonQuery();
+            }
         }
     }
 }

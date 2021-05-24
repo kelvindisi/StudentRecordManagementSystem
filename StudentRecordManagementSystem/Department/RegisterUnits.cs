@@ -36,6 +36,32 @@ namespace StudentRecordManagementSystem
             dtGridStudents.Columns[2].DataPropertyName = "first_name";
             dtGridStudents.Columns[3].DataPropertyName = "surname";
             dtGridStudents.Columns[4].DataPropertyName = "email";
+
+            dtGridStudents.CellDoubleClick += DtGridStudents_CellDoubleClick;
+        }
+
+        private void DtGridStudents_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int row = e.RowIndex;
+                if (row < 0)
+                    return;
+                showUnitsForm(row);
+            }catch(Exception ex)
+            {
+                showErrorMessage(ex.Message);
+            }
+        }
+
+        private void showUnitsForm(int row)
+        {
+            int studId = (int)dtGridStudents.Rows[row].Cells[0].Value;
+            UnitsRegisterList units = new UnitsRegisterList();
+            units.sessionId = sessionId;
+            units.studentId = studId;
+            units.courseId = courseId;
+            units.ShowDialog(this);
         }
 
         private void fillGrid()

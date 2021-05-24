@@ -30,21 +30,21 @@
         {
             this.topPanel = new System.Windows.Forms.Panel();
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.searchPanel = new System.Windows.Forms.Panel();
             this.studentListPanel = new System.Windows.Forms.Panel();
-            this.lblFind = new MaterialSkin.Controls.MaterialLabel();
-            this.btnSearch = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.txtSearch = new System.Windows.Forms.TextBox();
             this.dtGridStudents = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.regNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.surname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.searchPanel = new System.Windows.Forms.Panel();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.lblFind = new MaterialSkin.Controls.MaterialLabel();
             this.mainPanel.SuspendLayout();
-            this.searchPanel.SuspendLayout();
             this.studentListPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridStudents)).BeginInit();
+            this.searchPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // topPanel
@@ -68,17 +68,6 @@
             this.mainPanel.Size = new System.Drawing.Size(1035, 475);
             this.mainPanel.TabIndex = 1;
             // 
-            // searchPanel
-            // 
-            this.searchPanel.Controls.Add(this.txtSearch);
-            this.searchPanel.Controls.Add(this.btnSearch);
-            this.searchPanel.Controls.Add(this.lblFind);
-            this.searchPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.searchPanel.Location = new System.Drawing.Point(0, 0);
-            this.searchPanel.Name = "searchPanel";
-            this.searchPanel.Size = new System.Drawing.Size(1035, 53);
-            this.searchPanel.TabIndex = 0;
-            // 
             // studentListPanel
             // 
             this.studentListPanel.Controls.Add(this.dtGridStudents);
@@ -88,44 +77,12 @@
             this.studentListPanel.Size = new System.Drawing.Size(1035, 422);
             this.studentListPanel.TabIndex = 1;
             // 
-            // lblFind
-            // 
-            this.lblFind.AutoSize = true;
-            this.lblFind.Depth = 0;
-            this.lblFind.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblFind.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblFind.Location = new System.Drawing.Point(12, 14);
-            this.lblFind.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblFind.Name = "lblFind";
-            this.lblFind.Size = new System.Drawing.Size(53, 27);
-            this.lblFind.TabIndex = 0;
-            this.lblFind.Text = "Find";
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Depth = 0;
-            this.btnSearch.Location = new System.Drawing.Point(720, 6);
-            this.btnSearch.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Primary = true;
-            this.btnSearch.Size = new System.Drawing.Size(176, 35);
-            this.btnSearch.TabIndex = 1;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(71, 9);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(643, 32);
-            this.txtSearch.TabIndex = 2;
-            // 
             // dtGridStudents
             // 
             this.dtGridStudents.AllowUserToAddRows = false;
             this.dtGridStudents.AllowUserToDeleteRows = false;
+            this.dtGridStudents.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dtGridStudents.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dtGridStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtGridStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -164,7 +121,7 @@
             this.firstName.HeaderText = "First Name";
             this.firstName.Name = "firstName";
             this.firstName.ReadOnly = true;
-            this.firstName.Width = 122;
+            this.firstName.Width = 113;
             // 
             // surname
             // 
@@ -181,6 +138,51 @@
             this.email.Name = "email";
             this.email.ReadOnly = true;
             // 
+            // searchPanel
+            // 
+            this.searchPanel.Controls.Add(this.txtSearch);
+            this.searchPanel.Controls.Add(this.btnSearch);
+            this.searchPanel.Controls.Add(this.lblFind);
+            this.searchPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.searchPanel.Location = new System.Drawing.Point(0, 0);
+            this.searchPanel.Name = "searchPanel";
+            this.searchPanel.Size = new System.Drawing.Size(1035, 53);
+            this.searchPanel.TabIndex = 0;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(71, 9);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(643, 32);
+            this.txtSearch.TabIndex = 2;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Depth = 0;
+            this.btnSearch.Location = new System.Drawing.Point(720, 6);
+            this.btnSearch.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Primary = true;
+            this.btnSearch.Size = new System.Drawing.Size(176, 35);
+            this.btnSearch.TabIndex = 1;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // lblFind
+            // 
+            this.lblFind.AutoSize = true;
+            this.lblFind.Depth = 0;
+            this.lblFind.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblFind.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblFind.Location = new System.Drawing.Point(12, 14);
+            this.lblFind.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblFind.Name = "lblFind";
+            this.lblFind.Size = new System.Drawing.Size(53, 27);
+            this.lblFind.TabIndex = 0;
+            this.lblFind.Text = "Find";
+            // 
             // RegisterUnits
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -194,10 +196,10 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.RegisterUnits_Load);
             this.mainPanel.ResumeLayout(false);
-            this.searchPanel.ResumeLayout(false);
-            this.searchPanel.PerformLayout();
             this.studentListPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtGridStudents)).EndInit();
+            this.searchPanel.ResumeLayout(false);
+            this.searchPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }

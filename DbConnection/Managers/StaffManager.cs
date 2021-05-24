@@ -311,10 +311,6 @@ namespace DataAccess
             }
             return table;
         }
-
-        private static void showMessage(string v)
-        {
-            MessageBox.Show(string.Format("Total no of search is {0}", v));
-        }
+        
     }
 }
