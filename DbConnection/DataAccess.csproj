@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Managers\AttendanceManager.cs" />
     <Compile Include="Managers\DbConnector.cs" />
     <Compile Include="Managers\DepartmentManager.cs" />
     <Compile Include="Managers\EnrollmentManager.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="Exceptions\WrongUsernamePasswordException.cs" />
     <Compile Include="Models\BioDataModel.cs" />
     <Compile Include="Managers\CourseManager.cs" />
+    <Compile Include="Models\ClassSessionModel.cs" />
     <Compile Include="Models\CourseModel.cs" />
     <Compile Include="Models\EnrollmentModel.cs" />
     <Compile Include="Models\SessionModel.cs" />
