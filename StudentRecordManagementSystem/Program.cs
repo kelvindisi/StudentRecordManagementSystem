@@ -16,10 +16,10 @@ namespace StudentRecordManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Login());
-            Department.CourseList courses = new Department.CourseList();
-            courses.department = 1;
-            Application.Run(courses);
+            Application.Run(new Login());
+            //Department.CourseList courses = new Department.CourseList();
+            //courses.department = 1;
+            //Application.Run(courses);
         }
     }
 }

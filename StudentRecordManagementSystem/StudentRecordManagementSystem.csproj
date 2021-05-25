@@ -191,6 +191,18 @@
     <Compile Include="Controls\LecturerControl.Designer.cs">
       <DependentUpon>LecturerControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Lecturer\SessionUnits.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lecturer\SessionUnits.Designer.cs">
+      <DependentUpon>SessionUnits.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lecturer\SessionUnitStudentList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lecturer\SessionUnitStudentList.Designer.cs">
+      <DependentUpon>SessionUnitStudentList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -313,6 +325,12 @@
     <EmbeddedResource Include="Department\EnrollStudent.resx">
       <DependentUpon>EnrollStudent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Lecturer\SessionUnits.resx">
+      <DependentUpon>SessionUnits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lecturer\SessionUnitStudentList.resx">
+      <DependentUpon>SessionUnitStudentList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -375,9 +393,7 @@
       <Name>DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Lecturer\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

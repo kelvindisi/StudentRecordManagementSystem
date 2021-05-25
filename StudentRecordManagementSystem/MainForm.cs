@@ -44,6 +44,7 @@ namespace StudentRecordManagementSystem
         private void updateControllerDetails()
         {
             DepartmentControl.department = this.staff.DepartmentId;
+            LecturerControl.staffId = this.staff.ID;
         }
 
         private void initializeAppDbConfig()

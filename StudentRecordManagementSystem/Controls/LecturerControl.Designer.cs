@@ -79,9 +79,10 @@
             this.btnCourses.Name = "btnCourses";
             this.btnCourses.Size = new System.Drawing.Size(226, 68);
             this.btnCourses.TabIndex = 3;
-            this.btnCourses.Text = "    Assign Course";
+            this.btnCourses.Text = "    Assigned Units";
             this.btnCourses.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCourses.UseVisualStyleBackColor = false;
+            this.btnCourses.Click += new System.EventHandler(this.btnCourses_Click);
             // 
             // btnAttendance
             // 
@@ -95,13 +96,14 @@
             this.btnAttendance.Name = "btnAttendance";
             this.btnAttendance.Size = new System.Drawing.Size(226, 68);
             this.btnAttendance.TabIndex = 4;
-            this.btnAttendance.Text = "    Attendance";
+            this.btnAttendance.Text = "    Take Attendance";
             this.btnAttendance.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAttendance.UseVisualStyleBackColor = false;
+            this.btnAttendance.Click += new System.EventHandler(this.btnAttendance_Click);
             // 
             // LecturerControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnAttendanceReports);
             this.Controls.Add(this.btnAssessment);

@@ -293,5 +293,59 @@ namespace DataAccess
                 cmd.ExecuteNonQuery();
             }
         }
+
+        public static DataTable getLecturerUnits(int lec, int sess, string q)
+        {
+            DataTable table = new DataTable();
+            using (conn = new MySqlConnection(getConnectionString()))
+            {
+                conn.Open();
+                string qr = "SELECT session_units.id, unit_id, unit_code, "
+                    + "unit_name, course_name, CEIL(semester / 2) as `year`, "
+                    + "semester FROM session_units "
+                    + "JOIN units ON session_units.unit_id = units.id "
+                    + "JOIN courses ON units.course_id = courses.id "
+                    + "WHERE lecturer_id = @lec AND session_id = @sess AND "
+                    + "(unit_code LIKE @q OR unit_name LIKE @q OR "
+                    + "course_name LIKE @q OR semester LIKE @q)";
+                cmd = new MySqlCommand(qr, conn);
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("lec", lec);
+                cmd.Parameters.AddWithValue("sess", sess);
+                cmd.Parameters.AddWithValue("q", $"%{q}%");
+                MySqlDataAdapter dapt = new MySqlDataAdapter(cmd);
+                dapt.Fill(table);
+            }
+            return table;
+        }
+        public static DataTable getSessLecUnits(int lec, int sess, string q)
+        {
+            DataTable table = new DataTable();
+            using (conn = new MySqlConnection(getConnectionString()))
+            {
+                conn.Open();
+                string qr = "SELECT enrollment.id, regNo, first_name, "
+                    + "surname, email FROM registered_units "
+                    + "JOIN enrollment ON enrollment.id = "
+                    + "registered_units.student_id "
+                    + "JOIN student_bio ON student_bio.id = "
+                    + "enrollment.student_id "
+                    + "JOIN session_units ON session_units.id = "
+                    + "registered_units.session_unit_id "
+                    + "WHERE lecturer_id =@lec AND session_unit_id = @sess AND "
+                    + "(regNo LIKE @q OR first_name LIKE @q OR "
+                    + "surname LIKE @q OR email LIKE @q)";
+                cmd = new MySqlCommand(qr, conn);
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("lec", lec);
+                cmd.Parameters.AddWithValue("sess", sess);
+                cmd.Parameters.AddWithValue("q", $"%{q}%");
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                da.Fill(table);
+            }
+
+            return table;
+        }
     }
 }
