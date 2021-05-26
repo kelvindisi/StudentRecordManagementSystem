@@ -58,11 +58,12 @@ namespace StudentRecordManagementSystem.Lecturer
         private void initializeGridConfig()
         {
             dtGridStudents.AutoGenerateColumns = false;
-            dtGridStudents.Columns[0].DataPropertyName = "id";
-            dtGridStudents.Columns[1].DataPropertyName = "regNo";
-            dtGridStudents.Columns[2].DataPropertyName = "first_name";
-            dtGridStudents.Columns[3].DataPropertyName = "surname";
-            dtGridStudents.Columns[4].DataPropertyName = "email";
+            dtGridStudents.Columns[0].DataPropertyName = "registered_id";
+            dtGridStudents.Columns[1].DataPropertyName = "id";
+            dtGridStudents.Columns[2].DataPropertyName = "regNo";
+            dtGridStudents.Columns[3].DataPropertyName = "first_name";
+            dtGridStudents.Columns[4].DataPropertyName = "surname";
+            dtGridStudents.Columns[5].DataPropertyName = "email";
 
             dtGridStudents.CellDoubleClick += DtGridStudents_CellDoubleClick;
         }
@@ -81,6 +82,61 @@ namespace StudentRecordManagementSystem.Lecturer
         private void TakeAttendance(int row)
         {
             int sessionId = getSessionId();
+            if (sessionId == 0)
+                return;
+            string email = getEmail(row);
+            int registrationId = getRegistrationId(row);
+            bool confirmed = confirmFingerPrints(email);
+            if (confirmed)
+                saveTodaysAttendance(sessionId, registrationId);
+        }
+
+        private void saveTodaysAttendance(int sessionId, int registrationId)
+        {
+            if (AttendanceManager.hasAttendedTodaySession(sessionId, registrationId))
+            {
+                showErrorMessage("Already took attendance for today.");
+                return;
+            }
+            if (AttendanceManager.saveAttendance(sessionId, registrationId))
+            {
+                showMessage("Attendance details saved.");
+                return;
+            }
+            throw new Exception("Failed to save attendance.");
+        }
+
+        private void showMessage(string v)
+        {
+            MessageBox.Show(v, this.Text, 
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private int getRegistrationId(int row)
+        {
+            int registrationId = (int)dtGridStudents.Rows[row].Cells[0].Value;
+            if (registrationId == 0)
+                throw new Exception("Cannot validate unit registration, "
+                    + "close to refresh.");
+            return registrationId;
+        }
+
+        private bool confirmFingerPrints(string email)
+        {
+            FingerprintVerify verifier = new FingerprintVerify(DbName.student);
+            verifier.email = email;
+            verifier.ShowDialog(this);
+            if (!verifier.attemptedVerification)
+                return false;
+            if (verifier.verified)
+                return true;
+            showErrorMessage("Failed to verify fingerprint.");
+            return false;
+        }
+
+        private string getEmail(int row)
+        {
+            return (string)dtGridStudents.Rows[row].Cells[5].Value;
         }
 
         private int getSessionId()
@@ -106,7 +162,10 @@ namespace StudentRecordManagementSystem.Lecturer
 
         private void recordScore(int row)
         {
-            throw new NotImplementedException();
+            int registrationId = getRegistrationId(row);
+            FillAssessment assess = new FillAssessment();
+            assess.RegistrationId = registrationId;
+            assess.ShowDialog();
         }
 
 

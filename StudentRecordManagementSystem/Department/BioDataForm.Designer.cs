@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BioDataForm));
             this.lblSurname = new MaterialSkin.Controls.MaterialLabel();
             this.txtSurname = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtFirstName = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -602,6 +603,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.name);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "BioDataForm";

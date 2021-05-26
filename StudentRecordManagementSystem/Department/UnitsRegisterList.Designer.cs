@@ -29,20 +29,21 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UnitsRegisterList));
             this.topPanel = new System.Windows.Forms.Panel();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.registeredList = new System.Windows.Forms.Panel();
             this.listPanel = new System.Windows.Forms.Panel();
             this.dtGridSessCourseUnits = new System.Windows.Forms.DataGridView();
-            this.searchPanel = new System.Windows.Forms.Panel();
-            this.btnSearch = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.lblSearch = new MaterialSkin.Controls.MaterialLabel();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Enroll = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.searchPanel = new System.Windows.Forms.Panel();
+            this.btnSearch = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.lblSearch = new MaterialSkin.Controls.MaterialLabel();
             this.mainPanel.SuspendLayout();
             this.registeredList.SuspendLayout();
             this.listPanel.SuspendLayout();
@@ -108,6 +109,48 @@
             this.dtGridSessCourseUnits.Size = new System.Drawing.Size(1080, 478);
             this.dtGridSessCourseUnits.TabIndex = 0;
             // 
+            // id
+            // 
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // unitId
+            // 
+            this.unitId.HeaderText = "UnitId";
+            this.unitId.Name = "unitId";
+            this.unitId.ReadOnly = true;
+            this.unitId.Visible = false;
+            // 
+            // unitCode
+            // 
+            this.unitCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.unitCode.HeaderText = "Unit Code";
+            this.unitCode.Name = "unitCode";
+            this.unitCode.ReadOnly = true;
+            this.unitCode.Width = 116;
+            // 
+            // unitName
+            // 
+            this.unitName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.unitName.HeaderText = "Unit Name";
+            this.unitName.Name = "unitName";
+            this.unitName.ReadOnly = true;
+            // 
+            // Enroll
+            // 
+            this.Enroll.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.Enroll.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Enroll.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Enroll.HeaderText = "Enroll";
+            this.Enroll.Name = "Enroll";
+            this.Enroll.ReadOnly = true;
+            this.Enroll.Width = 55;
+            // 
             // searchPanel
             // 
             this.searchPanel.Controls.Add(this.btnSearch);
@@ -153,48 +196,6 @@
             this.lblSearch.TabIndex = 0;
             this.lblSearch.Text = "Find";
             // 
-            // id
-            // 
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // unitId
-            // 
-            this.unitId.HeaderText = "UnitId";
-            this.unitId.Name = "unitId";
-            this.unitId.ReadOnly = true;
-            this.unitId.Visible = false;
-            // 
-            // unitCode
-            // 
-            this.unitCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.unitCode.HeaderText = "Unit Code";
-            this.unitCode.Name = "unitCode";
-            this.unitCode.ReadOnly = true;
-            this.unitCode.Width = 116;
-            // 
-            // unitName
-            // 
-            this.unitName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.unitName.HeaderText = "Unit Name";
-            this.unitName.Name = "unitName";
-            this.unitName.ReadOnly = true;
-            // 
-            // Enroll
-            // 
-            this.Enroll.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.Enroll.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Enroll.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Enroll.HeaderText = "Enroll";
-            this.Enroll.Name = "Enroll";
-            this.Enroll.ReadOnly = true;
-            this.Enroll.Width = 55;
-            // 
             // UnitsRegisterList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -202,6 +203,7 @@
             this.ClientSize = new System.Drawing.Size(1080, 635);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.topPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UnitsRegisterList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "UnitsRegisterList";

@@ -1,6 +1,6 @@
 ﻿namespace StudentRecordManagementSystem
 {
-    partial class FingerPrintScanner
+    partial class FingerprintVerify
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FingerPrintScanner));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FingerprintVerify));
             this.panelMessage = new System.Windows.Forms.Panel();
             this.txtMessage = new MaterialSkin.Controls.MaterialLabel();
             this.txtFingerPrintMsg = new MaterialSkin.Controls.MaterialLabel();
@@ -158,9 +158,9 @@
             this.btnScan.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnScan.Name = "btnScan";
             this.btnScan.Primary = true;
-            this.btnScan.Size = new System.Drawing.Size(119, 45);
+            this.btnScan.Size = new System.Drawing.Size(289, 45);
             this.btnScan.TabIndex = 0;
-            this.btnScan.Text = "Scan";
+            this.btnScan.Text = "Confirm Attendance";
             this.btnScan.UseVisualStyleBackColor = false;
             this.btnScan.Click += new System.EventHandler(this.btnScan_Click);
             // 
@@ -178,7 +178,7 @@
             this.btnFinish.Text = "Finish";
             this.btnFinish.UseVisualStyleBackColor = false;
             // 
-            // FingerPrintScanner
+            // FingerprintVerify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -192,7 +192,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FingerPrintScanner";
+            this.Name = "FingerprintVerify";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Finger Print Scanner";
@@ -216,8 +216,8 @@
         private MaterialSkin.Controls.MaterialLabel lblFingerprintTitle;
         private System.Windows.Forms.PictureBox PictureFingerPrint;
         private MaterialSkin.Controls.MaterialRaisedButton btnScan;
-        private MaterialSkin.Controls.MaterialRaisedButton btnFinish;
         private MaterialSkin.Controls.MaterialLabel lblLeftIndex;
         private MaterialSkin.Controls.MaterialFlatButton btnStop;
+        private MaterialSkin.Controls.MaterialRaisedButton btnFinish;
     }
 }

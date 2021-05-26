@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CourseList));
             this.topPanel = new System.Windows.Forms.Panel();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.dtGridCourses = new System.Windows.Forms.DataGridView();
@@ -104,14 +105,15 @@
             this.units.Name = "units";
             this.units.ReadOnly = true;
             // 
-            // EnrollCourse
+            // CourseList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(904, 593);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.topPanel);
-            this.Name = "EnrollCourse";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "CourseList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Enroll Student";
             this.Load += new System.EventHandler(this.EnrollCourse_Load);

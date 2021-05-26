@@ -199,6 +199,26 @@ namespace StudentRecordManagementSystem
 
             return Users;
         }
+        internal static DbRecord ReadRecord(string szDbDir, string fileName)
+        {
+            DbRecord User = new DbRecord();
+
+            if (!Directory.Exists(szDbDir))
+                throw new DirectoryNotFoundException(String.Format("The folder {0} is not found", szDbDir));
+            string[] rgFiles = Directory.GetFiles(szDbDir, fileName);
+            if (rgFiles == null || rgFiles.Length == 0)
+                return User;
+            try
+            {
+                User = new DbRecord(rgFiles[0]);
+            }
+            catch (InvalidDataException)
+            {
+                // The user's information has invalid data. Skip it and continue processing.
+            }
+
+            return User;
+        }
 
         /// <summary>
         /// User name
@@ -214,5 +234,7 @@ namespace StudentRecordManagementSystem
         /// Finger template.
         /// </summary>
         private byte[] m_Template;
+
+        
     }
 }

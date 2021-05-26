@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SessionPick));
             this.lblSession = new MaterialSkin.Controls.MaterialLabel();
             this.cbxSessions = new System.Windows.Forms.ComboBox();
             this.btnChoose = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -109,6 +110,7 @@
             this.Controls.Add(this.btnChoose);
             this.Controls.Add(this.cbxSessions);
             this.Controls.Add(this.lblSession);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SessionPick";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Session Pick";

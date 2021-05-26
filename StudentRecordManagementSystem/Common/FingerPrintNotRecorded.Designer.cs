@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FingerPrintNotRecorded));
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -98,6 +99,7 @@
             this.Controls.Add(this.materialRaisedButton1);
             this.Controls.Add(this.materialLabel1);
             this.DoubleBuffered = false;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FingerPrintNotRecorded";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Finger Print Not Recorded";

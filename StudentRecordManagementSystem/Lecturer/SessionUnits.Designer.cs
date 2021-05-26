@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SessionUnits));
             this.topPanel = new System.Windows.Forms.Panel();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.gridPanel = new System.Windows.Forms.Panel();
@@ -205,6 +206,7 @@
             this.ClientSize = new System.Drawing.Size(1039, 599);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.topPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SessionUnits";
             this.Text = "Session Units";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

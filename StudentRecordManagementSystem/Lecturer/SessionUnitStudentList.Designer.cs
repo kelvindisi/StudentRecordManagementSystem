@@ -28,19 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SessionUnitStudentList));
             this.panel1 = new System.Windows.Forms.Panel();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.gridPanel = new System.Windows.Forms.Panel();
             this.dtGridStudents = new System.Windows.Forms.DataGridView();
-            this.searchPanel = new System.Windows.Forms.Panel();
-            this.btnSearch = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.lblSearch = new MaterialSkin.Controls.MaterialLabel();
+            this.RegistraionID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RegNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Surname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.searchPanel = new System.Windows.Forms.Panel();
+            this.btnSearch = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.lblSearch = new MaterialSkin.Controls.MaterialLabel();
             this.mainPanel.SuspendLayout();
             this.gridPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridStudents)).BeginInit();
@@ -83,6 +85,7 @@
             this.dtGridStudents.AllowUserToDeleteRows = false;
             this.dtGridStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtGridStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.RegistraionID,
             this.StudentID,
             this.RegNo,
             this.FirstName,
@@ -96,6 +99,49 @@
             this.dtGridStudents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtGridStudents.Size = new System.Drawing.Size(1081, 484);
             this.dtGridStudents.TabIndex = 0;
+            // 
+            // RegistraionID
+            // 
+            this.RegistraionID.HeaderText = "RegirstrationID";
+            this.RegistraionID.Name = "RegistraionID";
+            this.RegistraionID.ReadOnly = true;
+            // 
+            // StudentID
+            // 
+            this.StudentID.HeaderText = "StudentID";
+            this.StudentID.Name = "StudentID";
+            this.StudentID.ReadOnly = true;
+            // 
+            // RegNo
+            // 
+            this.RegNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.RegNo.HeaderText = "Reg No";
+            this.RegNo.Name = "RegNo";
+            this.RegNo.ReadOnly = true;
+            this.RegNo.Width = 99;
+            // 
+            // FirstName
+            // 
+            this.FirstName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.FirstName.HeaderText = "First Name";
+            this.FirstName.Name = "FirstName";
+            this.FirstName.ReadOnly = true;
+            this.FirstName.Width = 113;
+            // 
+            // Surname
+            // 
+            this.Surname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Surname.HeaderText = "Surname";
+            this.Surname.Name = "Surname";
+            this.Surname.ReadOnly = true;
+            this.Surname.Width = 110;
+            // 
+            // email
+            // 
+            this.email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.email.HeaderText = "Email";
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
             // 
             // searchPanel
             // 
@@ -142,44 +188,6 @@
             this.lblSearch.TabIndex = 0;
             this.lblSearch.Text = "Find";
             // 
-            // StudentID
-            // 
-            this.StudentID.HeaderText = "StudentID";
-            this.StudentID.Name = "StudentID";
-            this.StudentID.ReadOnly = true;
-            this.StudentID.Visible = false;
-            // 
-            // RegNo
-            // 
-            this.RegNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.RegNo.HeaderText = "Reg No";
-            this.RegNo.Name = "RegNo";
-            this.RegNo.ReadOnly = true;
-            this.RegNo.Width = 99;
-            // 
-            // FirstName
-            // 
-            this.FirstName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.FirstName.HeaderText = "First Name";
-            this.FirstName.Name = "FirstName";
-            this.FirstName.ReadOnly = true;
-            this.FirstName.Width = 122;
-            // 
-            // Surname
-            // 
-            this.Surname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Surname.HeaderText = "Surname";
-            this.Surname.Name = "Surname";
-            this.Surname.ReadOnly = true;
-            this.Surname.Width = 110;
-            // 
-            // email
-            // 
-            this.email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.email.HeaderText = "Email";
-            this.email.Name = "email";
-            this.email.ReadOnly = true;
-            // 
             // SessionUnitStudentList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -187,6 +195,7 @@
             this.ClientSize = new System.Drawing.Size(1081, 665);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SessionUnitStudentList";
             this.Text = "Session Unit Students";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -210,6 +219,7 @@
         private MaterialSkin.Controls.MaterialRaisedButton btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
         private MaterialSkin.Controls.MaterialLabel lblSearch;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RegistraionID;
         private System.Windows.Forms.DataGridViewTextBoxColumn StudentID;
         private System.Windows.Forms.DataGridViewTextBoxColumn RegNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;

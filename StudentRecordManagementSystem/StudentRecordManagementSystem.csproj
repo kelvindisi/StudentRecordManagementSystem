@@ -52,7 +52,16 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>StudentRecordManagementSystem.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>student.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="ftrSDKHelper13">
       <HintPath>..\..\SDK 4.2\Bin\ftrSDKHelper13.dll</HintPath>
     </Reference>
@@ -78,6 +87,12 @@
     </Compile>
     <Compile Include="Admin\AddStaffForm.Designer.cs">
       <DependentUpon>AddStaffForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\FingerprintVerify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\FingerprintVerify.Designer.cs">
+      <DependentUpon>FingerprintVerify.cs</DependentUpon>
     </Compile>
     <Compile Include="Common\SessionPick.cs">
       <SubType>Form</SubType>
@@ -191,6 +206,12 @@
     <Compile Include="Controls\LecturerControl.Designer.cs">
       <DependentUpon>LecturerControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Lecturer\FillAssessment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lecturer\FillAssessment.Designer.cs">
+      <DependentUpon>FillAssessment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Lecturer\SessionUnits.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,6 +295,9 @@
     <EmbeddedResource Include="Admin\AddStaffForm.resx">
       <DependentUpon>AddStaffForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Common\FingerprintVerify.resx">
+      <DependentUpon>FingerprintVerify.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Common\SessionPick.resx">
       <DependentUpon>SessionPick.cs</DependentUpon>
     </EmbeddedResource>
@@ -324,6 +348,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Department\EnrollStudent.resx">
       <DependentUpon>EnrollStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lecturer\FillAssessment.resx">
+      <DependentUpon>FillAssessment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Lecturer\SessionUnits.resx">
       <DependentUpon>SessionUnits.cs</DependentUpon>
@@ -393,7 +420,15 @@
       <Name>DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="student.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reports\crystals\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FingerprintCancelBioDelete));
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.btnYes = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnNo = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -83,6 +84,7 @@
             this.Controls.Add(this.btnNo);
             this.Controls.Add(this.btnYes);
             this.Controls.Add(this.materialLabel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FingerprintCancelBioDelete";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Fingerprint Registration";

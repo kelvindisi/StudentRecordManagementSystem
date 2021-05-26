@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentBioManager));
             this.panelTop = new System.Windows.Forms.Panel();
             this.panelCenterMain = new System.Windows.Forms.Panel();
             this.dtGridBio = new System.Windows.Forms.DataGridView();
@@ -116,6 +117,7 @@
             this.ClientSize = new System.Drawing.Size(832, 467);
             this.Controls.Add(this.panelCenterMain);
             this.Controls.Add(this.panelTop);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StudentBioManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Manage Students";

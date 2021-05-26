@@ -324,7 +324,8 @@ namespace DataAccess
             using (conn = new MySqlConnection(getConnectionString()))
             {
                 conn.Open();
-                string qr = "SELECT enrollment.id, regNo, first_name, "
+                string qr = "SELECT registered_units.id as registered_id, "
+                    + "enrollment.id, regNo, first_name, "
                     + "surname, email FROM registered_units "
                     + "JOIN enrollment ON enrollment.id = "
                     + "registered_units.student_id "

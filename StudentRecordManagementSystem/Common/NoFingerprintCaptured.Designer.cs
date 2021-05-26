@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NoFingerprintCaptured));
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.btnOk = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnNo = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -82,6 +83,7 @@
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.materialLabel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NoFingerprintCaptured";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "No Fingerprint";

@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CoursesForm));
             this.topPanel = new System.Windows.Forms.Panel();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.dtGridCourses = new System.Windows.Forms.DataGridView();
@@ -163,7 +164,7 @@
             // 
             this.txtSemesters.Location = new System.Drawing.Point(31, 186);
             this.txtSemesters.Name = "txtSemesters";
-            this.txtSemesters.Size = new System.Drawing.Size(147, 26);
+            this.txtSemesters.Size = new System.Drawing.Size(147, 35);
             this.txtSemesters.TabIndex = 11;
             // 
             // lblNoOfSemesters
@@ -175,7 +176,7 @@
             this.lblNoOfSemesters.Location = new System.Drawing.Point(28, 164);
             this.lblNoOfSemesters.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblNoOfSemesters.Name = "lblNoOfSemesters";
-            this.lblNoOfSemesters.Size = new System.Drawing.Size(184, 19);
+            this.lblNoOfSemesters.Size = new System.Drawing.Size(263, 27);
             this.lblNoOfSemesters.TabIndex = 10;
             this.lblNoOfSemesters.Text = "Duration|No of Semesters";
             // 
@@ -226,7 +227,7 @@
             this.txtCourseCode.SelectedText = "";
             this.txtCourseCode.SelectionLength = 0;
             this.txtCourseCode.SelectionStart = 0;
-            this.txtCourseCode.Size = new System.Drawing.Size(238, 23);
+            this.txtCourseCode.Size = new System.Drawing.Size(238, 32);
             this.txtCourseCode.TabIndex = 7;
             this.txtCourseCode.UseSystemPasswordChar = false;
             // 
@@ -239,7 +240,7 @@
             this.lblCourseCode.Location = new System.Drawing.Point(28, 116);
             this.lblCourseCode.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblCourseCode.Name = "lblCourseCode";
-            this.lblCourseCode.Size = new System.Drawing.Size(96, 19);
+            this.lblCourseCode.Size = new System.Drawing.Size(137, 27);
             this.lblCourseCode.TabIndex = 6;
             this.lblCourseCode.Text = "Course Code";
             // 
@@ -265,7 +266,7 @@
             this.lblCourse.Location = new System.Drawing.Point(27, 68);
             this.lblCourse.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblCourse.Name = "lblCourse";
-            this.lblCourse.Size = new System.Drawing.Size(101, 19);
+            this.lblCourse.Size = new System.Drawing.Size(145, 27);
             this.lblCourse.TabIndex = 3;
             this.lblCourse.Text = "Course Name";
             // 
@@ -280,7 +281,7 @@
             this.txtCourse.SelectedText = "";
             this.txtCourse.SelectionLength = 0;
             this.txtCourse.SelectionStart = 0;
-            this.txtCourse.Size = new System.Drawing.Size(239, 23);
+            this.txtCourse.Size = new System.Drawing.Size(239, 32);
             this.txtCourse.TabIndex = 2;
             this.txtCourse.UseSystemPasswordChar = false;
             // 
@@ -289,7 +290,7 @@
             this.cboDepartments.FormattingEnabled = true;
             this.cboDepartments.Location = new System.Drawing.Point(31, 37);
             this.cboDepartments.Name = "cboDepartments";
-            this.cboDepartments.Size = new System.Drawing.Size(239, 28);
+            this.cboDepartments.Size = new System.Drawing.Size(239, 37);
             this.cboDepartments.TabIndex = 1;
             // 
             // lblDepartment
@@ -301,7 +302,7 @@
             this.lblDepartment.Location = new System.Drawing.Point(28, 15);
             this.lblDepartment.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblDepartment.Name = "lblDepartment";
-            this.lblDepartment.Size = new System.Drawing.Size(87, 19);
+            this.lblDepartment.Size = new System.Drawing.Size(126, 27);
             this.lblDepartment.TabIndex = 0;
             this.lblDepartment.Text = "Department";
             // 
@@ -311,13 +312,14 @@
             // 
             // CoursesForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(896, 504);
             this.Controls.Add(this.leftPanel);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.topPanel);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "CoursesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -72,10 +72,14 @@
     <Compile Include="Models\ClassSessionModel.cs" />
     <Compile Include="Models\CourseModel.cs" />
     <Compile Include="Models\EnrollmentModel.cs" />
+    <Compile Include="Models\QueryStrings.cs" />
     <Compile Include="Models\SessionModel.cs" />
     <Compile Include="Models\SessionUnitModel.cs" />
     <Compile Include="Models\StaffAuthModel.cs" />
     <Compile Include="Models\StaffPrimaryModel.cs" />
+    <Compile Include="Models\StudentAttendanceScore.cs" />
+    <Compile Include="Models\StudentScoreAttendanceModel.cs" />
+    <Compile Include="Models\StudentScoreModel.cs" />
     <Compile Include="Models\UnitModel.cs" />
     <Compile Include="Managers\RolesManager.cs" />
     <Compile Include="Managers\SessionManager.cs" />

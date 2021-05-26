@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectLecturer));
             this.topPanel = new System.Windows.Forms.Panel();
             this.centerPanel = new System.Windows.Forms.Panel();
             this.gridPanel = new System.Windows.Forms.Panel();
@@ -225,6 +226,7 @@
             this.ClientSize = new System.Drawing.Size(1085, 652);
             this.Controls.Add(this.centerPanel);
             this.Controls.Add(this.topPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SelectLecturer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SelectLecturer";

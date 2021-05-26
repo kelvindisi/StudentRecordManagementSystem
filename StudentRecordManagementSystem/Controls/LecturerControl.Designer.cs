@@ -66,6 +66,7 @@
             this.btnAssessment.Text = "    Assessment";
             this.btnAssessment.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAssessment.UseVisualStyleBackColor = false;
+            this.btnAssessment.Click += new System.EventHandler(this.btnAssessment_Click);
             // 
             // btnCourses
             // 

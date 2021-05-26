@@ -134,6 +134,7 @@
             this.Controls.Add(this.btnAssessment);
             this.Controls.Add(this.btnRegisterUnit);
             this.Controls.Add(this.btnSessionUnits);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CourseManagerOption";

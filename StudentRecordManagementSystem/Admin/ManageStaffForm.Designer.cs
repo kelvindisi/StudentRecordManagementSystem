@@ -29,9 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageStaffForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.detailsPanel = new System.Windows.Forms.Panel();
             this.formPanel = new System.Windows.Forms.Panel();
+            this.txtEmail = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.lblEmail = new MaterialSkin.Controls.MaterialLabel();
             this.lblPasswordInfo = new System.Windows.Forms.Label();
             this.txtConfirmation = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.lblConfirmation = new MaterialSkin.Controls.MaterialLabel();
@@ -60,8 +63,6 @@
             this.firstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.admin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblEmail = new MaterialSkin.Controls.MaterialLabel();
-            this.txtEmail = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.errProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.detailsPanel.SuspendLayout();
             this.formPanel.SuspendLayout();
@@ -120,6 +121,34 @@
             this.formPanel.Size = new System.Drawing.Size(336, 494);
             this.formPanel.TabIndex = 1;
             // 
+            // txtEmail
+            // 
+            this.txtEmail.Depth = 0;
+            this.txtEmail.Hint = "";
+            this.txtEmail.Location = new System.Drawing.Point(45, 178);
+            this.txtEmail.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.PasswordChar = '\0';
+            this.txtEmail.SelectedText = "";
+            this.txtEmail.SelectionLength = 0;
+            this.txtEmail.SelectionStart = 0;
+            this.txtEmail.Size = new System.Drawing.Size(246, 32);
+            this.txtEmail.TabIndex = 38;
+            this.txtEmail.UseSystemPasswordChar = false;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Depth = 0;
+            this.lblEmail.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblEmail.Location = new System.Drawing.Point(41, 156);
+            this.lblEmail.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(66, 27);
+            this.lblEmail.TabIndex = 37;
+            this.lblEmail.Text = "Email";
+            // 
             // lblPasswordInfo
             // 
             this.lblPasswordInfo.AutoSize = true;
@@ -127,7 +156,7 @@
             this.lblPasswordInfo.ForeColor = System.Drawing.Color.Red;
             this.lblPasswordInfo.Location = new System.Drawing.Point(42, 25);
             this.lblPasswordInfo.Name = "lblPasswordInfo";
-            this.lblPasswordInfo.Size = new System.Drawing.Size(249, 13);
+            this.lblPasswordInfo.Size = new System.Drawing.Size(385, 20);
             this.lblPasswordInfo.TabIndex = 36;
             this.lblPasswordInfo.Text = "*Leave password blank if you don\'t want to change";
             // 
@@ -142,7 +171,7 @@
             this.txtConfirmation.SelectedText = "";
             this.txtConfirmation.SelectionLength = 0;
             this.txtConfirmation.SelectionStart = 0;
-            this.txtConfirmation.Size = new System.Drawing.Size(251, 23);
+            this.txtConfirmation.Size = new System.Drawing.Size(251, 32);
             this.txtConfirmation.TabIndex = 35;
             this.txtConfirmation.UseSystemPasswordChar = false;
             // 
@@ -155,7 +184,7 @@
             this.lblConfirmation.Location = new System.Drawing.Point(45, 441);
             this.lblConfirmation.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblConfirmation.Name = "lblConfirmation";
-            this.lblConfirmation.Size = new System.Drawing.Size(133, 19);
+            this.lblConfirmation.Size = new System.Drawing.Size(192, 27);
             this.lblConfirmation.TabIndex = 34;
             this.lblConfirmation.Text = "Confirm Password";
             // 
@@ -170,7 +199,7 @@
             this.txtPassword.SelectedText = "";
             this.txtPassword.SelectionLength = 0;
             this.txtPassword.SelectionStart = 0;
-            this.txtPassword.Size = new System.Drawing.Size(251, 23);
+            this.txtPassword.Size = new System.Drawing.Size(251, 32);
             this.txtPassword.TabIndex = 33;
             this.txtPassword.UseSystemPasswordChar = false;
             // 
@@ -183,7 +212,7 @@
             this.lblNewPassword.Location = new System.Drawing.Point(46, 393);
             this.lblNewPassword.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblNewPassword.Name = "lblNewPassword";
-            this.lblNewPassword.Size = new System.Drawing.Size(109, 19);
+            this.lblNewPassword.Size = new System.Drawing.Size(159, 27);
             this.lblNewPassword.TabIndex = 32;
             this.lblNewPassword.Text = "New Password";
             // 
@@ -192,7 +221,7 @@
             this.cboDepartment.FormattingEnabled = true;
             this.cboDepartment.Location = new System.Drawing.Point(49, 362);
             this.cboDepartment.Name = "cboDepartment";
-            this.cboDepartment.Size = new System.Drawing.Size(247, 28);
+            this.cboDepartment.Size = new System.Drawing.Size(247, 37);
             this.cboDepartment.TabIndex = 31;
             // 
             // cbxDepartmentAdmin
@@ -206,7 +235,7 @@
             this.cbxDepartmentAdmin.MouseState = MaterialSkin.MouseState.HOVER;
             this.cbxDepartmentAdmin.Name = "cbxDepartmentAdmin";
             this.cbxDepartmentAdmin.Ripple = true;
-            this.cbxDepartmentAdmin.Size = new System.Drawing.Size(146, 30);
+            this.cbxDepartmentAdmin.Size = new System.Drawing.Size(206, 30);
             this.cbxDepartmentAdmin.TabIndex = 30;
             this.cbxDepartmentAdmin.Text = "Department Admin";
             this.cbxDepartmentAdmin.UseVisualStyleBackColor = true;
@@ -222,7 +251,7 @@
             this.cbxLecturer.MouseState = MaterialSkin.MouseState.HOVER;
             this.cbxLecturer.Name = "cbxLecturer";
             this.cbxLecturer.Ripple = true;
-            this.cbxLecturer.Size = new System.Drawing.Size(81, 30);
+            this.cbxLecturer.Size = new System.Drawing.Size(109, 30);
             this.cbxLecturer.TabIndex = 29;
             this.cbxLecturer.Text = "Lecturer";
             this.cbxLecturer.UseVisualStyleBackColor = true;
@@ -238,7 +267,7 @@
             this.cbxAdmin.MouseState = MaterialSkin.MouseState.HOVER;
             this.cbxAdmin.Name = "cbxAdmin";
             this.cbxAdmin.Ripple = true;
-            this.cbxAdmin.Size = new System.Drawing.Size(70, 30);
+            this.cbxAdmin.Size = new System.Drawing.Size(92, 30);
             this.cbxAdmin.TabIndex = 28;
             this.cbxAdmin.Text = "Admin";
             this.cbxAdmin.UseVisualStyleBackColor = true;
@@ -252,7 +281,7 @@
             this.lblDepartment.Location = new System.Drawing.Point(45, 340);
             this.lblDepartment.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblDepartment.Name = "lblDepartment";
-            this.lblDepartment.Size = new System.Drawing.Size(87, 19);
+            this.lblDepartment.Size = new System.Drawing.Size(126, 27);
             this.lblDepartment.TabIndex = 27;
             this.lblDepartment.Text = "Department";
             // 
@@ -265,7 +294,7 @@
             this.lblRoles.Location = new System.Drawing.Point(45, 261);
             this.lblRoles.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblRoles.Name = "lblRoles";
-            this.lblRoles.Size = new System.Drawing.Size(47, 19);
+            this.lblRoles.Size = new System.Drawing.Size(67, 27);
             this.lblRoles.TabIndex = 26;
             this.lblRoles.Text = "Roles";
             // 
@@ -280,7 +309,7 @@
             this.rdoOther.MouseState = MaterialSkin.MouseState.HOVER;
             this.rdoOther.Name = "rdoOther";
             this.rdoOther.Ripple = true;
-            this.rdoOther.Size = new System.Drawing.Size(63, 30);
+            this.rdoOther.Size = new System.Drawing.Size(82, 30);
             this.rdoOther.TabIndex = 25;
             this.rdoOther.TabStop = true;
             this.rdoOther.Text = "Other";
@@ -297,7 +326,7 @@
             this.rdoFemale.MouseState = MaterialSkin.MouseState.HOVER;
             this.rdoFemale.Name = "rdoFemale";
             this.rdoFemale.Ripple = true;
-            this.rdoFemale.Size = new System.Drawing.Size(74, 30);
+            this.rdoFemale.Size = new System.Drawing.Size(99, 30);
             this.rdoFemale.TabIndex = 24;
             this.rdoFemale.TabStop = true;
             this.rdoFemale.Text = "Female";
@@ -314,7 +343,7 @@
             this.rdoMale.MouseState = MaterialSkin.MouseState.HOVER;
             this.rdoMale.Name = "rdoMale";
             this.rdoMale.Ripple = true;
-            this.rdoMale.Size = new System.Drawing.Size(59, 30);
+            this.rdoMale.Size = new System.Drawing.Size(77, 30);
             this.rdoMale.TabIndex = 23;
             this.rdoMale.TabStop = true;
             this.rdoMale.Text = "Male";
@@ -331,7 +360,7 @@
             this.txtFirstName.SelectedText = "";
             this.txtFirstName.SelectionLength = 0;
             this.txtFirstName.SelectionStart = 0;
-            this.txtFirstName.Size = new System.Drawing.Size(251, 23);
+            this.txtFirstName.Size = new System.Drawing.Size(251, 32);
             this.txtFirstName.TabIndex = 22;
             this.txtFirstName.UseSystemPasswordChar = false;
             // 
@@ -346,7 +375,7 @@
             this.txtSurname.SelectedText = "";
             this.txtSurname.SelectionLength = 0;
             this.txtSurname.SelectionStart = 0;
-            this.txtSurname.Size = new System.Drawing.Size(251, 23);
+            this.txtSurname.Size = new System.Drawing.Size(251, 32);
             this.txtSurname.TabIndex = 21;
             this.txtSurname.UseSystemPasswordChar = false;
             // 
@@ -359,7 +388,7 @@
             this.lblFirstName.Location = new System.Drawing.Point(41, 108);
             this.lblFirstName.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(83, 19);
+            this.lblFirstName.Size = new System.Drawing.Size(118, 27);
             this.lblFirstName.TabIndex = 20;
             this.lblFirstName.Text = "First Name";
             // 
@@ -372,7 +401,7 @@
             this.lblGender.Location = new System.Drawing.Point(41, 204);
             this.lblGender.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(56, 19);
+            this.lblGender.Size = new System.Drawing.Size(82, 27);
             this.lblGender.TabIndex = 19;
             this.lblGender.Text = "Gender";
             // 
@@ -385,7 +414,7 @@
             this.lblSurname.Location = new System.Drawing.Point(41, 54);
             this.lblSurname.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblSurname.Name = "lblSurname";
-            this.lblSurname.Size = new System.Drawing.Size(68, 19);
+            this.lblSurname.Size = new System.Drawing.Size(99, 27);
             this.lblSurname.TabIndex = 18;
             this.lblSurname.Text = "Surname";
             // 
@@ -422,7 +451,7 @@
             this.btnClear.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnClear.Name = "btnClear";
             this.btnClear.Primary = false;
-            this.btnClear.Size = new System.Drawing.Size(54, 36);
+            this.btnClear.Size = new System.Drawing.Size(77, 36);
             this.btnClear.TabIndex = 15;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -478,47 +507,20 @@
             this.admin.Name = "admin";
             this.admin.ReadOnly = true;
             // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Depth = 0;
-            this.lblEmail.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblEmail.Location = new System.Drawing.Point(41, 156);
-            this.lblEmail.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(47, 19);
-            this.lblEmail.TabIndex = 37;
-            this.lblEmail.Text = "Email";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Depth = 0;
-            this.txtEmail.Hint = "";
-            this.txtEmail.Location = new System.Drawing.Point(45, 178);
-            this.txtEmail.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.PasswordChar = '\0';
-            this.txtEmail.SelectedText = "";
-            this.txtEmail.SelectionLength = 0;
-            this.txtEmail.SelectionStart = 0;
-            this.txtEmail.Size = new System.Drawing.Size(246, 23);
-            this.txtEmail.TabIndex = 38;
-            this.txtEmail.UseSystemPasswordChar = false;
-            // 
             // errProvider
             // 
             this.errProvider.ContainerControl = this;
             // 
             // ManageStaffForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(978, 607);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.detailsPanel);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ManageStaffForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

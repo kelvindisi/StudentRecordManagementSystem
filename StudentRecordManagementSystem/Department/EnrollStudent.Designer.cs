@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EnrollStudent));
             this.lblEmail = new MaterialSkin.Controls.MaterialLabel();
             this.lblFirstName = new MaterialSkin.Controls.MaterialLabel();
             this.lblSurname = new MaterialSkin.Controls.MaterialLabel();
@@ -294,6 +295,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblEmail);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EnrollStudent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EnrollStudent";
