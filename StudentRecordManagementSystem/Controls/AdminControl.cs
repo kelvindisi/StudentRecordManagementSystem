@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using StudentRecordManagementSystem.ReportsAdmin;
 
 namespace StudentRecordManagementSystem
 {
@@ -50,6 +51,12 @@ namespace StudentRecordManagementSystem
         {
             SessionManagerForm sessionForm = new SessionManagerForm();
             sessionForm.ShowDialog();
+        }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            ViewStaffList staffs = new ViewStaffList();
+            staffs.Show();
         }
     }
 }

@@ -34,6 +34,7 @@
             this.btnCourses = new System.Windows.Forms.Button();
             this.btnDepartments = new System.Windows.Forms.Button();
             this.btnSession = new System.Windows.Forms.Button();
+            this.btnReports = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAddStaff
@@ -132,11 +133,31 @@
             this.btnSession.UseVisualStyleBackColor = false;
             this.btnSession.Click += new System.EventHandler(this.btnSession_Click);
             // 
+            // btnReports
+            // 
+            this.btnReports.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnReports.FlatAppearance.BorderSize = 0;
+            this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReports.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReports.ForeColor = System.Drawing.Color.White;
+            this.btnReports.Image = ((System.Drawing.Image)(resources.GetObject("btnReports.Image")));
+            this.btnReports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReports.Location = new System.Drawing.Point(286, 195);
+            this.btnReports.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnReports.Name = "btnReports";
+            this.btnReports.Size = new System.Drawing.Size(235, 68);
+            this.btnReports.TabIndex = 4;
+            this.btnReports.Text = "    Reports";
+            this.btnReports.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReports.UseVisualStyleBackColor = false;
+            this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
+            // 
             // AdminControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.Controls.Add(this.btnReports);
             this.Controls.Add(this.btnSession);
             this.Controls.Add(this.btnCourses);
             this.Controls.Add(this.btnDepartments);
@@ -158,5 +179,6 @@
         private System.Windows.Forms.Button btnCourses;
         private System.Windows.Forms.Button btnDepartments;
         private System.Windows.Forms.Button btnSession;
+        private System.Windows.Forms.Button btnReports;
     }
 }

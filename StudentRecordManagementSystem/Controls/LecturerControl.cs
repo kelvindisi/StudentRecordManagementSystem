@@ -116,5 +116,10 @@ namespace StudentRecordManagementSystem
                 showErrorMessage(ex.Message);
             }
         }
+
+        private void btnAttendanceReports_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

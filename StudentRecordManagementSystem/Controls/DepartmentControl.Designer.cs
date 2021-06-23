@@ -43,13 +43,15 @@
             this.btnDepartmentCourses.ForeColor = System.Drawing.Color.White;
             this.btnDepartmentCourses.Image = ((System.Drawing.Image)(resources.GetObject("btnDepartmentCourses.Image")));
             this.btnDepartmentCourses.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDepartmentCourses.Location = new System.Drawing.Point(33, 116);
+            this.btnDepartmentCourses.Location = new System.Drawing.Point(286, 129);
             this.btnDepartmentCourses.Name = "btnDepartmentCourses";
             this.btnDepartmentCourses.Size = new System.Drawing.Size(235, 65);
             this.btnDepartmentCourses.TabIndex = 0;
             this.btnDepartmentCourses.Text = "    Academic Year";
             this.btnDepartmentCourses.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDepartmentCourses.UseVisualStyleBackColor = false;
+            this.btnDepartmentCourses.Visible = false;
+            this.btnDepartmentCourses.Click += new System.EventHandler(this.btnDepartmentCourses_Click);
             // 
             // btnEnrollStudent
             // 
@@ -93,7 +95,7 @@
             this.btnEnrollCourse.ForeColor = System.Drawing.Color.White;
             this.btnEnrollCourse.Image = ((System.Drawing.Image)(resources.GetObject("btnEnrollCourse.Image")));
             this.btnEnrollCourse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEnrollCourse.Location = new System.Drawing.Point(286, 116);
+            this.btnEnrollCourse.Location = new System.Drawing.Point(33, 129);
             this.btnEnrollCourse.Name = "btnEnrollCourse";
             this.btnEnrollCourse.Size = new System.Drawing.Size(235, 65);
             this.btnEnrollCourse.TabIndex = 0;

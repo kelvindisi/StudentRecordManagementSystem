@@ -50,6 +50,7 @@
             this.btnAttendanceReports.Text = "    Attendance Reports";
             this.btnAttendanceReports.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAttendanceReports.UseVisualStyleBackColor = false;
+            this.btnAttendanceReports.Click += new System.EventHandler(this.btnAttendanceReports_Click);
             // 
             // btnAssessment
             // 

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using StudentRecordManagementSystem.Department;
 
@@ -42,6 +35,11 @@ namespace StudentRecordManagementSystem
             CourseList courses = new CourseList();
             courses.department = department;
             courses.ShowDialog();
+        }
+
+        private void btnDepartmentCourses_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Not yet implemented.");
         }
     }
 }

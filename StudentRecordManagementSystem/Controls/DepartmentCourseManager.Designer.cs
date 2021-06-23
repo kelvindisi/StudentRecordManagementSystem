@@ -58,7 +58,7 @@
             this.btnDepartmentCourses.ForeColor = System.Drawing.Color.White;
             this.btnDepartmentCourses.Image = ((System.Drawing.Image)(resources.GetObject("btnDepartmentCourses.Image")));
             this.btnDepartmentCourses.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDepartmentCourses.Location = new System.Drawing.Point(33, 116);
+            this.btnDepartmentCourses.Location = new System.Drawing.Point(283, 45);
             this.btnDepartmentCourses.Name = "btnDepartmentCourses";
             this.btnDepartmentCourses.Size = new System.Drawing.Size(235, 65);
             this.btnDepartmentCourses.TabIndex = 5;
@@ -74,13 +74,14 @@
             this.btnAssignCourse.ForeColor = System.Drawing.Color.White;
             this.btnAssignCourse.Image = ((System.Drawing.Image)(resources.GetObject("btnAssignCourse.Image")));
             this.btnAssignCourse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAssignCourse.Location = new System.Drawing.Point(286, 45);
+            this.btnAssignCourse.Location = new System.Drawing.Point(33, 129);
             this.btnAssignCourse.Name = "btnAssignCourse";
             this.btnAssignCourse.Size = new System.Drawing.Size(235, 65);
             this.btnAssignCourse.TabIndex = 6;
             this.btnAssignCourse.Text = "    Academic Registry";
             this.btnAssignCourse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAssignCourse.UseVisualStyleBackColor = false;
+            this.btnAssignCourse.Visible = false;
             // 
             // DepartmentCourseManager
             // 
