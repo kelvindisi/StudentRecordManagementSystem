@@ -308,6 +308,28 @@
     <Compile Include="ReportsAdmin\ViewStaffList.Designer.cs">
       <DependentUpon>ViewStaffList.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportsLecturer\AttendanceRpt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportsLecturer\AttendanceRpt.Designer.cs">
+      <DependentUpon>AttendanceRpt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportsLecturer\SummaryAttendanceRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SummaryAttendanceRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="student_record_sytem.cs">
+      <DependentUpon>student_record_sytem.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="student_record_sytem.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>student_record_sytem.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <EmbeddedResource Include="Admin\AddStaffForm.resx">
       <DependentUpon>AddStaffForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -423,6 +445,13 @@
     <EmbeddedResource Include="ReportsAdmin\ViewStaffList.resx">
       <DependentUpon>ViewStaffList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportsLecturer\AttendanceRpt.resx">
+      <DependentUpon>AttendanceRpt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportsLecturer\SummaryAttendanceRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SummaryAttendanceRpt.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -433,6 +462,20 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="student_record_sytem.xsc">
+      <DependentUpon>student_record_sytem.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="student_record_sytem.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>student_record_sytem.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="student_record_sytem.xss">
+      <DependentUpon>student_record_sytem.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -451,7 +494,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ReportsDepartment\" />
-    <Folder Include="ReportsLecturer\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

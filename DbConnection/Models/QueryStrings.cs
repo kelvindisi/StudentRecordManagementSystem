@@ -30,5 +30,13 @@ namespace DataAccess.Models
             + "(`registered_id`, `score`, `outof`) "
             + "VALUES (@regId, @score, @outof)";
         public static string deleteScore = "DELETE FROM `assessment` WHERE registered_id=@regId";
+        public static string attendanceSummary = "SELECT enrollment.regNo, student_bio.first_name, "
+            + "student_bio.surname, COUNT(attendance.registration_id) AS 'attendance' "
+            + "FROM attendance RIGHT JOIN class_session ON attendance.class_session_id = class_session.id "
+            + "RIGHT JOIN session_units ON class_session.session_unit_id = session_units.id "
+            + "RIGHT JOIN registered_units ON session_units.id = registered_units.session_unit_id "
+            + "RIGHT JOIN enrollment ON registered_units.student_id = enrollment.id RIGHT JOIN student_bio "
+            + "ON enrollment.student_id = student_bio.id WHERE session_units.session_id= @sess "
+            + "AND session_units.id= @sess_unit GROUP BY attendance.registration_id";
     }
 }

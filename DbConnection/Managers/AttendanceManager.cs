@@ -1,11 +1,39 @@
 ﻿using System;
 using DataAccess.Models;
 using MySql.Data.MySqlClient;
+using System.Collections.Generic;
 
 namespace DataAccess.Managers
 {
     public class AttendanceManager:DbConnector
     {
+        public static List<AttendanceSummary> getSessionAttendance(int session, int unit, int sessions)
+        {
+            List<AttendanceSummary> attendance = new List<AttendanceSummary>();
+
+            using (conn = new MySqlConnection(getConnectionString()))
+            {
+                //@sess, @session_units
+                conn.Open();
+                cmd = new MySqlCommand(QueryStrings.attendanceSummary, conn);
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("sess", session);
+                cmd.Parameters.AddWithValue("sess_unit", unit);
+
+                MySqlDataReader rd = cmd.ExecuteReader();
+                while(rd.Read())
+                {
+                    AttendanceSummary summary = new AttendanceSummary(sessions);
+                    summary.regNo = rd.GetString("regNo");
+                    summary.firstName = rd.GetString("first_name");
+                    summary.secondName = rd.GetString("surname");
+                    summary.attended = rd.GetInt32("attendance");
+                    attendance.Add(summary);
+                }
+            }
+
+            return attendance;
+        }
         public static ClassSessionModel getTodaySession(int unit_sess)
         {
             ClassSessionModel sess = new ClassSessionModel();

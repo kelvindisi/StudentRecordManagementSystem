@@ -116,6 +116,27 @@ namespace DataAccess
             return sessUnit;
         }
 
+        public static int getTotalSessionCount(int selected_sess_unit)
+        {
+            int count = 0;
+            string q = "SELECT COUNT(*) AS count FROM `class_session` WHERE session_unit_id=@sess;";
+            using (conn = new MySqlConnection(getConnectionString()))
+            {
+                conn.Open();
+                cmd = new MySqlCommand(q, conn);
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("sess", selected_sess_unit);
+                MySqlDataReader rd = cmd.ExecuteReader();
+                if (rd.HasRows)
+                {
+                    rd.Read();
+                    count = rd.GetInt32("count");
+                }
+            }
+
+            return count;
+        }
+
         public static bool removeSessionUnit(int sessUnitId)
         {
             bool removed = false;

@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CourseManagerOption));
             this.btnEnrollStudent = new System.Windows.Forms.Button();
-            this.btnAttendanceReport = new System.Windows.Forms.Button();
-            this.btnAssessment = new System.Windows.Forms.Button();
             this.btnRegisterUnit = new System.Windows.Forms.Button();
             this.btnSessionUnits = new System.Windows.Forms.Button();
+            this.btnAttendanceReport = new System.Windows.Forms.Button();
+            this.btnAssessment = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEnrollStudent
@@ -53,40 +53,6 @@
             this.btnEnrollStudent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEnrollStudent.UseVisualStyleBackColor = false;
             this.btnEnrollStudent.Click += new System.EventHandler(this.btnEnrollStudent_Click);
-            // 
-            // btnAttendanceReport
-            // 
-            this.btnAttendanceReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnAttendanceReport.FlatAppearance.BorderSize = 0;
-            this.btnAttendanceReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAttendanceReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAttendanceReport.ForeColor = System.Drawing.Color.White;
-            this.btnAttendanceReport.Image = ((System.Drawing.Image)(resources.GetObject("btnAttendanceReport.Image")));
-            this.btnAttendanceReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAttendanceReport.Location = new System.Drawing.Point(388, 215);
-            this.btnAttendanceReport.Name = "btnAttendanceReport";
-            this.btnAttendanceReport.Size = new System.Drawing.Size(303, 98);
-            this.btnAttendanceReport.TabIndex = 8;
-            this.btnAttendanceReport.Text = "    Attendance Reports";
-            this.btnAttendanceReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAttendanceReport.UseVisualStyleBackColor = false;
-            // 
-            // btnAssessment
-            // 
-            this.btnAssessment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(27)))), ((int)(((byte)(55)))));
-            this.btnAssessment.FlatAppearance.BorderSize = 0;
-            this.btnAssessment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAssessment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAssessment.ForeColor = System.Drawing.Color.White;
-            this.btnAssessment.Image = ((System.Drawing.Image)(resources.GetObject("btnAssessment.Image")));
-            this.btnAssessment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAssessment.Location = new System.Drawing.Point(52, 329);
-            this.btnAssessment.Name = "btnAssessment";
-            this.btnAssessment.Size = new System.Drawing.Size(303, 98);
-            this.btnAssessment.TabIndex = 7;
-            this.btnAssessment.Text = "    Assessment";
-            this.btnAssessment.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAssessment.UseVisualStyleBackColor = false;
             // 
             // btnRegisterUnit
             // 
@@ -124,6 +90,42 @@
             this.btnSessionUnits.UseVisualStyleBackColor = false;
             this.btnSessionUnits.Click += new System.EventHandler(this.btnSessionUnits_Click);
             // 
+            // btnAttendanceReport
+            // 
+            this.btnAttendanceReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnAttendanceReport.FlatAppearance.BorderSize = 0;
+            this.btnAttendanceReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAttendanceReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAttendanceReport.ForeColor = System.Drawing.Color.White;
+            this.btnAttendanceReport.Image = ((System.Drawing.Image)(resources.GetObject("btnAttendanceReport.Image")));
+            this.btnAttendanceReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAttendanceReport.Location = new System.Drawing.Point(388, 215);
+            this.btnAttendanceReport.Name = "btnAttendanceReport";
+            this.btnAttendanceReport.Size = new System.Drawing.Size(303, 98);
+            this.btnAttendanceReport.TabIndex = 8;
+            this.btnAttendanceReport.Text = "    Attendance Reports";
+            this.btnAttendanceReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAttendanceReport.UseVisualStyleBackColor = false;
+            this.btnAttendanceReport.Visible = false;
+            // 
+            // btnAssessment
+            // 
+            this.btnAssessment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(27)))), ((int)(((byte)(55)))));
+            this.btnAssessment.FlatAppearance.BorderSize = 0;
+            this.btnAssessment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAssessment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAssessment.ForeColor = System.Drawing.Color.White;
+            this.btnAssessment.Image = ((System.Drawing.Image)(resources.GetObject("btnAssessment.Image")));
+            this.btnAssessment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAssessment.Location = new System.Drawing.Point(52, 329);
+            this.btnAssessment.Name = "btnAssessment";
+            this.btnAssessment.Size = new System.Drawing.Size(303, 98);
+            this.btnAssessment.TabIndex = 7;
+            this.btnAssessment.Text = "    Assessment";
+            this.btnAssessment.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAssessment.UseVisualStyleBackColor = false;
+            this.btnAssessment.Visible = false;
+            // 
             // CourseManagerOption
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -148,9 +150,9 @@
         #endregion
 
         private System.Windows.Forms.Button btnEnrollStudent;
-        private System.Windows.Forms.Button btnAttendanceReport;
-        private System.Windows.Forms.Button btnAssessment;
         private System.Windows.Forms.Button btnRegisterUnit;
         private System.Windows.Forms.Button btnSessionUnits;
+        private System.Windows.Forms.Button btnAttendanceReport;
+        private System.Windows.Forms.Button btnAssessment;
     }
 }

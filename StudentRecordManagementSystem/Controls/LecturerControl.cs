@@ -3,6 +3,9 @@ using System.Windows.Forms;
 using StudentRecordManagementSystem.Common;
 using DataAccess.Models;
 using StudentRecordManagementSystem.Lecturer;
+using DataAccess;
+using StudentRecordManagementSystem.ReportsLecturer;
+using System.Data;
 
 namespace StudentRecordManagementSystem
 {
@@ -116,10 +119,31 @@ namespace StudentRecordManagementSystem
                 showErrorMessage(ex.Message);
             }
         }
-
+        
         private void btnAttendanceReports_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                int sessionId = getSession();
+                if (sessionId == 0)
+                    return;
+                int selected_sess_unit = chooseUnit(sessionId);
+                if (selected_sess_unit == 0)
+                    return;
+                int totalSessions = SessionUnitManager
+                    .getTotalSessionCount(selected_sess_unit);
+                // display form with report viewer
+                AttendanceRpt view = new AttendanceRpt();
+                view.selected_sess_unit = selected_sess_unit;
+                view.sessionId = sessionId;
+                view.totalSessions = totalSessions;
+                view.ShowDialog();
+                
+            }
+            catch (Exception ex)
+            {
+                showErrorMessage(ex.Message);
+            }
         }
     }
 }

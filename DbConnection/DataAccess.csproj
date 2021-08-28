@@ -67,6 +67,7 @@
     <Compile Include="Exceptions\UnitAlreadyExistsException.cs" />
     <Compile Include="Exceptions\UnitDoesNotExistException.cs" />
     <Compile Include="Exceptions\WrongUsernamePasswordException.cs" />
+    <Compile Include="Models\AttendanceSummary.cs" />
     <Compile Include="Models\BioDataModel.cs" />
     <Compile Include="Managers\CourseManager.cs" />
     <Compile Include="Models\ClassSessionModel.cs" />
